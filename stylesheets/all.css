@@ -1,0 +1,989 @@
+/*! normalize.css v2.0.1 | MIT License | git.io/normalize */
+/* ==========================================================================
+   HTML5 display definitions
+   ========================================================================== */
+/*
+ * Corrects `block` display not defined in IE 8/9.
+ */
+/* line 12, /Users/Winning/Dropbox/Work/template/source/stylesheets/normalize.css */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary {
+  display: block; }
+
+/*
+ * Corrects `inline-block` display not defined in IE 8/9.
+ */
+/* line 30, /Users/Winning/Dropbox/Work/template/source/stylesheets/normalize.css */
+audio,
+canvas,
+video {
+  display: inline-block; }
+
+/*
+ * Prevents modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+/* line 41, /Users/Winning/Dropbox/Work/template/source/stylesheets/normalize.css */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/*
+ * Addresses styling for `hidden` attribute not present in IE 8/9.
+ */
+/* line 50, /Users/Winning/Dropbox/Work/template/source/stylesheets/normalize.css */
+[hidden] {
+  display: none; }
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+/*
+ * 1. Sets default font family to sans-serif.
+ * 2. Prevents iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+/* line 64, /Users/Winning/Dropbox/Work/template/source/stylesheets/normalize.css */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */ }
+
+/*
+ * Removes default margin.
+ */
+/* line 74, /Users/Winning/Dropbox/Work/template/source/stylesheets/normalize.css */
+body {
+  margin: 0; }
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+/*
+ * Addresses `outline` inconsistency between Chrome and other browsers.
+ */
+/* line 86, /Users/Winning/Dropbox/Work/template/source/stylesheets/normalize.css */
+a:focus {
+  outline: thin dotted; }
+
+/*
+ * Improves readability when focused and also mouse hovered in all browsers.
+ */
+/* line 94, /Users/Winning/Dropbox/Work/template/source/stylesheets/normalize.css */
+a:active,
+a:hover {
+  outline: 0; }
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+/*
+ * Addresses `h1` font sizes within `section` and `article` in Firefox 4+,
+ * Safari 5, and Chrome.
+ */
+/* line 108, /Users/Winning/Dropbox/Work/template/source/stylesheets/normalize.css */
+h1 {
+  font-size: 2em; }
+
+/*
+ * Addresses styling not present in IE 8/9, Safari 5, and Chrome.
+ */
+/* line 116, /Users/Winning/Dropbox/Work/template/source/stylesheets/normalize.css */
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+/*
+ * Addresses style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
+/* line 124, /Users/Winning/Dropbox/Work/template/source/stylesheets/normalize.css */
+b,
+strong {
+  font-weight: bold; }
+
+/*
+ * Addresses styling not present in Safari 5 and Chrome.
+ */
+/* line 133, /Users/Winning/Dropbox/Work/template/source/stylesheets/normalize.css */
+dfn {
+  font-style: italic; }
+
+/*
+ * Addresses styling not present in IE 8/9.
+ */
+/* line 141, /Users/Winning/Dropbox/Work/template/source/stylesheets/normalize.css */
+mark {
+  background: #ff0;
+  color: #000; }
+
+/*
+ * Corrects font family set oddly in Safari 5 and Chrome.
+ */
+/* line 151, /Users/Winning/Dropbox/Work/template/source/stylesheets/normalize.css */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
+  font-size: 1em; }
+
+/*
+ * Improves readability of pre-formatted text in all browsers.
+ */
+/* line 163, /Users/Winning/Dropbox/Work/template/source/stylesheets/normalize.css */
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word; }
+
+/*
+ * Sets consistent quote types.
+ */
+/* line 173, /Users/Winning/Dropbox/Work/template/source/stylesheets/normalize.css */
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019"; }
+
+/*
+ * Addresses inconsistent and variable font size in all browsers.
+ */
+/* line 181, /Users/Winning/Dropbox/Work/template/source/stylesheets/normalize.css */
+small {
+  font-size: 80%; }
+
+/*
+ * Prevents `sub` and `sup` affecting `line-height` in all browsers.
+ */
+/* line 189, /Users/Winning/Dropbox/Work/template/source/stylesheets/normalize.css */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+/* line 197, /Users/Winning/Dropbox/Work/template/source/stylesheets/normalize.css */
+sup {
+  top: -0.5em; }
+
+/* line 201, /Users/Winning/Dropbox/Work/template/source/stylesheets/normalize.css */
+sub {
+  bottom: -0.25em; }
+
+/* ==========================================================================
+   Embedded content
+   ========================================================================== */
+/*
+ * Removes border when inside `a` element in IE 8/9.
+ */
+/* line 213, /Users/Winning/Dropbox/Work/template/source/stylesheets/normalize.css */
+img {
+  border: 0; }
+
+/*
+ * Corrects overflow displayed oddly in IE 9.
+ */
+/* line 221, /Users/Winning/Dropbox/Work/template/source/stylesheets/normalize.css */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* ==========================================================================
+   Figures
+   ========================================================================== */
+/*
+ * Addresses margin not present in IE 8/9 and Safari 5.
+ */
+/* line 233, /Users/Winning/Dropbox/Work/template/source/stylesheets/normalize.css */
+figure {
+  margin: 0; }
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+/*
+ * Define consistent border, margin, and padding.
+ */
+/* line 245, /Users/Winning/Dropbox/Work/template/source/stylesheets/normalize.css */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+/*
+ * 1. Corrects color not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+/* line 256, /Users/Winning/Dropbox/Work/template/source/stylesheets/normalize.css */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/*
+ * 1. Corrects font family not being inherited in all browsers.
+ * 2. Corrects font size not being inherited in all browsers.
+ * 3. Addresses margins set differently in Firefox 4+, Safari 5, and Chrome
+ */
+/* line 267, /Users/Winning/Dropbox/Work/template/source/stylesheets/normalize.css */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 2 */
+  margin: 0;
+  /* 3 */ }
+
+/*
+ * Addresses Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+/* line 281, /Users/Winning/Dropbox/Work/template/source/stylesheets/normalize.css */
+button,
+input {
+  line-height: normal; }
+
+/*
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Corrects inability to style clickable `input` types in iOS.
+ * 3. Improves usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+/* line 294, /Users/Winning/Dropbox/Work/template/source/stylesheets/normalize.css */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */ }
+
+/*
+ * Re-set default cursor for disabled elements.
+ */
+/* line 306, /Users/Winning/Dropbox/Work/template/source/stylesheets/normalize.css */
+button[disabled],
+input[disabled] {
+  cursor: default; }
+
+/*
+ * 1. Addresses box sizing set to `content-box` in IE 8/9.
+ * 2. Removes excess padding in IE 8/9.
+ */
+/* line 316, /Users/Winning/Dropbox/Work/template/source/stylesheets/normalize.css */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/*
+ * 1. Addresses `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Addresses `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+/* line 328, /Users/Winning/Dropbox/Work/template/source/stylesheets/normalize.css */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box; }
+
+/*
+ * Removes inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+/* line 340, /Users/Winning/Dropbox/Work/template/source/stylesheets/normalize.css */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/*
+ * Removes inner padding and border in Firefox 4+.
+ */
+/* line 349, /Users/Winning/Dropbox/Work/template/source/stylesheets/normalize.css */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/*
+ * 1. Removes default vertical scrollbar in IE 8/9.
+ * 2. Improves readability and alignment in all browsers.
+ */
+/* line 360, /Users/Winning/Dropbox/Work/template/source/stylesheets/normalize.css */
+textarea {
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */ }
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+/*
+ * Remove most spacing between table cells.
+ */
+/* line 373, /Users/Winning/Dropbox/Work/template/source/stylesheets/normalize.css */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* line 1, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_buttons.scss */
+button, input[type="button"], input[type="reset"], input[type="submit"],
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  -webkit-font-smoothing: antialiased;
+  background-color: #fff;
+  border-radius: 3px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Bitstream Vera Sans Mono", "Consolas", "Courier", monospace;
+  font-size: 1em;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0.75em 1em;
+  text-decoration: none;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap; }
+  /* line 21, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_buttons.scss */
+  button:hover, button:focus, input[type="button"]:hover, input[type="button"]:focus, input[type="reset"]:hover, input[type="reset"]:focus, input[type="submit"]:hover, input[type="submit"]:focus,
+  button:hover,
+  button:focus {
+    background-color: #d9d9d9;
+    color: #fff; }
+  /* line 27, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_buttons.scss */
+  button:disabled, input[type="button"]:disabled, input[type="reset"]:disabled, input[type="submit"]:disabled,
+  button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5; }
+
+/* line 1, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_forms.scss */
+fieldset {
+  background-color: #737373;
+  border: 1px solid #595959;
+  margin: 0 0 0.9;
+  padding: 1.8; }
+
+/* line 8, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_forms.scss */
+input,
+label,
+select {
+  display: block;
+  font-family: "Bitstream Vera Sans Mono", "Consolas", "Courier", monospace;
+  font-size: 1em; }
+
+/* line 16, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_forms.scss */
+label {
+  font-weight: 600;
+  margin-bottom: 0.45; }
+  /* line 20, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_forms.scss */
+  label.required::after {
+    content: "*"; }
+  /* line 24, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_forms.scss */
+  label abbr {
+    display: none; }
+
+/* line 29, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_forms.scss */
+input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], textarea,
+select[multiple=multiple],
+textarea {
+  background-color: #000;
+  border: 1px solid #595959;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+  font-family: "Bitstream Vera Sans Mono", "Consolas", "Courier", monospace;
+  font-size: 1em;
+  margin-bottom: 0.9;
+  padding: 0.6;
+  transition: border-color;
+  width: 100%; }
+  /* line 44, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_forms.scss */
+  input[type="color"]:hover, input[type="date"]:hover, input[type="datetime"]:hover, input[type="datetime-local"]:hover, input[type="email"]:hover, input[type="month"]:hover, input[type="number"]:hover, input[type="password"]:hover, input[type="search"]:hover, input[type="tel"]:hover, input[type="text"]:hover, input[type="time"]:hover, input[type="url"]:hover, input[type="week"]:hover, textarea:hover,
+  select[multiple=multiple]:hover,
+  textarea:hover {
+    border-color: #404040; }
+  /* line 48, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_forms.scss */
+  input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="email"]:focus, input[type="month"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="time"]:focus, input[type="url"]:focus, input[type="week"]:focus, textarea:focus,
+  select[multiple=multiple]:focus,
+  textarea:focus {
+    border-color: #fff;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 5px rgba(242, 242, 242, 0.7);
+    outline: none; }
+
+/* line 55, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_forms.scss */
+textarea {
+  resize: vertical; }
+
+/* line 59, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_forms.scss */
+input[type="search"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none; }
+
+/* line 63, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_forms.scss */
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline;
+  margin-right: 0.45; }
+
+/* line 69, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_forms.scss */
+input[type="file"] {
+  padding-bottom: 0.9;
+  width: 100%; }
+
+/* line 74, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_forms.scss */
+select {
+  margin-bottom: 1.8;
+  max-width: 100%;
+  width: auto; }
+
+/* line 1, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_lists.scss */
+ul,
+ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+/* line 20, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_lists.scss */
+dl {
+  margin-bottom: 0.9; }
+  /* line 23, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_lists.scss */
+  dl dt {
+    font-weight: bold;
+    margin-top: 0.9; }
+  /* line 28, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_lists.scss */
+  dl dd {
+    margin: 0; }
+
+/* line 1, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_tables.scss */
+table {
+  -webkit-font-feature-settings: "kern", "liga", "tnum";
+  -moz-font-feature-settings: "kern", "liga", "tnum";
+  -ms-font-feature-settings: "kern", "liga", "tnum";
+  font-feature-settings: "kern", "liga", "tnum";
+  border-collapse: collapse;
+  margin: 0.9 0;
+  table-layout: fixed;
+  width: 100%; }
+
+/* line 9, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_tables.scss */
+th {
+  border-bottom: 1px solid #333333;
+  font-weight: 600;
+  padding: 0.9 0;
+  text-align: left; }
+
+/* line 16, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_tables.scss */
+td {
+  border-bottom: 1px solid #595959;
+  padding: 0.9 0; }
+
+/* line 21, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_tables.scss */
+tr,
+td,
+th {
+  vertical-align: middle; }
+
+/* line 1, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_typography.scss */
+body {
+  -webkit-font-feature-settings: "kern", "liga", "pnum";
+  -moz-font-feature-settings: "kern", "liga", "pnum";
+  -ms-font-feature-settings: "kern", "liga", "pnum";
+  font-feature-settings: "kern", "liga", "pnum";
+  -webkit-font-smoothing: antialiased;
+  color: #60a020;
+  font-family: "Bitstream Vera Sans Mono", "Consolas", "Courier", monospace;
+  font-size: 1em;
+  line-height: 1.5; }
+
+/* line 10, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_typography.scss */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Bitstream Vera Sans Mono", "Consolas", "Courier", monospace;
+  font-size: 1em;
+  line-height: 1.2;
+  margin: 0 0 0.9; }
+
+/* line 22, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_typography.scss */
+p {
+  margin: 0 0 0.9; }
+
+/* line 27, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_typography.scss */
+a {
+  color: #fff;
+  transition: color 0.1s linear; }
+  /* line 31, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_typography.scss */
+  a:active, a:focus, a:hover {
+    color: #333333; }
+  /* line 37, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_typography.scss */
+  a:active, a:focus {
+    outline: none; }
+
+/* line 43, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_typography.scss */
+hr {
+  border-bottom: 1px solid #595959;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  margin: 1.8 0; }
+
+/* line 51, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_typography.scss */
+img,
+picture {
+  margin: 0;
+  max-width: 100%; }
+
+/* Bitters needs to be imported before Neat */
+/* line 4, /Users/Winning/.rvm/gems/ruby-2.0.0-p0/gems/neat-1.7.1/app/assets/stylesheets/grid/_box-sizing.scss */
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/* line 9, /Users/Winning/.rvm/gems/ruby-2.0.0-p0/gems/neat-1.7.1/app/assets/stylesheets/grid/_box-sizing.scss */
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit; }
+
+/* line 1, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_layout.scss */
+h1 {
+  font-size: 2em;
+  margin-top: 0.5em;
+  color: #c06000; }
+  /* line 6, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_layout.scss */
+  h1:before {
+    content: "* ";
+    color: #c06000; }
+
+/* line 12, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_layout.scss */
+h2 {
+  font-size: 1.5em;
+  line-height: 2em;
+  color: #c06000; }
+  /* line 17, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_layout.scss */
+  h2:before {
+    content: "** ";
+    color: #c06000; }
+
+/* line 23, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_layout.scss */
+h3 {
+  font-size: 1.17em;
+  color: #c06000; }
+  /* line 27, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_layout.scss */
+  h3:before {
+    content: "*** ";
+    color: #c06000; }
+
+/* line 33, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_layout.scss */
+h4 {
+  font-size: 1.12em;
+  color: #c06000; }
+  /* line 37, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_layout.scss */
+  h4:before {
+    content: "**** ";
+    color: #c06000; }
+
+/* line 43, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_layout.scss */
+h5 {
+  font-size: .83em;
+  color: #c06000; }
+  /* line 47, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_layout.scss */
+  h5:before {
+    content: "***** ";
+    color: #c06000; }
+
+/* line 53, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_layout.scss */
+h6 {
+  font-size: .75em;
+  color: #c06000; }
+  /* line 57, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_layout.scss */
+  h6:before {
+    content: "****** ";
+    color: #c06000; }
+
+/* line 63, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_layout.scss */
+ul li {
+  list-style: circle;
+  margin-left: 2em; }
+
+/* line 68, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_layout.scss */
+ol li {
+  list-style: decimal;
+  margin-left: 2em; }
+
+/* line 73, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_layout.scss */
+ul.article-list > li {
+  list-style: none; }
+
+/* line 77, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_layout.scss */
+p.post-date {
+  color: #3a6013;
+  font-size: 1em;
+  font-style: italic;
+  margin: 0;
+  padding: 0; }
+
+/* line 85, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_layout.scss */
+.main {
+  background-color: #000; }
+
+/* line 89, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_layout.scss */
+.content {
+  max-width: 53.75em;
+  margin-left: auto;
+  margin-right: auto; }
+  /* line 20, /Users/Winning/.rvm/gems/ruby-2.0.0-p0/gems/bourbon-4.2.1/app/assets/stylesheets/addons/_clearfix.scss */
+  .content::after {
+    clear: both;
+    content: "";
+    display: table; }
+
+/* line 93, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_layout.scss */
+.video {
+  max-width: 53.75em;
+  margin-left: auto;
+  margin-right: auto; }
+  /* line 20, /Users/Winning/.rvm/gems/ruby-2.0.0-p0/gems/bourbon-4.2.1/app/assets/stylesheets/addons/_clearfix.scss */
+  .video::after {
+    clear: both;
+    content: "";
+    display: table; }
+  /* line 95, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_layout.scss */
+  .video iframe {
+    float: left;
+    display: block;
+    margin-right: 1.20482%;
+    width: 66.26506%;
+    margin-left: 16.86747%; }
+    /* line 87, /Users/Winning/.rvm/gems/ruby-2.0.0-p0/gems/neat-1.7.1/app/assets/stylesheets/grid/_span-columns.scss */
+    .video iframe:last-child {
+      margin-right: 0; }
+
+/* line 101, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_layout.scss */
+blockquote {
+  border-left-style: solid;
+  border-left-color: #595959; }
+  /* line 104, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_layout.scss */
+  blockquote p {
+    padding-left: 1em; }
+
+/* code blocks */
+/* line 110, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_layout.scss */
+code {
+  background-color: #595959; }
+
+/* line 114, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_layout.scss */
+pre.highlight {
+  background-color: #595959;
+  padding-left: 15px; }
+
+/* line 1, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_nav.scss */
+.nav {
+  background-color: #666;
+  font-family: sans-serif;
+  text-align: left; }
+  /* line 6, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_nav.scss */
+  .nav ul {
+    margin-left: 8.43373%; }
+    /* line 9, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_nav.scss */
+    .nav ul li {
+      display: inline-block;
+      margin: 1em 1em 0 1em; }
+      /* line 13, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_nav.scss */
+      .nav ul li:first-letter {
+        text-decoration: underline; }
+      /* line 16, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_nav.scss */
+      .nav ul li a {
+        color: white;
+        text-decoration: none; }
+        /* line 20, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_nav.scss */
+        .nav ul li a:hover {
+          color: #1a1a1a; }
+
+/* line 28, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_nav.scss */
+.index-title {
+  max-width: 53.75em;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 15px; }
+  /* line 20, /Users/Winning/.rvm/gems/ruby-2.0.0-p0/gems/bourbon-4.2.1/app/assets/stylesheets/addons/_clearfix.scss */
+  .index-title::after {
+    clear: both;
+    content: "";
+    display: table; }
+  /* line 32, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_nav.scss */
+  .index-title aside {
+    float: left;
+    display: block;
+    margin-right: 1.20482%;
+    width: 7.22892%;
+    min-width: 62px;
+    margin-left: 10px; }
+    /* line 87, /Users/Winning/.rvm/gems/ruby-2.0.0-p0/gems/neat-1.7.1/app/assets/stylesheets/grid/_span-columns.scss */
+    .index-title aside:last-child {
+      margin-right: 0; }
+    /* line 36, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_nav.scss */
+    .index-title aside img {
+      border-radius: 15px; }
+  /* line 41, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_nav.scss */
+  .index-title .title-heading {
+    float: left;
+    display: block;
+    margin-right: 1.20482%;
+    width: 74.6988%;
+    margin-right: 0; }
+    /* line 87, /Users/Winning/.rvm/gems/ruby-2.0.0-p0/gems/neat-1.7.1/app/assets/stylesheets/grid/_span-columns.scss */
+    .index-title .title-heading:last-child {
+      margin-right: 0; }
+    /* line 45, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_nav.scss */
+    .index-title .title-heading .name-brand {
+      font-size: 2em;
+      height: 1.2em;
+      margin: 0;
+      padding: 0; }
+    /* line 51, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_nav.scss */
+    .index-title .title-heading p {
+      margin: 0;
+      padding-top: 0; }
+
+/* line 1, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
+ul.article-list {
+  max-width: 53.75em;
+  margin-left: auto;
+  margin-right: auto; }
+  /* line 20, /Users/Winning/.rvm/gems/ruby-2.0.0-p0/gems/bourbon-4.2.1/app/assets/stylesheets/addons/_clearfix.scss */
+  ul.article-list::after {
+    clear: both;
+    content: "";
+    display: table; }
+  /* line 3, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
+  ul.article-list img {
+    float: left;
+    display: block;
+    margin-right: 1.20482%;
+    width: 32.53012%; }
+    /* line 87, /Users/Winning/.rvm/gems/ruby-2.0.0-p0/gems/neat-1.7.1/app/assets/stylesheets/grid/_span-columns.scss */
+    ul.article-list img:last-child {
+      margin-right: 0; }
+  /* line 6, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
+  ul.article-list aside {
+    float: left;
+    display: block;
+    margin-right: 1.20482%;
+    width: 66.26506%;
+    margin-right: 0; }
+    /* line 87, /Users/Winning/.rvm/gems/ruby-2.0.0-p0/gems/neat-1.7.1/app/assets/stylesheets/grid/_span-columns.scss */
+    ul.article-list aside:last-child {
+      margin-right: 0; }
+
+/* line 12, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
+section {
+  max-width: 53.75em;
+  margin-left: auto;
+  margin-right: auto; }
+  /* line 20, /Users/Winning/.rvm/gems/ruby-2.0.0-p0/gems/bourbon-4.2.1/app/assets/stylesheets/addons/_clearfix.scss */
+  section::after {
+    clear: both;
+    content: "";
+    display: table; }
+  /* line 14, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
+  section aside {
+    float: left;
+    display: block;
+    margin-right: 1.20482%;
+    width: 24.09639%; }
+    /* line 87, /Users/Winning/.rvm/gems/ruby-2.0.0-p0/gems/neat-1.7.1/app/assets/stylesheets/grid/_span-columns.scss */
+    section aside:last-child {
+      margin-right: 0; }
+  /* line 15, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
+  section article {
+    float: left;
+    display: block;
+    margin-right: 1.20482%;
+    width: 74.6988%; }
+    /* line 87, /Users/Winning/.rvm/gems/ruby-2.0.0-p0/gems/neat-1.7.1/app/assets/stylesheets/grid/_span-columns.scss */
+    section article:last-child {
+      margin-right: 0; }
+
+/* contact page */
+/* line 20, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
+table {
+  max-width: 53.75em;
+  margin-left: auto;
+  margin-right: auto; }
+  /* line 20, /Users/Winning/.rvm/gems/ruby-2.0.0-p0/gems/bourbon-4.2.1/app/assets/stylesheets/addons/_clearfix.scss */
+  table::after {
+    clear: both;
+    content: "";
+    display: table; }
+  /* line 23, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
+  table tr.contact-info {
+    float: left;
+    display: block;
+    margin-right: 1.20482%;
+    width: 100%; }
+    /* line 87, /Users/Winning/.rvm/gems/ruby-2.0.0-p0/gems/neat-1.7.1/app/assets/stylesheets/grid/_span-columns.scss */
+    table tr.contact-info:last-child {
+      margin-right: 0; }
+    /* line 26, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
+    table tr.contact-info td {
+      border-bottom: none; }
+    /* line 30, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
+    table tr.contact-info td.name-col {
+      float: left;
+      display: block;
+      margin-right: 1.20482%;
+      width: 15.66265%; }
+      /* line 87, /Users/Winning/.rvm/gems/ruby-2.0.0-p0/gems/neat-1.7.1/app/assets/stylesheets/grid/_span-columns.scss */
+      table tr.contact-info td.name-col:last-child {
+        margin-right: 0; }
+    /* line 31, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
+    table tr.contact-info td.link-col {
+      float: left;
+      display: block;
+      margin-right: 1.20482%;
+      width: 83.13253%; }
+      /* line 87, /Users/Winning/.rvm/gems/ruby-2.0.0-p0/gems/neat-1.7.1/app/assets/stylesheets/grid/_span-columns.scss */
+      table tr.contact-info td.link-col:last-child {
+        margin-right: 0; }
+
+/* line 1, /Users/Winning/Dropbox/Work/template/source/stylesheets/highlight.css.erb */
+.highlight table td {
+  padding: 5px; }
+
+/* line 2, /Users/Winning/Dropbox/Work/template/source/stylesheets/highlight.css.erb */
+.highlight table pre {
+  margin: 0; }
+
+/* line 3, /Users/Winning/Dropbox/Work/template/source/stylesheets/highlight.css.erb */
+.highlight, .highlight .w {
+  color: #d0d0d0;
+  background-color: #151515; }
+
+/* line 7, /Users/Winning/Dropbox/Work/template/source/stylesheets/highlight.css.erb */
+.highlight .err {
+  color: #151515;
+  background-color: #ac4142; }
+
+/* line 11, /Users/Winning/Dropbox/Work/template/source/stylesheets/highlight.css.erb */
+.highlight .c, .highlight .cd, .highlight .cm, .highlight .c1, .highlight .cs {
+  color: #505050; }
+
+/* line 14, /Users/Winning/Dropbox/Work/template/source/stylesheets/highlight.css.erb */
+.highlight .cp {
+  color: #f4bf75; }
+
+/* line 17, /Users/Winning/Dropbox/Work/template/source/stylesheets/highlight.css.erb */
+.highlight .nt {
+  color: #f4bf75; }
+
+/* line 20, /Users/Winning/Dropbox/Work/template/source/stylesheets/highlight.css.erb */
+.highlight .o, .highlight .ow {
+  color: #d0d0d0; }
+
+/* line 23, /Users/Winning/Dropbox/Work/template/source/stylesheets/highlight.css.erb */
+.highlight .p, .highlight .pi {
+  color: #d0d0d0; }
+
+/* line 26, /Users/Winning/Dropbox/Work/template/source/stylesheets/highlight.css.erb */
+.highlight .gi {
+  color: #90a959; }
+
+/* line 29, /Users/Winning/Dropbox/Work/template/source/stylesheets/highlight.css.erb */
+.highlight .gd {
+  color: #ac4142; }
+
+/* line 32, /Users/Winning/Dropbox/Work/template/source/stylesheets/highlight.css.erb */
+.highlight .gh {
+  color: #6a9fb5;
+  background-color: #151515;
+  font-weight: bold; }
+
+/* line 37, /Users/Winning/Dropbox/Work/template/source/stylesheets/highlight.css.erb */
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #aa759f; }
+
+/* line 40, /Users/Winning/Dropbox/Work/template/source/stylesheets/highlight.css.erb */
+.highlight .kc {
+  color: #d28445; }
+
+/* line 43, /Users/Winning/Dropbox/Work/template/source/stylesheets/highlight.css.erb */
+.highlight .kt {
+  color: #d28445; }
+
+/* line 46, /Users/Winning/Dropbox/Work/template/source/stylesheets/highlight.css.erb */
+.highlight .kd {
+  color: #d28445; }
+
+/* line 49, /Users/Winning/Dropbox/Work/template/source/stylesheets/highlight.css.erb */
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #90a959; }
+
+/* line 52, /Users/Winning/Dropbox/Work/template/source/stylesheets/highlight.css.erb */
+.highlight .sr {
+  color: #75b5aa; }
+
+/* line 55, /Users/Winning/Dropbox/Work/template/source/stylesheets/highlight.css.erb */
+.highlight .si {
+  color: #8f5536; }
+
+/* line 58, /Users/Winning/Dropbox/Work/template/source/stylesheets/highlight.css.erb */
+.highlight .se {
+  color: #8f5536; }
+
+/* line 61, /Users/Winning/Dropbox/Work/template/source/stylesheets/highlight.css.erb */
+.highlight .nn {
+  color: #f4bf75; }
+
+/* line 64, /Users/Winning/Dropbox/Work/template/source/stylesheets/highlight.css.erb */
+.highlight .nc {
+  color: #f4bf75; }
+
+/* line 67, /Users/Winning/Dropbox/Work/template/source/stylesheets/highlight.css.erb */
+.highlight .no {
+  color: #f4bf75; }
+
+/* line 70, /Users/Winning/Dropbox/Work/template/source/stylesheets/highlight.css.erb */
+.highlight .na {
+  color: #6a9fb5; }
+
+/* line 73, /Users/Winning/Dropbox/Work/template/source/stylesheets/highlight.css.erb */
+.highlight .m, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mb, .highlight .mx {
+  color: #90a959; }
+
+/* line 76, /Users/Winning/Dropbox/Work/template/source/stylesheets/highlight.css.erb */
+.highlight .ss {
+  color: #90a959; }
