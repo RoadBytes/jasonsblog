@@ -95,10 +95,10 @@ end
 <h3 id="we-remove-the-logic-from-one-of-the-views-to-take-advantage-of-our-sortbydate-method">We remove the logic from one of the views to take advantage of our <code>sort_by_date</code> method.</h3>
 
 <pre class="highlight plaintext"><code>%article.row
-  - @Posts.sort_by_date.each do |video|
-    .video.col-md-2
-    = link_to video do 
-      = image_tag video.small_image_url
+  - @Posts.sort_by_date.each do |post|
+    .post.col-md-2
+    = link_to post do 
+      = image_tag post.small_image_url
 </code></pre>
 
 <h3 id="we-commit-our-local-branch-and-push-for-a-pull-request">We commit our local branch and push for a pull request.</h3>
