@@ -838,8 +838,39 @@ section {
     section article:last-child {
       margin-right: 0; }
 
+/* questions */
+/* line 19, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
+.question {
+  border-style: dotted;
+  color: #fff;
+  font-size: 1.5em;
+  padding-left: 1em;
+  margin: 1em;
+  transition: color 0.1s linear; }
+  /* line 20, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
+  .question:after {
+    content: "(click to toggle answer)";
+    display: block; }
+  /* line 24, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
+  .question:before {
+    content: "Check for Understanding";
+    display: block;
+    text-decoration: underline; }
+  /* line 29, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
+  .question:active, .question:focus, .question:hover {
+    color: #333333; }
+  /* line 42, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
+  .question .answer {
+    display: none;
+    color: #60a020;
+    transition: color 0.1s linear; }
+    /* line 47, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
+    .question .answer p, .question .answer pre {
+      margin: 0;
+      padding: 0; }
+
 /* contact page */
-/* line 20, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
+/* line 56, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
 table {
   max-width: 53.75em;
   margin-left: auto;
@@ -849,7 +880,7 @@ table {
     clear: both;
     content: "";
     display: table; }
-  /* line 23, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
+  /* line 59, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
   table tr.contact-info {
     float: left;
     display: block;
@@ -858,10 +889,10 @@ table {
     /* line 87, /Users/Winning/.rvm/gems/ruby-2.0.0-p0/gems/neat-1.7.1/app/assets/stylesheets/grid/_span-columns.scss */
     table tr.contact-info:last-child {
       margin-right: 0; }
-    /* line 26, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
+    /* line 62, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
     table tr.contact-info td {
       border-bottom: none; }
-    /* line 30, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
+    /* line 66, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
     table tr.contact-info td.name-col {
       float: left;
       display: block;
@@ -870,7 +901,7 @@ table {
       /* line 87, /Users/Winning/.rvm/gems/ruby-2.0.0-p0/gems/neat-1.7.1/app/assets/stylesheets/grid/_span-columns.scss */
       table tr.contact-info td.name-col:last-child {
         margin-right: 0; }
-    /* line 31, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
+    /* line 67, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
     table tr.contact-info td.link-col {
       float: left;
       display: block;
