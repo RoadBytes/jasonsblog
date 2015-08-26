@@ -75,7 +75,8 @@
 
 <span class="k">class</span> <span class="nc">Mother</span>
   <span class="kp">attr_reader</span> <span class="ss">:meat</span><span class="p">,</span> <span class="ss">:mayonnaise</span>
-  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">meat</span><span class="p">,</span> <span class="n">mayonnaise</span><span class="p">)</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">bread</span><span class="p">,</span> <span class="n">meat</span><span class="p">,</span> <span class="n">mayonnaise</span><span class="p">)</span>
+    <span class="vi">@bread</span>      <span class="o">=</span> <span class="n">bread</span>
     <span class="vi">@meat</span>       <span class="o">=</span> <span class="n">meat</span>
     <span class="vi">@mayonnaise</span> <span class="o">=</span> <span class="n">mayonnaise</span>
   <span class="k">end</span>
@@ -112,7 +113,8 @@
     <pre></pre>
     <pre>class Mother</pre>
     <pre>  attr_reader :meat, :mayonnaise</pre>
-    <pre>  def initialize(meat, mayonnaise)</pre>
+    <pre>  def initialize(bread, meat, mayonnaise)</pre>
+    <pre>    @bread      = bread</pre>
     <pre>    @meat       = meat</pre>
     <pre>    @mayonnaise = mayonnaise</pre>
     <pre>  end</pre>
