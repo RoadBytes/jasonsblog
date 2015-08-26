@@ -87,7 +87,54 @@
 
 <p>My solution from the problem</p>
 
-<p>(define who (lambda (sent) (let ((describe (lambda (person) (se person sent)))) (every describe ‘(pete roger john keith)))))</p>
+<pre class="highlight plaintext"><code>(define who
+  (lambda (sent)
+    (let ((describe (lambda (person) (se person sent))))
+      (every describe '(pete roger john keith)))))
+</code></pre>
+
+<h3 id="notes-on-lambda-syntaximplementation-and-call">Notes on lambda syntax/implementation and call</h3>
+
+<ul>
+  <li>Initially I thought it was:
+    <ul>
+      <li><code>(lambda (args) (func) (instances))</code></li>
+    </ul>
+  </li>
+  <li>Then, I figured it was
+    <ul>
+      <li><code>((lambda (args) (func)) (instances))</code></li>
+    </ul>
+  </li>
+  <li>so,
+    <ul>
+      <li><code>(let ((x 2)(y 3)) (* x y)) =&gt; 6</code></li>
+    </ul>
+  </li>
+  <li>and is the same as,
+    <ul>
+      <li><code>((lambda (x y) (* x y)) 2 3) =&gt; 6</code></li>
+    </ul>
+  </li>
+  <li>So these are equivalent:
+    <ul>
+      <li><code>(let ((variable init) ...) expression expression ...)</code></li>
+      <li><code>((lambda (variable ...) expression expression ...) init ...)</code></li>
+    </ul>
+  </li>
+  <li>and these are equivalent:
+    <ul>
+      <li><code>(define (function args)(expression))</code></li>
+      <li><code>(define function (lambda (args)(expression)))</code></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="notes-on-every">Notes on <code>every</code></h3>
+
+<ul>
+  <li>(every <method> <sentence>)</sentence></method></li>
+</ul>
 
      <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
