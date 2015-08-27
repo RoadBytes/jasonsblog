@@ -59,7 +59,7 @@
 
 <h2 id="dependency-injection">Dependency Injection</h2>
 
-<pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">Son</span>
+<pre class="highlight ruby"><code><span class="k">class</span> <span class="nc">Customer</span>
   <span class="kp">attr_reader</span> <span class="ss">:money</span><span class="p">,</span> <span class="ss">:bread</span><span class="p">,</span> <span class="ss">:meat</span><span class="p">,</span> <span class="ss">:mayonnaise</span>
   <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">money</span><span class="p">,</span> <span class="n">bread</span><span class="p">,</span> <span class="n">meat</span><span class="p">,</span> <span class="n">mayonnaise</span><span class="p">)</span>
     <span class="vi">@money</span>      <span class="o">=</span> <span class="n">money</span>
@@ -69,11 +69,11 @@
   <span class="k">end</span>
 
   <span class="k">def</span> <span class="nf">lunch</span>
-    <span class="no">Mother</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">bread</span><span class="p">,</span> <span class="n">meat</span><span class="p">,</span> <span class="n">mayonnaise</span><span class="p">).</span><span class="nf">prepare</span>
+    <span class="no">Chef</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">bread</span><span class="p">,</span> <span class="n">meat</span><span class="p">,</span> <span class="n">mayonnaise</span><span class="p">).</span><span class="nf">prepare</span>
   <span class="k">end</span>
 <span class="k">end</span>
 
-<span class="k">class</span> <span class="nc">Mother</span>
+<span class="k">class</span> <span class="nc">Chef</span>
   <span class="kp">attr_reader</span> <span class="ss">:bread</span><span class="p">,</span> <span class="ss">:meat</span><span class="p">,</span> <span class="ss">:mayonnaise</span>
   <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">bread</span><span class="p">,</span> <span class="n">meat</span><span class="p">,</span> <span class="n">mayonnaise</span><span class="p">)</span>
     <span class="vi">@bread</span>      <span class="o">=</span> <span class="n">bread</span>
@@ -87,10 +87,10 @@
 <span class="k">end</span>
 </code></pre>
 
-<div class="question"> in `Gear`, what are some of the things `lunch` method "knows" about `Mother`? 
+<div class="question"> in `Customer`, what are some of the things `lunch` method "knows" about `Chef`? 
   <div class="answer">
   
-    <p> + the name of the class `Mother` </p>
+    <p> + the name of the class `Chef` </p>
     <p> + the `prepare` method name </p>
     <p> + how many arguments `prepare` needs </p>
     <p> + the order of arguments into `prepare` </p>
@@ -98,12 +98,12 @@
   </div>
 </div>
 
-<h3 id="try-decoupling-son-and-mother-above">Try decoupling Son and Mother above</h3>
+<h3 id="try-decoupling-customer-and-chef-above">Try decoupling Customer and Chef above</h3>
 
-<div class="question"> How would decouple the Son class from the Mother class? 
+<div class="question"> How would decouple the Customer class from the Chef class? 
   <div class="answer">
     <h2> My Answer </h2>
-    <pre>class Son</pre>
+    <pre>class Customer</pre>
     <pre>  attr_reader :money, :lunch</pre>
     <pre>  def initialize(money, lunch)</pre>
     <pre>    @money = money</pre>
@@ -111,7 +111,7 @@
     <pre>  end</pre>
     <pre>end</pre>
     <pre></pre>
-    <pre>class Mother</pre>
+    <pre>class Chef</pre>
     <pre>  attr_reader :bread, :meat, :mayonnaise</pre>
     <pre>  def initialize(bread, meat, mayonnaise)</pre>
     <pre>    @bread      = bread</pre>
@@ -124,9 +124,9 @@
     <pre>  end</pre>
     <pre>end</pre>
     <pre></pre>
-    <pre>son_instance = Son.new(5, Mother.new(bread, meat, mayonnaise).prepare)</pre>
+    <pre>joe = Customer.new(5, Chef.new(bread, meat, mayonnaise).prepare)</pre>
     <br />
-    <p>Mother is untouched and lunch is *pulled out of* `Gear`</p>
+    <p>Chef is untouched and lunch is *pulled out of* `Gear`</p>
   </div>
 </div>
 
