@@ -1,0 +1,288 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title>POODR Ch 2</title>
+    
+        <link rel="apple-touch-icon-precomposed" sizes="57x57"   href="images/favicomatic/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/favicomatic/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72"   href="images/favicomatic/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/favicomatic/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60"   href="images/favicomatic/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="images/favicomatic/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76"   href="images/favicomatic/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="images/favicomatic/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="images/favicomatic/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="images/favicomatic/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="images/favicomatic/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="images/favicomatic/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="images/favicomatic/favicon-128.png" sizes="128x128" />
+    <meta name="application-name" content="&nbsp;"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
+
+    <link href="../../../../stylesheets/normalize.css" rel="stylesheet" type="text/css" /><link href="../../../../stylesheets/all.css" rel="stylesheet" type="text/css" />
+    <script src="../../../../javascripts/all.js" type="text/javascript"></script>
+  </head>
+  
+  <body class="blog blog_2015 blog_2015_08 blog_2015_08_27 blog_2015_08_27_poodr-ch-2 main">
+   <div class="nav">
+  <ul id="nav_text">
+    <li>
+      <a href="/">Home</a>
+    </li>
+    <li>
+      <a href="../../../../about.html">About</a>
+    </li>
+    <li>
+      <a href="../../../../contact.html">Contact</a>
+    </li>
+  </ul>
+</div>
+
+   <div class="content">
+     <h1>POODR Ch 2</h1>
+     <p class="post-date"><27 Aug 2015></p>
+     <hr/>
+     <h2 id="notes-from-poodr-ch-2-for-codenewbies">Notes from POODR Ch 2 for CodeNewbies</h2>
+
+<p><strong>this is for study purposes only, excerpts from POODR are not my work.</strong></p>
+
+<p>Initially, <code>ratio</code> method is made for Gear class.</p>
+
+<pre class="highlight plaintext"><code>class Gear 
+  attr_reader :chainring, :cog 
+  def initialize( chainring, cog) 
+    @chainring = chainring 
+    @cog = cog 
+  end 
+  
+  def ratio 
+    chainring / cog.to_f 
+  end 
+end 
+
+puts Gear.new( 52, 11).ratio # -&gt; 4.72727272727273 
+puts Gear.new( 30, 27).ratio # -&gt; 1.11111111111111
+
+Metz, Sandi (2012-09-05). Practical Object-Oriented Design in Ruby: An Agile Primer (Addison-Wesley Professional Ruby Series) (Kindle Locations 720-740). Pearson Education. Kindle Edition. 
+</code></pre>
+
+<p>Wheel diameter is added, so <code>gear_inches</code> can be considered</p>
+
+<ul>
+  <li>gear_inches = ratio * (rim + 2 * tire)</li>
+</ul>
+
+<pre class="highlight plaintext"><code>class Gear 
+  attr_reader :chainring, :cog, :rim, :tire
+  def initialize( chainring, cog, rim, tire) 
+    @chainring = chainring 
+    @cog       = cog 
+    @rim       = rim
+    @tire      = tire
+  end 
+  
+  def ratio 
+    chainring / cog.to_f 
+  end 
+
+  def gear_inches
+    ratio * (rim + 2 * tire)
+  end
+end
+
+puts Gear.new( 52, 11, 26, 1.5). gear_inches 
+# -&gt; 137.090909090909 22 23 
+puts Gear.new( 52, 11, 24, 1.25). gear_inches 
+# -&gt; 125.272727272727
+
+Metz, Sandi (2012-09-05). Practical Object-Oriented Design in Ruby: An Agile Primer (Addison-Wesley Professional Ruby Series) (Kindle Locations 782-791). Pearson Education. Kindle Edition.  
+</code></pre>
+
+<p>The problem here is after adding <code>gear_inches</code>, <code>ratio</code> would not function with only two arguments</p>
+
+<pre class="highlight plaintext"><code>puts Gear.new(52, 11).ratio 
+# ArgumentError: wrong number of arguments (2 for 4)
+# 	from gear.rb:3:in `initialize'
+# 	from (irb):3:in `new'
+# 	from (irb):3
+</code></pre>
+
+<p><code>ratio</code> No, longer works!!!</p>
+
+<p>This eludes to the idea that Gear may be holding responsibilities that are not cohesive enough.</p>
+
+<h3 id="how-do-we-make-sense-of-gear-and-whats-going-on">How do we make sense of Gear and what’s going on?</h3>
+
+<blockquote>
+  <p>Ask questions and try to hone in on what is going on:</p>
+</blockquote>
+
+<ul>
+  <li>Mr Gear, what’s your ratio?</li>
+  <li>Mr Gear, what’s your gear_inches?</li>
+  <li>Mr Gear, what’s your tire size? # this one’s weird</li>
+</ul>
+
+<blockquote>
+  <p>Using the word ‘and’ may imply an overly complex class.
+Perhaps we need a Tire of Bicycle class?</p>
+</blockquote>
+
+<h3 id="we-dont-necessarily-know-the-best-decision-postponing-change-may-be-appropriate">We don’t necessarily know the best decision, postponing change may be appropriate.</h3>
+
+<h2 id="write-code-that-embraces-change">Write code that embraces change</h2>
+
+<ul>
+  <li>hide variables, use getters and setter not direct <code>@variable</code>
+    <ul>
+      <li>here <code>cog</code> is the only place that knows what <code>@cog/cog</code> means</li>
+      <li>ie, multiplying cog by <code>adj_factor</code> only requires <code>def cog; @cog * adj_factor; end</code></li>
+      <li>your data can be thought of as plain old objects</li>
+    </ul>
+  </li>
+  <li>separate complex data structures with the information itself.</li>
+</ul>
+
+<pre class="highlight plaintext"><code>// dealing with array
+
+Wheel = Struct.new(: rim, :tire) 
+def wheelify( data) 
+  data.collect {| cell | 
+  Wheel.new( cell[ 0], cell[ 1])} 
+end
+
+Metz, Sandi (2012-09-05). Practical Object-Oriented Design in Ruby: An Agile Primer (Addison-Wesley Professional Ruby Series) (Kindle Locations 1027-1035). Pearson Education. Kindle Edition. 
+</code></pre>
+
+<p>Here, the array of arrays structure is stripped away and instead, <code>wheels</code> are instantiated and we work with array of structs</p>
+
+<p>This does several things:
+* expose qualities
+* avoid comments/clarifies intent
+* encourage reuse
+* easy to move to another class</p>
+
+<h2 id="refactoring-our-gear">Refactoring our Gear</h2>
+
+<p>First, Wheel struct is implemented in Gear.  This is usually done when the Wheel object exists only for the Gear class.</p>
+
+<pre class="highlight plaintext"><code>class Gear 
+  attr_reader :chainring, :cog, :wheel
+  def initialize( chainring, cog, rim, tire) 
+    @chainring = chainring 
+    @cog       = cog 
+    @wheel     = Wheel.new(rim, tire)
+  end 
+  
+  def ratio 
+    chainring / cog.to_f 
+  end 
+
+  def gear_inches
+    ratio * wheel.diameter
+  end
+
+  Wheel = Struct.new(:rim, :tire) do 
+    def diameter
+      rim + 2 * tire
+    end
+  end
+end
+</code></pre>
+
+<p>We can also move it out of the Gear class.</p>
+
+<pre class="highlight plaintext"><code>class Gear 
+  attr_reader :chainring, :cog, :wheel
+  def initialize( chainring, cog, wheel=nil) 
+    @chainring = chainring 
+    @cog       = cog 
+    @wheel     = wheel
+  end 
+  
+  def ratio 
+    chainring / cog.to_f 
+  end 
+
+  def gear_inches
+    ratio * wheel.diameter
+  end
+end
+
+class Wheel 
+  attr_reader :rim, :tire
+  def initialize(rim, tire)
+    @rim  = rim
+    @tire = tire
+  end
+
+  def diameter
+    rim + 2 * tire
+  end
+
+  def circumference
+    diameter * Math::PI
+  end
+end
+</code></pre>
+
+<h3 id="and-this-allows-us-to-have-certain-features-from-the-code">And this allows us to have certain features from the code:</h3>
+
+<ul>
+  <li>Gear can call <code>ratio</code> method without necessary 4 arguments</li>
+  <li>Wheel can add more methods like <code>circumference</code> and be used with other objects</li>
+  <li>Gear can also be used with the <code>gear_inches</code> method if a certain wheel is available</li>
+</ul>
+
+<pre class="highlight plaintext"><code>&gt; @wheel = Wheel.new(26, 1.5)
+ =&gt; #&lt;Wheel:0x007f8f343d8ec8 @rim=26, @tire=1.5&gt; 
+&gt; @wheel.diameter
+ =&gt; 29.0 
+&gt; @wheel.circumference
+ =&gt; 91.106186954104 
+&gt; Gear.new(52, 11).ratio
+ =&gt; 4.7272727272727275 
+&gt; Gear.new(52, 11, @wheel).ratio
+ =&gt; 4.7272727272727275 
+&gt; Gear.new(52, 11, @wheel).gear_inches
+ =&gt; 137.0909090909091 
+</code></pre>
+
+     <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-66493418-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+     <div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'jasondata';
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+   </div>
+  </body>
+</html>
