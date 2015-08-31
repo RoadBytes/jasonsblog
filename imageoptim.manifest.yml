@@ -1,6 +1,8 @@
 ---
 build/images/controller.png: 2015-08-26 15:40:05.000000000 -07:00
 build/images/data.png: 2015-08-26 15:40:04.000000000 -07:00
+build/images/Desktop-index.png: 2015-08-31 11:55:49.000000000 -07:00
+build/images/Desktop.png: 2015-08-31 11:55:51.000000000 -07:00
 build/images/face.jpg: 2015-08-26 15:39:34.000000000 -07:00
 build/images/favicomatic/apple-touch-icon-114x114.png: 2015-08-26 15:39:35.000000000
   -07:00
@@ -42,13 +44,17 @@ build/images/mrtruongsnearby.png: 2015-08-26 15:41:42.000000000 -07:00
 build/images/mrtruongsporksandwich.jpg: 2015-08-26 15:41:21.000000000 -07:00
 build/images/mrtruongsreview.png: 2015-08-26 15:41:40.000000000 -07:00
 build/images/mvc.png: 2015-08-26 15:43:14.000000000 -07:00
+build/images/page-source.png: 2015-08-31 11:54:22.000000000 -07:00
 build/images/partial_output.png: 2015-08-26 15:42:09.000000000 -07:00
 build/images/program21days.png: 2015-08-26 15:42:28.000000000 -07:00
 build/images/routes.png: 2015-08-26 15:42:25.000000000 -07:00
+build/images/spotlight-terminal.png: 2015-08-31 11:56:05.000000000 -07:00
 build/images/taco-medic-annie-order.jpg: 2015-08-26 15:42:20.000000000 -07:00
 build/images/taco-medic-annie.jpg: 2015-08-26 15:42:21.000000000 -07:00
 build/images/taco-medic-fish-2.jpg: 2015-08-26 15:42:21.000000000 -07:00
 build/images/taco-medic-fish-tacos.jpg: 2015-08-26 15:42:22.000000000 -07:00
 build/images/taco-medic-roca.jpg: 2015-08-26 15:42:22.000000000 -07:00
 build/images/taco-medic-side.jpg: 2015-08-26 15:42:23.000000000 -07:00
+build/images/terminal-file.png: 2015-08-31 11:55:05.000000000 -07:00
+build/images/view-page-source.png: 2015-08-31 11:55:18.000000000 -07:00
 build/images/views.png: 2015-08-26 15:42:38.000000000 -07:00
