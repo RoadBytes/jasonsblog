@@ -567,13 +567,13 @@ picture {
   max-width: 100%; }
 
 /* Bitters needs to be imported before Neat */
-/* line 4, /Users/Winning/.rvm/gems/ruby-2.0.0-p0/gems/neat-1.7.1/app/assets/stylesheets/grid/_box-sizing.scss */
+/* line 4, /usr/local/lib/ruby/gems/2.1.0/gems/neat-1.7.1/app/assets/stylesheets/grid/_box-sizing.scss */
 html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
-/* line 9, /Users/Winning/.rvm/gems/ruby-2.0.0-p0/gems/neat-1.7.1/app/assets/stylesheets/grid/_box-sizing.scss */
+/* line 9, /usr/local/lib/ruby/gems/2.1.0/gems/neat-1.7.1/app/assets/stylesheets/grid/_box-sizing.scss */
 *, *:before, *:after {
   -webkit-box-sizing: inherit;
   -moz-box-sizing: inherit;
@@ -673,7 +673,7 @@ p.post-date {
   max-width: 53.75em;
   margin-left: auto;
   margin-right: auto; }
-  /* line 20, /Users/Winning/.rvm/gems/ruby-2.0.0-p0/gems/bourbon-4.2.1/app/assets/stylesheets/addons/_clearfix.scss */
+  /* line 20, /usr/local/lib/ruby/gems/2.1.0/gems/bourbon-4.2.1/app/assets/stylesheets/addons/_clearfix.scss */
   .content::after {
     clear: both;
     content: "";
@@ -684,7 +684,7 @@ p.post-date {
   max-width: 53.75em;
   margin-left: auto;
   margin-right: auto; }
-  /* line 20, /Users/Winning/.rvm/gems/ruby-2.0.0-p0/gems/bourbon-4.2.1/app/assets/stylesheets/addons/_clearfix.scss */
+  /* line 20, /usr/local/lib/ruby/gems/2.1.0/gems/bourbon-4.2.1/app/assets/stylesheets/addons/_clearfix.scss */
   .video::after {
     clear: both;
     content: "";
@@ -696,7 +696,7 @@ p.post-date {
     margin-right: 1.20482%;
     width: 66.26506%;
     margin-left: 16.86747%; }
-    /* line 87, /Users/Winning/.rvm/gems/ruby-2.0.0-p0/gems/neat-1.7.1/app/assets/stylesheets/grid/_span-columns.scss */
+    /* line 87, /usr/local/lib/ruby/gems/2.1.0/gems/neat-1.7.1/app/assets/stylesheets/grid/_span-columns.scss */
     .video iframe:last-child {
       margin-right: 0; }
 
@@ -753,7 +753,7 @@ pre.highlight {
   margin-left: auto;
   margin-right: auto;
   padding-top: 15px; }
-  /* line 20, /Users/Winning/.rvm/gems/ruby-2.0.0-p0/gems/bourbon-4.2.1/app/assets/stylesheets/addons/_clearfix.scss */
+  /* line 20, /usr/local/lib/ruby/gems/2.1.0/gems/bourbon-4.2.1/app/assets/stylesheets/addons/_clearfix.scss */
   .index-title::after {
     clear: both;
     content: "";
@@ -766,7 +766,7 @@ pre.highlight {
     width: 7.22892%;
     min-width: 62px;
     margin-left: 10px; }
-    /* line 87, /Users/Winning/.rvm/gems/ruby-2.0.0-p0/gems/neat-1.7.1/app/assets/stylesheets/grid/_span-columns.scss */
+    /* line 87, /usr/local/lib/ruby/gems/2.1.0/gems/neat-1.7.1/app/assets/stylesheets/grid/_span-columns.scss */
     .index-title aside:last-child {
       margin-right: 0; }
     /* line 36, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_nav.scss */
@@ -779,7 +779,7 @@ pre.highlight {
     margin-right: 1.20482%;
     width: 74.6988%;
     margin-right: 0; }
-    /* line 87, /Users/Winning/.rvm/gems/ruby-2.0.0-p0/gems/neat-1.7.1/app/assets/stylesheets/grid/_span-columns.scss */
+    /* line 87, /usr/local/lib/ruby/gems/2.1.0/gems/neat-1.7.1/app/assets/stylesheets/grid/_span-columns.scss */
     .index-title .title-heading:last-child {
       margin-right: 0; }
     /* line 45, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_nav.scss */
@@ -798,7 +798,7 @@ ul.article-list {
   max-width: 53.75em;
   margin-left: auto;
   margin-right: auto; }
-  /* line 20, /Users/Winning/.rvm/gems/ruby-2.0.0-p0/gems/bourbon-4.2.1/app/assets/stylesheets/addons/_clearfix.scss */
+  /* line 20, /usr/local/lib/ruby/gems/2.1.0/gems/bourbon-4.2.1/app/assets/stylesheets/addons/_clearfix.scss */
   ul.article-list::after {
     clear: both;
     content: "";
@@ -809,7 +809,7 @@ ul.article-list {
     display: block;
     margin-right: 1.20482%;
     width: 32.53012%; }
-    /* line 87, /Users/Winning/.rvm/gems/ruby-2.0.0-p0/gems/neat-1.7.1/app/assets/stylesheets/grid/_span-columns.scss */
+    /* line 87, /usr/local/lib/ruby/gems/2.1.0/gems/neat-1.7.1/app/assets/stylesheets/grid/_span-columns.scss */
     ul.article-list img:last-child {
       margin-right: 0; }
   /* line 6, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
@@ -819,7 +819,7 @@ ul.article-list {
     margin-right: 1.20482%;
     width: 66.26506%;
     margin-right: 0; }
-    /* line 87, /Users/Winning/.rvm/gems/ruby-2.0.0-p0/gems/neat-1.7.1/app/assets/stylesheets/grid/_span-columns.scss */
+    /* line 87, /usr/local/lib/ruby/gems/2.1.0/gems/neat-1.7.1/app/assets/stylesheets/grid/_span-columns.scss */
     ul.article-list aside:last-child {
       margin-right: 0; }
 
@@ -828,7 +828,7 @@ section {
   max-width: 53.75em;
   margin-left: auto;
   margin-right: auto; }
-  /* line 20, /Users/Winning/.rvm/gems/ruby-2.0.0-p0/gems/bourbon-4.2.1/app/assets/stylesheets/addons/_clearfix.scss */
+  /* line 20, /usr/local/lib/ruby/gems/2.1.0/gems/bourbon-4.2.1/app/assets/stylesheets/addons/_clearfix.scss */
   section::after {
     clear: both;
     content: "";
@@ -839,7 +839,7 @@ section {
     display: block;
     margin-right: 1.20482%;
     width: 24.09639%; }
-    /* line 87, /Users/Winning/.rvm/gems/ruby-2.0.0-p0/gems/neat-1.7.1/app/assets/stylesheets/grid/_span-columns.scss */
+    /* line 87, /usr/local/lib/ruby/gems/2.1.0/gems/neat-1.7.1/app/assets/stylesheets/grid/_span-columns.scss */
     section aside:last-child {
       margin-right: 0; }
   /* line 15, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
@@ -848,7 +848,7 @@ section {
     display: block;
     margin-right: 1.20482%;
     width: 74.6988%; }
-    /* line 87, /Users/Winning/.rvm/gems/ruby-2.0.0-p0/gems/neat-1.7.1/app/assets/stylesheets/grid/_span-columns.scss */
+    /* line 87, /usr/local/lib/ruby/gems/2.1.0/gems/neat-1.7.1/app/assets/stylesheets/grid/_span-columns.scss */
     section article:last-child {
       margin-right: 0; }
 
@@ -889,7 +889,7 @@ table {
   max-width: 53.75em;
   margin-left: auto;
   margin-right: auto; }
-  /* line 20, /Users/Winning/.rvm/gems/ruby-2.0.0-p0/gems/bourbon-4.2.1/app/assets/stylesheets/addons/_clearfix.scss */
+  /* line 20, /usr/local/lib/ruby/gems/2.1.0/gems/bourbon-4.2.1/app/assets/stylesheets/addons/_clearfix.scss */
   table::after {
     clear: both;
     content: "";
@@ -900,7 +900,7 @@ table {
     display: block;
     margin-right: 1.20482%;
     width: 100%; }
-    /* line 87, /Users/Winning/.rvm/gems/ruby-2.0.0-p0/gems/neat-1.7.1/app/assets/stylesheets/grid/_span-columns.scss */
+    /* line 87, /usr/local/lib/ruby/gems/2.1.0/gems/neat-1.7.1/app/assets/stylesheets/grid/_span-columns.scss */
     table tr.contact-info:last-child {
       margin-right: 0; }
     /* line 62, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
@@ -912,7 +912,7 @@ table {
       display: block;
       margin-right: 1.20482%;
       width: 15.66265%; }
-      /* line 87, /Users/Winning/.rvm/gems/ruby-2.0.0-p0/gems/neat-1.7.1/app/assets/stylesheets/grid/_span-columns.scss */
+      /* line 87, /usr/local/lib/ruby/gems/2.1.0/gems/neat-1.7.1/app/assets/stylesheets/grid/_span-columns.scss */
       table tr.contact-info td.name-col:last-child {
         margin-right: 0; }
     /* line 67, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
@@ -921,7 +921,7 @@ table {
       display: block;
       margin-right: 1.20482%;
       width: 83.13253%; }
-      /* line 87, /Users/Winning/.rvm/gems/ruby-2.0.0-p0/gems/neat-1.7.1/app/assets/stylesheets/grid/_span-columns.scss */
+      /* line 87, /usr/local/lib/ruby/gems/2.1.0/gems/neat-1.7.1/app/assets/stylesheets/grid/_span-columns.scss */
       table tr.contact-info td.link-col:last-child {
         margin-right: 0; }
 
