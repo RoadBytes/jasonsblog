@@ -411,7 +411,7 @@ label {
     display: none; }
 
 /* line 29, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_forms.scss */
-input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], textarea,
+input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], input:not([type]), textarea,
 select[multiple=multiple],
 textarea {
   background-color: #000;
@@ -426,12 +426,12 @@ textarea {
   transition: border-color;
   width: 100%; }
   /* line 44, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_forms.scss */
-  input[type="color"]:hover, input[type="date"]:hover, input[type="datetime"]:hover, input[type="datetime-local"]:hover, input[type="email"]:hover, input[type="month"]:hover, input[type="number"]:hover, input[type="password"]:hover, input[type="search"]:hover, input[type="tel"]:hover, input[type="text"]:hover, input[type="time"]:hover, input[type="url"]:hover, input[type="week"]:hover, textarea:hover,
+  input[type="color"]:hover, input[type="date"]:hover, input[type="datetime"]:hover, input[type="datetime-local"]:hover, input[type="email"]:hover, input[type="month"]:hover, input[type="number"]:hover, input[type="password"]:hover, input[type="search"]:hover, input[type="tel"]:hover, input[type="text"]:hover, input[type="time"]:hover, input[type="url"]:hover, input[type="week"]:hover, input:not([type]):hover, textarea:hover,
   select[multiple=multiple]:hover,
   textarea:hover {
     border-color: #404040; }
   /* line 48, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_forms.scss */
-  input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="email"]:focus, input[type="month"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="time"]:focus, input[type="url"]:focus, input[type="week"]:focus, textarea:focus,
+  input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="email"]:focus, input[type="month"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="time"]:focus, input[type="url"]:focus, input[type="week"]:focus, input:not([type]):focus, textarea:focus,
   select[multiple=multiple]:focus,
   textarea:focus {
     border-color: #fff;
@@ -567,16 +567,12 @@ picture {
   max-width: 100%; }
 
 /* Bitters needs to be imported before Neat */
-/* line 4, /usr/local/lib/ruby/gems/2.1.0/gems/neat-1.7.1/app/assets/stylesheets/grid/_box-sizing.scss */
+/* line 4, /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/neat-1.7.2/app/assets/stylesheets/grid/_box-sizing.scss */
 html {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
-/* line 9, /usr/local/lib/ruby/gems/2.1.0/gems/neat-1.7.1/app/assets/stylesheets/grid/_box-sizing.scss */
-*, *:before, *:after {
-  -webkit-box-sizing: inherit;
-  -moz-box-sizing: inherit;
+/* line 9, /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/neat-1.7.2/app/assets/stylesheets/grid/_box-sizing.scss */
+*, *::after, *::before {
   box-sizing: inherit; }
 
 /* line 1, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_layout.scss */
@@ -673,7 +669,7 @@ p.post-date {
   max-width: 53.75em;
   margin-left: auto;
   margin-right: auto; }
-  /* line 20, /usr/local/lib/ruby/gems/2.1.0/gems/bourbon-4.2.1/app/assets/stylesheets/addons/_clearfix.scss */
+  /* line 20, /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bourbon-4.2.6/app/assets/stylesheets/addons/_clearfix.scss */
   .content::after {
     clear: both;
     content: "";
@@ -684,7 +680,7 @@ p.post-date {
   max-width: 53.75em;
   margin-left: auto;
   margin-right: auto; }
-  /* line 20, /usr/local/lib/ruby/gems/2.1.0/gems/bourbon-4.2.1/app/assets/stylesheets/addons/_clearfix.scss */
+  /* line 20, /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bourbon-4.2.6/app/assets/stylesheets/addons/_clearfix.scss */
   .video::after {
     clear: both;
     content: "";
@@ -696,7 +692,7 @@ p.post-date {
     margin-right: 1.20482%;
     width: 66.26506%;
     margin-left: 16.86747%; }
-    /* line 87, /usr/local/lib/ruby/gems/2.1.0/gems/neat-1.7.1/app/assets/stylesheets/grid/_span-columns.scss */
+    /* line 89, /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/neat-1.7.2/app/assets/stylesheets/grid/_span-columns.scss */
     .video iframe:last-child {
       margin-right: 0; }
 
@@ -753,7 +749,7 @@ pre.highlight {
   margin-left: auto;
   margin-right: auto;
   padding-top: 15px; }
-  /* line 20, /usr/local/lib/ruby/gems/2.1.0/gems/bourbon-4.2.1/app/assets/stylesheets/addons/_clearfix.scss */
+  /* line 20, /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bourbon-4.2.6/app/assets/stylesheets/addons/_clearfix.scss */
   .index-title::after {
     clear: both;
     content: "";
@@ -766,7 +762,7 @@ pre.highlight {
     width: 7.22892%;
     min-width: 62px;
     margin-left: 10px; }
-    /* line 87, /usr/local/lib/ruby/gems/2.1.0/gems/neat-1.7.1/app/assets/stylesheets/grid/_span-columns.scss */
+    /* line 89, /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/neat-1.7.2/app/assets/stylesheets/grid/_span-columns.scss */
     .index-title aside:last-child {
       margin-right: 0; }
     /* line 36, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_nav.scss */
@@ -779,7 +775,7 @@ pre.highlight {
     margin-right: 1.20482%;
     width: 74.6988%;
     margin-right: 0; }
-    /* line 87, /usr/local/lib/ruby/gems/2.1.0/gems/neat-1.7.1/app/assets/stylesheets/grid/_span-columns.scss */
+    /* line 89, /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/neat-1.7.2/app/assets/stylesheets/grid/_span-columns.scss */
     .index-title .title-heading:last-child {
       margin-right: 0; }
     /* line 45, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_nav.scss */
@@ -798,7 +794,7 @@ ul.article-list {
   max-width: 53.75em;
   margin-left: auto;
   margin-right: auto; }
-  /* line 20, /usr/local/lib/ruby/gems/2.1.0/gems/bourbon-4.2.1/app/assets/stylesheets/addons/_clearfix.scss */
+  /* line 20, /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bourbon-4.2.6/app/assets/stylesheets/addons/_clearfix.scss */
   ul.article-list::after {
     clear: both;
     content: "";
@@ -809,7 +805,7 @@ ul.article-list {
     display: block;
     margin-right: 1.20482%;
     width: 32.53012%; }
-    /* line 87, /usr/local/lib/ruby/gems/2.1.0/gems/neat-1.7.1/app/assets/stylesheets/grid/_span-columns.scss */
+    /* line 89, /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/neat-1.7.2/app/assets/stylesheets/grid/_span-columns.scss */
     ul.article-list img:last-child {
       margin-right: 0; }
   /* line 6, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
@@ -819,7 +815,7 @@ ul.article-list {
     margin-right: 1.20482%;
     width: 66.26506%;
     margin-right: 0; }
-    /* line 87, /usr/local/lib/ruby/gems/2.1.0/gems/neat-1.7.1/app/assets/stylesheets/grid/_span-columns.scss */
+    /* line 89, /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/neat-1.7.2/app/assets/stylesheets/grid/_span-columns.scss */
     ul.article-list aside:last-child {
       margin-right: 0; }
 
@@ -828,7 +824,7 @@ section {
   max-width: 53.75em;
   margin-left: auto;
   margin-right: auto; }
-  /* line 20, /usr/local/lib/ruby/gems/2.1.0/gems/bourbon-4.2.1/app/assets/stylesheets/addons/_clearfix.scss */
+  /* line 20, /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bourbon-4.2.6/app/assets/stylesheets/addons/_clearfix.scss */
   section::after {
     clear: both;
     content: "";
@@ -839,7 +835,7 @@ section {
     display: block;
     margin-right: 1.20482%;
     width: 24.09639%; }
-    /* line 87, /usr/local/lib/ruby/gems/2.1.0/gems/neat-1.7.1/app/assets/stylesheets/grid/_span-columns.scss */
+    /* line 89, /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/neat-1.7.2/app/assets/stylesheets/grid/_span-columns.scss */
     section aside:last-child {
       margin-right: 0; }
   /* line 15, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
@@ -848,7 +844,7 @@ section {
     display: block;
     margin-right: 1.20482%;
     width: 74.6988%; }
-    /* line 87, /usr/local/lib/ruby/gems/2.1.0/gems/neat-1.7.1/app/assets/stylesheets/grid/_span-columns.scss */
+    /* line 89, /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/neat-1.7.2/app/assets/stylesheets/grid/_span-columns.scss */
     section article:last-child {
       margin-right: 0; }
 
@@ -889,7 +885,7 @@ table {
   max-width: 53.75em;
   margin-left: auto;
   margin-right: auto; }
-  /* line 20, /usr/local/lib/ruby/gems/2.1.0/gems/bourbon-4.2.1/app/assets/stylesheets/addons/_clearfix.scss */
+  /* line 20, /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bourbon-4.2.6/app/assets/stylesheets/addons/_clearfix.scss */
   table::after {
     clear: both;
     content: "";
@@ -900,7 +896,7 @@ table {
     display: block;
     margin-right: 1.20482%;
     width: 100%; }
-    /* line 87, /usr/local/lib/ruby/gems/2.1.0/gems/neat-1.7.1/app/assets/stylesheets/grid/_span-columns.scss */
+    /* line 89, /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/neat-1.7.2/app/assets/stylesheets/grid/_span-columns.scss */
     table tr.contact-info:last-child {
       margin-right: 0; }
     /* line 62, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
@@ -912,7 +908,7 @@ table {
       display: block;
       margin-right: 1.20482%;
       width: 15.66265%; }
-      /* line 87, /usr/local/lib/ruby/gems/2.1.0/gems/neat-1.7.1/app/assets/stylesheets/grid/_span-columns.scss */
+      /* line 89, /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/neat-1.7.2/app/assets/stylesheets/grid/_span-columns.scss */
       table tr.contact-info td.name-col:last-child {
         margin-right: 0; }
     /* line 67, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
@@ -921,7 +917,7 @@ table {
       display: block;
       margin-right: 1.20482%;
       width: 83.13253%; }
-      /* line 87, /usr/local/lib/ruby/gems/2.1.0/gems/neat-1.7.1/app/assets/stylesheets/grid/_span-columns.scss */
+      /* line 89, /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/neat-1.7.2/app/assets/stylesheets/grid/_span-columns.scss */
       table tr.contact-info td.link-col:last-child {
         margin-right: 0; }
 
