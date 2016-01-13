@@ -1,0 +1,302 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title>My First Interview</title>
+    
+        <link rel="apple-touch-icon-precomposed" sizes="57x57"   href="images/favicomatic/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/favicomatic/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72"   href="images/favicomatic/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/favicomatic/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60"   href="images/favicomatic/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="images/favicomatic/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76"   href="images/favicomatic/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="images/favicomatic/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="images/favicomatic/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="images/favicomatic/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="images/favicomatic/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="images/favicomatic/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="images/favicomatic/favicon-128.png" sizes="128x128" />
+    <meta name="application-name" content="&nbsp;"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
+
+    <link href="../../../../stylesheets/normalize.css" rel="stylesheet" type="text/css" /><link href="../../../../stylesheets/all.css" rel="stylesheet" type="text/css" />
+    <script src="../../../../javascripts/all.js" type="text/javascript"></script>
+  </head>
+  
+  <body class="blog blog_2016 blog_2016_01 blog_2016_01_13 blog_2016_01_13_first-interview main">
+   <div class="nav">
+  <ul id="nav_text">
+    <li>
+      <a href="/">Home</a>
+    </li>
+    <li>
+      <a href="../../../../about.html">About</a>
+    </li>
+    <li>
+      <a href="../../../../contact.html">Contact</a>
+    </li>
+  </ul>
+</div>
+
+   <div class="content">
+     <h1>My First Interview</h1>
+     <p class="post-date"><13 Jan 2016></p>
+     <hr/>
+     <p>After my first developer interview, I had an “inspiration” to make a toy blog app to see if I could implement a <em>News Feed</em> feature where the News Feed would display the last six “things” I did.</p>
+
+<ul>
+  <li>
+    <p><a href="https://newsfeed-blog.herokuapp.com/">Here’s my finished coding spike</a>: https://newsfeed-blog.herokuapp.com/</p>
+  </li>
+  <li>
+    <p><a href="https://github.com/RoadBytes/newsfeedblog">Repo is here</a>: https://github.com/RoadBytes/newsfeedblog</p>
+  </li>
+</ul>
+
+<h3 id="here-are-a-few-specs-i-think-i-remember">Here are a few specs I think I remember:</h3>
+<ul>
+  <li>The feed could include blog posts, or tweets, or other media I could have out there.</li>
+  <li>It would be on the home page on the bottom</li>
+  <li>It would consist of the latest things I’ve posted</li>
+</ul>
+
+<p>To save time I stole bits of <a href="https://twitter.com/lgarvey">this guys implementation (Leonard Garvey)</a> of a <a href="https://reinteractive.net/posts/32-ruby-on-rails-3-2-blog-in-15-minutes-step-by-step">Rails Blog in 15 minutes app.</a></p>
+
+<p>Then, I had to do some sleuthing for a Twitter Rails gem.  I found <a href="https://github.com/sferik/twitter">this</a> and it was super cool to use.</p>
+
+<h3 id="man--i-learned-a-whole-lot-just-playing-with-this-application">Man!  I learned a whole lot just playing with this application.</h3>
+<ul>
+  <li>First off, Twitter API is pretty cool and I pulled the tweets from an app I made on my Twitter home page.
+    <ul>
+      <li>you can make your own twitter app at <a href="https://apps.twitter.com/">https://apps.twitter.com/</a></li>
+    </ul>
+  </li>
+  <li>I decided to just work with Tweets and Posts to have an easy code spike and hope to finish the implementation sooner than later.</li>
+  <li>I first thought of having Polymorphic Association with different <code>NewFeed</code> objects, but since I only the last 6 things I did, I figured it’d be easier to have something that wasn’t persistant.</li>
+  <li>This was one of the first non-ActiveRecord backed models I’ve made for a Rails App.
+    <ul>
+      <li>I made a <code>NewsBundle</code> model that would instantiate <code>NewItem</code>s and pull off the <code>created_at</code>, <code>object_text</code>, and <code>type</code> information</li>
+      <li>it was much easier working with two types of objects, <code>Posts</code> and <code>Tweets</code> but adding another type of object would be interesting</li>
+      <li>to limit the API querying, I had the <code>NewsBundle</code> only update if it wasn’t ever called or if was older than 5 minutes</li>
+      <li>Thanks <a href="https://twitter.com/milandobrota">Milan</a> for the help</li>
+    </ul>
+  </li>
+</ul>
+
+<pre class="highlight plaintext"><code>  def self.query_stale?
+    # expire @query every five minutes
+    @query_refreshed_at ||= Time.now
+    @objects.blank? || (Time.now - @query_refreshed_at &gt; 5.minutes)
+  end
+</code></pre>
+
+<h3 id="things-to-think-of-for-next-steps">Things to think of for next steps</h3>
+<ul>
+  <li>I haven’t added testing so I’d consider this more of a spike since I’m not using this for production</li>
+  <li>I don’t have much experience testing API’s, I wonder how the TDD process would look like</li>
+</ul>
+
+<h3 id="actual-code-for-your-convenience">Actual Code (for your convenience)</h3>
+
+<h2 id="here-is-the-main-bread-and-butter-of-the-newsbundle">Here is the main bread and butter of the NewsBundle</h2>
+
+<ul>
+  <li>I’m still needing to get over terms… I like <code>NewsBundle</code> better than <code>NewsFeed</code>, but I need to stick to one and own it eventually.</li>
+  <li>I probably need to move the <code>NewsItem</code> out, but I didn’t really mind it since it’s a code spike (haha, did I say code spike enough?)
+    <ul>
+      <li>I’ve never hard coded a class inside a class like that (I’m sure that’s a noob thing [insert tounge face])</li>
+    </ul>
+  </li>
+  <li>It’s weird, but the <code>NewsBundle</code> is really the Enumerable version of <code>NewsItem</code>… I’m sure there’s an easy way to arrange or set up the model.</li>
+</ul>
+
+<pre class="highlight plaintext"><code># file at: app/models/news_bundle.rb
+class NewsItem
+  attr_accessor :news_object
+  def initialize(object)
+    @news_object = object
+  end
+
+  def object_text
+    if self.tweet?
+      news_object.text
+    else
+      news_object.body
+    end
+  end
+
+  def type
+    if tweet?
+      "Tweet"
+    else
+      "Blog Post"
+    end
+  end
+
+  def tweet?
+    self.class == Twitter::Tweet
+  end
+
+  def class
+    news_object.class
+  end
+
+  def created_at
+    news_object.created_at.to_datetime.utc.to_formatted_s(:long)
+  end
+end
+
+class NewsBundle &lt; NewsItem
+  def self.get_objects
+    if query_stale?
+      @objects =  tweet_objects
+      @objects += Post.last(6)
+    end
+
+    sorted_and_mapped
+  end
+
+  def self.query_refreshed_at
+    @query_refreshed_at
+  end
+
+  def self.query_stale?
+    # expire @query every five minutes
+    @query_refreshed_at ||= Time.now
+    @objects.blank? || (Time.now - @query_refreshed_at &gt; 5.minutes)
+  end
+
+  def self.tweet_objects
+    tweets = Twitter::REST::Client.new do |config|
+      config.consumer_key        = ENV['TWITTER_CONSUMER_KEY']
+      config.consumer_secret     = ENV['TWITTER_CONSUMER_SECRET_KEY']
+      config.access_token        = ENV['TWITTER_OAUTH_TOKEN']
+      config.access_token_secret = ENV['TWITTER_OAUTH_TOKEN_SECRET']
+    end
+
+    tweets.user_timeline("Jason_Data")
+  end
+
+  def self.sorted_and_mapped
+    @objects.map do |object|
+      NewsItem.new(object)
+    end.sort_by {|obj| obj.created_at }.reverse[0..6]
+  end
+end
+</code></pre>
+
+<h2 id="the-controller-side-of-things">The controller side of things</h2>
+
+<p>I called the <code>NewsBundle.get_objects</code> from the ‘posts#index’ action</p>
+
+<pre class="highlight plaintext"><code># file at: app/controllers/posts_controller.rb
+
+class PostsController &lt; ApplicationController
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
+
+  # GET /posts
+  # GET /posts.json
+  def index
+    @posts        = Post.all
+    @news_objects = NewsBundle.get_objects
+    @query_time   = NewsBundle.query_refreshed_at
+  end
+
+  # template stuff omitted
+
+end
+</code></pre>
+
+<h2 id="and-finally-the-view">And finally the view</h2>
+
+<ul>
+  <li>the query_time was just a way for me to see that the API was being queried properly, but then I liked it.</li>
+  <li>I actually started here, with the ideal methods I wanted to have and worked backwards</li>
+</ul>
+
+<pre class="highlight plaintext"><code># file at: app/views/posts/index.html.erb
+
+  # template stuff omitted AGAIN! Muhaha
+
+&lt;h1&gt;News Feed&lt;/h1&gt;
+
+&lt;h3&gt;Queried Fresh At: &lt;%= @query_time %&gt;&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;
+        &lt;%= "Date and Time" %&gt;
+      &lt;/th&gt;
+      &lt;th&gt;
+        &lt;%= "Type of Article" %&gt;
+      &lt;/th&gt;
+      &lt;th&gt;
+        &lt;%= "Text" %&gt;
+      &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+
+  &lt;%- @news_objects.each do |news_object| %&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td&gt;
+          &lt;%= news_object.created_at %&gt;
+        &lt;/td&gt;
+        &lt;td&gt;
+          &lt;%= news_object.type %&gt;
+        &lt;/td&gt;
+        &lt;td&gt;
+          &lt;%= news_object.object_text %&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;% end %&gt;
+&lt;/table&gt;
+</code></pre>
+
+<h3 id="in-conlusion-im-going-to-bed">In conlusion, I’m going to bed!</h3>
+
+<p>All in all, this was a great experience and I’ve learned a lot from taking something from idea to implementation.  Getting my first interview was a great experience and I’m sure there will be other opportunities for me to stretch myself and show progress.  If you have any questions or comments, leave them below or email me at:</p>
+
+<p>Jason.Data@roadbytes.me</p>
+
+
+     <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-66493418-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+     <div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'jasondata';
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+   </div>
+  </body>
+</html>
