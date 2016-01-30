@@ -108,7 +108,8 @@
   <li>The following is implemented</li>
 </ul>
 
-<pre class="highlight plaintext"><code>class Gear 
+<pre class="highlight plaintext"><code>
+class Gear 
   attr_reader :chainring, :cog 
   def initialize( chainring, cog) 
     @chainring = chainring 
@@ -128,7 +129,8 @@ puts Gear.new( 30, 27).ratio # -&gt; 1.11111111111111
   <li>You’re required to add <code>gear inches</code> to account for different wheel sizes</li>
 </ul>
 
-<pre class="highlight plaintext"><code>class Gear 
+<pre class="highlight plaintext"><code>
+class Gear 
   attr_reader :chainring, :cog, :rim, :tire
   def initialize( chainring, cog, rim, tire) 
     @chainring = chainring 
@@ -224,9 +226,48 @@ puts Gear.new( 52, 11, 24, 1.25). gear_inches
               <li><code>diameter</code> method “know” <code>@data</code>’s obscure structure</li>
             </ul>
           </li>
-          <li>Example: to reveal intentions and structure, use Struct to make <code>rim</code> and <code>tire</code> available.</li>
         </ul>
       </li>
+    </ul>
+  </li>
+</ul>
+
+<pre class="highlight plaintext"><code>
+# @data = [[ 622, 20], [622, 23], [559, 30], [559, 40]]
+
+def diameters
+  # 0 is rim, 1 is tire
+  data.collect do |cell|
+    cell[0] + (cell[1] * 2)
+  end
+end
+</code></pre>
+
+<pre class="highlight plaintext"><code>
+# @data = [[ 622, 20], [622, 23], [559, 30], [559, 40]]
+# converted to
+# @data = [#&lt;struct Wheel rim = 622, tire = 20&gt;, ... , #&lt;struct Wheel rim = 559, tire = 40&gt;]
+
+def diameters
+  wheels.collect do |wheel|
+    wheel.rim + (wheel * 2)
+  end
+
+  Wheel = Struct.new(:rim, :tire)
+  def wheelify(data)
+    data.collect do |cell|
+      Wheel.new(cell[0], cell[1])
+    end
+  end
+end
+</code></pre>
+
+<ul>
+  <li>
+    <p>so,</p>
+
+    <ul>
+      <li>Example: to reveal intentions and structure, use Struct to make <code>rim</code> and <code>tire</code> available.</li>
       <li>Enforce Single Responsibility Everywhere
         <ul>
           <li>Extract Extra Responsibilities from Methods</li>
@@ -236,14 +277,16 @@ puts Gear.new( 52, 11, 24, 1.25). gear_inches
   </li>
 </ul>
 
-<pre class="highlight plaintext"><code>def diameters
+<pre class="highlight plaintext"><code>
+def diameters
   wheels.collect { |wheel| wheel.rim + (wheel.tire * 2) }
 end
 </code></pre>
 
 <p>instead:</p>
 
-<pre class="highlight plaintext"><code>def diameters
+<pre class="highlight plaintext"><code>
+def diameters
   wheels.collect { |wheel| diameter(wheel) }
 end
 
@@ -272,14 +315,16 @@ end
   </li>
 </ul>
 
-<pre class="highlight plaintext"><code>class Gear
+<pre class="highlight plaintext"><code>
+class Gear
   Wheel = Struct.new(:rim, :tire) do 
     ...
   end
 end
 </code></pre>
 
-<pre class="highlight plaintext"><code>class Gear
+<pre class="highlight plaintext"><code>
+class Gear
   ...
 end
 
