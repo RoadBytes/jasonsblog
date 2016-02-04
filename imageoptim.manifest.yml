@@ -1,61 +1,61 @@
 ---
-build/images/controller.png: 2015-07-07 15:53:52.000000000 +09:00
-build/images/data.png: 2015-07-07 15:53:51.000000000 +09:00
-build/images/Desktop-index.png: 2015-09-01 03:55:49.000000000 +09:00
-build/images/Desktop.png: 2015-09-01 03:55:51.000000000 +09:00
-build/images/face.jpg: 2015-07-07 15:53:33.000000000 +09:00
-build/images/favicomatic/apple-touch-icon-114x114.png: 2015-07-07 15:53:34.000000000
-  +09:00
-build/images/favicomatic/apple-touch-icon-120x120.png: 2015-07-07 15:53:35.000000000
-  +09:00
-build/images/favicomatic/apple-touch-icon-144x144.png: 2015-07-07 15:53:38.000000000
-  +09:00
-build/images/favicomatic/apple-touch-icon-152x152.png: 2015-07-07 15:53:38.000000000
-  +09:00
-build/images/favicomatic/apple-touch-icon-57x57.png: 2015-07-07 15:53:38.000000000
-  +09:00
-build/images/favicomatic/apple-touch-icon-60x60.png: 2015-07-07 15:53:39.000000000
-  +09:00
-build/images/favicomatic/apple-touch-icon-72x72.png: 2015-07-07 15:53:39.000000000
-  +09:00
-build/images/favicomatic/apple-touch-icon-76x76.png: 2015-07-07 15:53:40.000000000
-  +09:00
-build/images/favicomatic/favicon-128.png: 2015-07-07 15:53:41.000000000 +09:00
-build/images/favicomatic/favicon-16x16.png: 2015-07-07 15:53:40.000000000 +09:00
-build/images/favicomatic/favicon-196x196.png: 2015-07-07 15:53:46.000000000 +09:00
-build/images/favicomatic/favicon-32x32.png: 2015-07-07 15:53:42.000000000 +09:00
-build/images/favicomatic/favicon-96x96.png: 2015-07-07 15:53:42.000000000 +09:00
-build/images/favicomatic/mstile-144x144.png: 2015-07-07 15:53:44.000000000 +09:00
-build/images/favicomatic/mstile-150x150.png: 2015-07-07 15:54:05.000000000 +09:00
-build/images/favicomatic/mstile-310x150.png: 2015-07-07 15:54:17.000000000 +09:00
-build/images/favicomatic/mstile-310x310.png: 2015-07-07 15:54:50.000000000 +09:00
-build/images/favicomatic/mstile-70x70.png: 2015-07-07 15:54:03.000000000 +09:00
-build/images/first.gif: 2015-09-06 06:44:58.000000000 +09:00
-build/images/form_helpers_view.png: 2015-07-07 15:54:04.000000000 +09:00
-build/images/gtp-menu.png: 2015-07-07 15:55:16.000000000 +09:00
-build/images/html_form_view.png: 2015-07-07 15:54:15.000000000 +09:00
-build/images/index_display.png: 2015-07-07 15:54:39.000000000 +09:00
-build/images/index_view.png: 2015-07-07 15:54:55.000000000 +09:00
-build/images/jason-data-icon.png: 2015-07-07 15:54:45.000000000 +09:00
-build/images/middleman-blog-in-browser.png: 2015-08-27 07:41:50.000000000 +09:00
-build/images/mrtruongscounter.jpg: 2015-07-10 08:32:09.000000000 +09:00
-build/images/mrtruongsdisplay.jpg: 2015-07-10 08:32:09.000000000 +09:00
-build/images/mrtruongsnapikins.jpg: 2015-07-10 08:32:09.000000000 +09:00
-build/images/mrtruongsnearby.png: 2015-07-10 08:32:21.000000000 +09:00
-build/images/mrtruongsporksandwich.jpg: 2015-07-10 08:32:09.000000000 +09:00
-build/images/mrtruongsreview.png: 2015-07-10 08:32:20.000000000 +09:00
-build/images/mvc.png: 2015-07-07 15:56:19.000000000 +09:00
-build/images/page-source.png: 2015-09-01 03:54:22.000000000 +09:00
-build/images/partial_output.png: 2015-07-07 15:55:24.000000000 +09:00
-build/images/program21days.png: 2015-07-07 15:55:33.000000000 +09:00
-build/images/routes.png: 2015-07-07 15:55:51.000000000 +09:00
-build/images/spotlight-terminal.png: 2015-09-01 03:56:05.000000000 +09:00
-build/images/taco-medic-annie-order.jpg: 2015-07-14 13:16:46.000000000 +09:00
-build/images/taco-medic-annie.jpg: 2015-07-14 13:16:46.000000000 +09:00
-build/images/taco-medic-fish-2.jpg: 2015-07-14 13:16:45.000000000 +09:00
-build/images/taco-medic-fish-tacos.jpg: 2015-07-14 13:16:46.000000000 +09:00
-build/images/taco-medic-roca.jpg: 2015-07-14 13:16:46.000000000 +09:00
-build/images/taco-medic-side.jpg: 2015-07-14 13:16:46.000000000 +09:00
-build/images/terminal-file.png: 2015-09-01 03:55:05.000000000 +09:00
-build/images/view-page-source.png: 2015-09-01 03:55:18.000000000 +09:00
-build/images/views.png: 2015-07-07 15:55:51.000000000 +09:00
+build/images/controller.png: 2015-07-06 23:53:52.000000000 -07:00
+build/images/data.png: 2015-07-06 23:53:51.000000000 -07:00
+build/images/Desktop-index.png: 2015-08-31 11:55:49.000000000 -07:00
+build/images/Desktop.png: 2015-08-31 11:55:51.000000000 -07:00
+build/images/face.jpg: 2015-07-06 23:53:33.000000000 -07:00
+build/images/favicomatic/apple-touch-icon-114x114.png: 2015-07-06 23:53:34.000000000
+  -07:00
+build/images/favicomatic/apple-touch-icon-120x120.png: 2015-07-06 23:53:35.000000000
+  -07:00
+build/images/favicomatic/apple-touch-icon-144x144.png: 2015-07-06 23:53:38.000000000
+  -07:00
+build/images/favicomatic/apple-touch-icon-152x152.png: 2015-07-06 23:53:38.000000000
+  -07:00
+build/images/favicomatic/apple-touch-icon-57x57.png: 2015-07-06 23:53:38.000000000
+  -07:00
+build/images/favicomatic/apple-touch-icon-60x60.png: 2015-07-06 23:53:39.000000000
+  -07:00
+build/images/favicomatic/apple-touch-icon-72x72.png: 2015-07-06 23:53:39.000000000
+  -07:00
+build/images/favicomatic/apple-touch-icon-76x76.png: 2015-07-06 23:53:40.000000000
+  -07:00
+build/images/favicomatic/favicon-128.png: 2015-07-06 23:53:41.000000000 -07:00
+build/images/favicomatic/favicon-16x16.png: 2015-07-06 23:53:40.000000000 -07:00
+build/images/favicomatic/favicon-196x196.png: 2015-07-06 23:53:46.000000000 -07:00
+build/images/favicomatic/favicon-32x32.png: 2015-07-06 23:53:42.000000000 -07:00
+build/images/favicomatic/favicon-96x96.png: 2015-07-06 23:53:42.000000000 -07:00
+build/images/favicomatic/mstile-144x144.png: 2015-07-06 23:53:44.000000000 -07:00
+build/images/favicomatic/mstile-150x150.png: 2015-07-06 23:54:05.000000000 -07:00
+build/images/favicomatic/mstile-310x150.png: 2015-07-06 23:54:17.000000000 -07:00
+build/images/favicomatic/mstile-310x310.png: 2015-07-06 23:54:50.000000000 -07:00
+build/images/favicomatic/mstile-70x70.png: 2015-07-06 23:54:03.000000000 -07:00
+build/images/first.gif: 2015-09-05 14:44:58.000000000 -07:00
+build/images/form_helpers_view.png: 2015-07-06 23:54:04.000000000 -07:00
+build/images/gtp-menu.png: 2015-07-06 23:55:16.000000000 -07:00
+build/images/html_form_view.png: 2015-07-06 23:54:15.000000000 -07:00
+build/images/index_display.png: 2015-07-06 23:54:39.000000000 -07:00
+build/images/index_view.png: 2015-07-06 23:54:55.000000000 -07:00
+build/images/jason-data-icon.png: 2015-07-06 23:54:45.000000000 -07:00
+build/images/middleman-blog-in-browser.png: 2015-08-26 15:41:50.000000000 -07:00
+build/images/mrtruongscounter.jpg: 2015-07-09 16:32:09.000000000 -07:00
+build/images/mrtruongsdisplay.jpg: 2015-07-09 16:32:09.000000000 -07:00
+build/images/mrtruongsnapikins.jpg: 2015-07-09 16:32:09.000000000 -07:00
+build/images/mrtruongsnearby.png: 2015-07-09 16:32:21.000000000 -07:00
+build/images/mrtruongsporksandwich.jpg: 2015-07-09 16:32:09.000000000 -07:00
+build/images/mrtruongsreview.png: 2015-07-09 16:32:20.000000000 -07:00
+build/images/mvc.png: 2015-07-06 23:56:19.000000000 -07:00
+build/images/page-source.png: 2015-08-31 11:54:22.000000000 -07:00
+build/images/partial_output.png: 2015-07-06 23:55:24.000000000 -07:00
+build/images/program21days.png: 2015-07-06 23:55:33.000000000 -07:00
+build/images/routes.png: 2015-07-06 23:55:51.000000000 -07:00
+build/images/spotlight-terminal.png: 2015-08-31 11:56:05.000000000 -07:00
+build/images/taco-medic-annie-order.jpg: 2015-07-13 21:16:46.000000000 -07:00
+build/images/taco-medic-annie.jpg: 2015-07-13 21:16:46.000000000 -07:00
+build/images/taco-medic-fish-2.jpg: 2015-07-13 21:16:45.000000000 -07:00
+build/images/taco-medic-fish-tacos.jpg: 2015-07-13 21:16:46.000000000 -07:00
+build/images/taco-medic-roca.jpg: 2015-07-13 21:16:46.000000000 -07:00
+build/images/taco-medic-side.jpg: 2015-07-13 21:16:46.000000000 -07:00
+build/images/terminal-file.png: 2015-08-31 11:55:05.000000000 -07:00
+build/images/view-page-source.png: 2015-08-31 11:55:18.000000000 -07:00
+build/images/views.png: 2015-07-06 23:55:51.000000000 -07:00
