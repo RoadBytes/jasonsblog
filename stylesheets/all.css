@@ -357,7 +357,7 @@ button {
   -o-appearance: none;
   appearance: none;
   -webkit-font-smoothing: antialiased;
-  background-color: #fff;
+  background-color: white;
   border-radius: 3px;
   border: none;
   color: #fff;
@@ -434,7 +434,7 @@ textarea {
   input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="email"]:focus, input[type="month"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="time"]:focus, input[type="url"]:focus, input[type="week"]:focus, input:not([type]):focus, textarea:focus,
   select[multiple=multiple]:focus,
   textarea:focus {
-    border-color: #fff;
+    border-color: white;
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 5px rgba(242, 242, 242, 0.7);
     outline: none; }
 
@@ -543,7 +543,7 @@ p {
 
 /* line 27, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_typography.scss */
 a {
-  color: #fff;
+  color: white;
   transition: color 0.1s linear; }
   /* line 31, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_typography.scss */
   a:active, a:focus, a:hover {
@@ -852,7 +852,7 @@ section {
 /* line 19, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
 .question {
   border-style: dotted;
-  color: #fff;
+  color: white;
   font-size: 1.5em;
   padding-left: 1em;
   margin: 1em;
@@ -871,16 +871,15 @@ section {
     color: #333333; }
   /* line 42, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
   .question .answer {
-    display: none;
     color: #60a020;
     transition: color 0.1s linear; }
-    /* line 47, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
+    /* line 46, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
     .question .answer p, .question .answer pre {
       margin: 0;
       padding: 0; }
 
 /* contact page */
-/* line 56, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
+/* line 55, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
 table {
   max-width: 53.75em;
   margin-left: auto;
@@ -890,7 +889,7 @@ table {
     clear: both;
     content: "";
     display: table; }
-  /* line 59, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
+  /* line 58, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
   table tr.contact-info {
     float: left;
     display: block;
@@ -899,10 +898,10 @@ table {
     /* line 89, /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/neat-1.7.2/app/assets/stylesheets/grid/_span-columns.scss */
     table tr.contact-info:last-child {
       margin-right: 0; }
-    /* line 62, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
+    /* line 61, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
     table tr.contact-info td {
       border-bottom: none; }
-    /* line 66, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
+    /* line 65, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
     table tr.contact-info td.name-col {
       float: left;
       display: block;
@@ -911,7 +910,7 @@ table {
       /* line 89, /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/neat-1.7.2/app/assets/stylesheets/grid/_span-columns.scss */
       table tr.contact-info td.name-col:last-child {
         margin-right: 0; }
-    /* line 67, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
+    /* line 66, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
     table tr.contact-info td.link-col {
       float: left;
       display: block;
