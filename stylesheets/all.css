@@ -348,578 +348,6 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-/* line 1, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_buttons.scss */
-button, input[type="button"], input[type="reset"], input[type="submit"],
-button {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
-  -o-appearance: none;
-  appearance: none;
-  -webkit-font-smoothing: antialiased;
-  background-color: white;
-  border-radius: 3px;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-  display: inline-block;
-  font-family: "Bitstream Vera Sans Mono", "Consolas", "Courier", monospace;
-  font-size: 1em;
-  font-weight: 600;
-  line-height: 1;
-  padding: 0.75em 1em;
-  text-decoration: none;
-  user-select: none;
-  vertical-align: middle;
-  white-space: nowrap; }
-  /* line 21, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_buttons.scss */
-  button:hover, button:focus, input[type="button"]:hover, input[type="button"]:focus, input[type="reset"]:hover, input[type="reset"]:focus, input[type="submit"]:hover, input[type="submit"]:focus,
-  button:hover,
-  button:focus {
-    background-color: #d9d9d9;
-    color: #fff; }
-  /* line 27, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_buttons.scss */
-  button:disabled, input[type="button"]:disabled, input[type="reset"]:disabled, input[type="submit"]:disabled,
-  button:disabled {
-    cursor: not-allowed;
-    opacity: 0.5; }
-
-/* line 1, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_forms.scss */
-fieldset {
-  background-color: #737373;
-  border: 1px solid #595959;
-  margin: 0 0 0.9;
-  padding: 1.8; }
-
-/* line 8, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_forms.scss */
-input,
-label,
-select {
-  display: block;
-  font-family: "Bitstream Vera Sans Mono", "Consolas", "Courier", monospace;
-  font-size: 1em; }
-
-/* line 16, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_forms.scss */
-label {
-  font-weight: 600;
-  margin-bottom: 0.45; }
-  /* line 20, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_forms.scss */
-  label.required::after {
-    content: "*"; }
-  /* line 24, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_forms.scss */
-  label abbr {
-    display: none; }
-
-/* line 29, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_forms.scss */
-input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], input:not([type]), textarea,
-select[multiple=multiple],
-textarea {
-  background-color: #000;
-  border: 1px solid #595959;
-  border-radius: 3px;
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
-  box-sizing: border-box;
-  font-family: "Bitstream Vera Sans Mono", "Consolas", "Courier", monospace;
-  font-size: 1em;
-  margin-bottom: 0.9;
-  padding: 0.6;
-  transition: border-color;
-  width: 100%; }
-  /* line 44, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_forms.scss */
-  input[type="color"]:hover, input[type="date"]:hover, input[type="datetime"]:hover, input[type="datetime-local"]:hover, input[type="email"]:hover, input[type="month"]:hover, input[type="number"]:hover, input[type="password"]:hover, input[type="search"]:hover, input[type="tel"]:hover, input[type="text"]:hover, input[type="time"]:hover, input[type="url"]:hover, input[type="week"]:hover, input:not([type]):hover, textarea:hover,
-  select[multiple=multiple]:hover,
-  textarea:hover {
-    border-color: #404040; }
-  /* line 48, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_forms.scss */
-  input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="email"]:focus, input[type="month"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="time"]:focus, input[type="url"]:focus, input[type="week"]:focus, input:not([type]):focus, textarea:focus,
-  select[multiple=multiple]:focus,
-  textarea:focus {
-    border-color: white;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 5px rgba(242, 242, 242, 0.7);
-    outline: none; }
-
-/* line 55, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_forms.scss */
-textarea {
-  resize: vertical; }
-
-/* line 59, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_forms.scss */
-input[type="search"] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
-  -o-appearance: none;
-  appearance: none; }
-
-/* line 63, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_forms.scss */
-input[type="checkbox"],
-input[type="radio"] {
-  display: inline;
-  margin-right: 0.45; }
-
-/* line 69, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_forms.scss */
-input[type="file"] {
-  padding-bottom: 0.9;
-  width: 100%; }
-
-/* line 74, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_forms.scss */
-select {
-  margin-bottom: 1.8;
-  max-width: 100%;
-  width: auto; }
-
-/* line 1, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_lists.scss */
-ul,
-ol {
-  list-style-type: none;
-  margin: 0;
-  padding: 0; }
-/* line 20, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_lists.scss */
-dl {
-  margin-bottom: 0.9; }
-  /* line 23, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_lists.scss */
-  dl dt {
-    font-weight: bold;
-    margin-top: 0.9; }
-  /* line 28, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_lists.scss */
-  dl dd {
-    margin: 0; }
-
-/* line 1, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_tables.scss */
-table {
-  -webkit-font-feature-settings: "kern", "liga", "tnum";
-  -moz-font-feature-settings: "kern", "liga", "tnum";
-  -ms-font-feature-settings: "kern", "liga", "tnum";
-  font-feature-settings: "kern", "liga", "tnum";
-  border-collapse: collapse;
-  margin: 0.9 0;
-  table-layout: fixed;
-  width: 100%; }
-
-/* line 9, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_tables.scss */
-th {
-  border-bottom: 1px solid #333333;
-  font-weight: 600;
-  padding: 0.9 0;
-  text-align: left; }
-
-/* line 16, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_tables.scss */
-td {
-  border-bottom: 1px solid #595959;
-  padding: 0.9 0; }
-
-/* line 21, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_tables.scss */
-tr,
-td,
-th {
-  vertical-align: middle; }
-
-/* line 1, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_typography.scss */
-body {
-  -webkit-font-feature-settings: "kern", "liga", "pnum";
-  -moz-font-feature-settings: "kern", "liga", "pnum";
-  -ms-font-feature-settings: "kern", "liga", "pnum";
-  font-feature-settings: "kern", "liga", "pnum";
-  -webkit-font-smoothing: antialiased;
-  color: #60a020;
-  font-family: "Bitstream Vera Sans Mono", "Consolas", "Courier", monospace;
-  font-size: 1em;
-  line-height: 1.5; }
-
-/* line 10, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_typography.scss */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Bitstream Vera Sans Mono", "Consolas", "Courier", monospace;
-  font-size: 1em;
-  line-height: 1.2;
-  margin: 0 0 0.9; }
-
-/* line 22, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_typography.scss */
-p {
-  margin: 0 0 0.9; }
-
-/* line 27, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_typography.scss */
-a {
-  color: white;
-  transition: color 0.1s linear; }
-  /* line 31, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_typography.scss */
-  a:active, a:focus, a:hover {
-    color: #333333; }
-  /* line 37, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_typography.scss */
-  a:active, a:focus {
-    outline: none; }
-
-/* line 43, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_typography.scss */
-hr {
-  border-bottom: 1px solid #595959;
-  border-left: none;
-  border-right: none;
-  border-top: none;
-  margin: 1.8 0; }
-
-/* line 51, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_typography.scss */
-img,
-picture {
-  margin: 0;
-  max-width: 100%; }
-
-/* Bitters needs to be imported before Neat */
-/* line 4, /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/neat-1.7.2/app/assets/stylesheets/grid/_box-sizing.scss */
-html {
-  box-sizing: border-box; }
-
-/* line 9, /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/neat-1.7.2/app/assets/stylesheets/grid/_box-sizing.scss */
-*, *::after, *::before {
-  box-sizing: inherit; }
-
-/* line 1, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_layout.scss */
-h1 {
-  font-size: 2em;
-  margin-top: 0.5em;
-  color: #c06000; }
-  /* line 6, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_layout.scss */
-  h1:before {
-    content: "* ";
-    color: #c06000; }
-
-/* line 12, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_layout.scss */
-h2 {
-  font-size: 1.5em;
-  line-height: 2em;
-  color: #c06000; }
-  /* line 17, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_layout.scss */
-  h2:before {
-    content: "** ";
-    color: #c06000; }
-
-/* line 23, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_layout.scss */
-h3 {
-  font-size: 1.17em;
-  color: #c06000; }
-  /* line 27, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_layout.scss */
-  h3:before {
-    content: "*** ";
-    color: #c06000; }
-
-/* line 33, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_layout.scss */
-h4 {
-  font-size: 1.12em;
-  color: #c06000; }
-  /* line 37, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_layout.scss */
-  h4:before {
-    content: "**** ";
-    color: #c06000; }
-
-/* line 43, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_layout.scss */
-h5 {
-  font-size: .83em;
-  color: #c06000; }
-  /* line 47, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_layout.scss */
-  h5:before {
-    content: "***** ";
-    color: #c06000; }
-
-/* line 53, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_layout.scss */
-h6 {
-  font-size: .75em;
-  color: #c06000; }
-  /* line 57, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_layout.scss */
-  h6:before {
-    content: "****** ";
-    color: #c06000; }
-
-/* line 63, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_layout.scss */
-strong {
-  color: #7acb29;
-  font: serif;
-  font-size: 1.2em;
-  font-weight: 900; }
-
-/* line 70, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_layout.scss */
-ul li {
-  list-style: circle;
-  margin-left: 2em; }
-
-/* line 75, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_layout.scss */
-ol li {
-  list-style: decimal;
-  margin-left: 2em; }
-
-/* line 80, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_layout.scss */
-ul.article-list > li {
-  list-style: none; }
-
-/* line 84, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_layout.scss */
-p.post-date {
-  color: #3a6013;
-  font-size: 1em;
-  font-style: italic;
-  margin: 0;
-  padding: 0; }
-
-/* line 92, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_layout.scss */
-.main {
-  background-color: #000; }
-
-/* line 96, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_layout.scss */
-.content {
-  max-width: 53.75em;
-  margin-left: auto;
-  margin-right: auto; }
-  /* line 20, /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bourbon-4.2.6/app/assets/stylesheets/addons/_clearfix.scss */
-  .content::after {
-    clear: both;
-    content: "";
-    display: table; }
-
-/* line 100, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_layout.scss */
-.video {
-  max-width: 53.75em;
-  margin-left: auto;
-  margin-right: auto; }
-  /* line 20, /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bourbon-4.2.6/app/assets/stylesheets/addons/_clearfix.scss */
-  .video::after {
-    clear: both;
-    content: "";
-    display: table; }
-  /* line 102, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_layout.scss */
-  .video iframe {
-    float: left;
-    display: block;
-    margin-right: 1.20482%;
-    width: 66.26506%;
-    margin-left: 16.86747%; }
-    /* line 89, /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/neat-1.7.2/app/assets/stylesheets/grid/_span-columns.scss */
-    .video iframe:last-child {
-      margin-right: 0; }
-
-/* line 108, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_layout.scss */
-blockquote {
-  border-left-style: solid;
-  border-left-color: #595959; }
-  /* line 111, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_layout.scss */
-  blockquote p {
-    padding-left: 1em; }
-
-/* code blocks */
-/* line 117, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_layout.scss */
-code {
-  background-color: #595959; }
-  /* line 118, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_layout.scss */
-  code:before {
-    content: " "; }
-  /* line 122, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_layout.scss */
-  code:after {
-    content: " "; }
-
-/* line 129, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_layout.scss */
-pre.highlight {
-  background-color: #595959;
-  padding-left: 15px; }
-
-/* line 1, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_nav.scss */
-.nav {
-  background-color: #666;
-  font-family: sans-serif;
-  text-align: left; }
-  /* line 6, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_nav.scss */
-  .nav ul {
-    margin-left: 8.43373%; }
-    /* line 9, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_nav.scss */
-    .nav ul li {
-      display: inline-block;
-      margin: 1em 1em 0 1em; }
-      /* line 13, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_nav.scss */
-      .nav ul li:first-letter {
-        text-decoration: underline; }
-      /* line 16, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_nav.scss */
-      .nav ul li a {
-        color: white;
-        text-decoration: none; }
-        /* line 20, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_nav.scss */
-        .nav ul li a:hover {
-          color: #1a1a1a; }
-
-/* line 28, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_nav.scss */
-.index-title {
-  max-width: 53.75em;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 15px; }
-  /* line 20, /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bourbon-4.2.6/app/assets/stylesheets/addons/_clearfix.scss */
-  .index-title::after {
-    clear: both;
-    content: "";
-    display: table; }
-  /* line 32, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_nav.scss */
-  .index-title aside {
-    float: left;
-    display: block;
-    margin-right: 1.20482%;
-    width: 7.22892%;
-    min-width: 62px;
-    margin-left: 10px; }
-    /* line 89, /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/neat-1.7.2/app/assets/stylesheets/grid/_span-columns.scss */
-    .index-title aside:last-child {
-      margin-right: 0; }
-    /* line 36, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_nav.scss */
-    .index-title aside img {
-      border-radius: 15px; }
-  /* line 41, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_nav.scss */
-  .index-title .title-heading {
-    float: left;
-    display: block;
-    margin-right: 1.20482%;
-    width: 74.6988%;
-    margin-right: 0; }
-    /* line 89, /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/neat-1.7.2/app/assets/stylesheets/grid/_span-columns.scss */
-    .index-title .title-heading:last-child {
-      margin-right: 0; }
-    /* line 45, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_nav.scss */
-    .index-title .title-heading .name-brand {
-      font-size: 2em;
-      height: 1.2em;
-      margin: 0;
-      padding: 0; }
-    /* line 51, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_nav.scss */
-    .index-title .title-heading p {
-      margin: 0;
-      padding-top: 0; }
-
-/* line 1, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
-ul.article-list {
-  max-width: 53.75em;
-  margin-left: auto;
-  margin-right: auto; }
-  /* line 20, /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bourbon-4.2.6/app/assets/stylesheets/addons/_clearfix.scss */
-  ul.article-list::after {
-    clear: both;
-    content: "";
-    display: table; }
-  /* line 3, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
-  ul.article-list img {
-    float: left;
-    display: block;
-    margin-right: 1.20482%;
-    width: 32.53012%; }
-    /* line 89, /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/neat-1.7.2/app/assets/stylesheets/grid/_span-columns.scss */
-    ul.article-list img:last-child {
-      margin-right: 0; }
-  /* line 6, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
-  ul.article-list aside {
-    float: left;
-    display: block;
-    margin-right: 1.20482%;
-    width: 66.26506%;
-    margin-right: 0; }
-    /* line 89, /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/neat-1.7.2/app/assets/stylesheets/grid/_span-columns.scss */
-    ul.article-list aside:last-child {
-      margin-right: 0; }
-
-/* line 12, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
-section {
-  max-width: 53.75em;
-  margin-left: auto;
-  margin-right: auto; }
-  /* line 20, /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bourbon-4.2.6/app/assets/stylesheets/addons/_clearfix.scss */
-  section::after {
-    clear: both;
-    content: "";
-    display: table; }
-  /* line 14, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
-  section aside {
-    float: left;
-    display: block;
-    margin-right: 1.20482%;
-    width: 24.09639%; }
-    /* line 89, /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/neat-1.7.2/app/assets/stylesheets/grid/_span-columns.scss */
-    section aside:last-child {
-      margin-right: 0; }
-  /* line 15, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
-  section article {
-    float: left;
-    display: block;
-    margin-right: 1.20482%;
-    width: 74.6988%; }
-    /* line 89, /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/neat-1.7.2/app/assets/stylesheets/grid/_span-columns.scss */
-    section article:last-child {
-      margin-right: 0; }
-
-/* questions */
-/* line 19, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
-.question {
-  border-style: dotted;
-  color: white;
-  font-size: 1.5em;
-  padding-left: 1em;
-  margin: 1em;
-  transition: color 0.1s linear; }
-  /* line 20, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
-  .question:after {
-    content: "(click to toggle answer)";
-    display: block; }
-  /* line 24, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
-  .question:before {
-    content: "Check for Understanding";
-    display: block;
-    text-decoration: underline; }
-  /* line 29, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
-  .question:active, .question:focus, .question:hover {
-    color: #333333; }
-  /* line 42, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
-  .question .answer {
-    color: #60a020;
-    transition: color 0.1s linear; }
-    /* line 46, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
-    .question .answer p, .question .answer pre {
-      margin: 0;
-      padding: 0; }
-
-/* contact page */
-/* line 55, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
-table {
-  max-width: 53.75em;
-  margin-left: auto;
-  margin-right: auto; }
-  /* line 20, /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bourbon-4.2.6/app/assets/stylesheets/addons/_clearfix.scss */
-  table::after {
-    clear: both;
-    content: "";
-    display: table; }
-  /* line 58, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
-  table tr.contact-info {
-    float: left;
-    display: block;
-    margin-right: 1.20482%;
-    width: 100%; }
-    /* line 89, /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/neat-1.7.2/app/assets/stylesheets/grid/_span-columns.scss */
-    table tr.contact-info:last-child {
-      margin-right: 0; }
-    /* line 61, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
-    table tr.contact-info td {
-      border-bottom: none; }
-    /* line 65, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
-    table tr.contact-info td.name-col {
-      float: left;
-      display: block;
-      margin-right: 1.20482%;
-      width: 15.66265%; }
-      /* line 89, /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/neat-1.7.2/app/assets/stylesheets/grid/_span-columns.scss */
-      table tr.contact-info td.name-col:last-child {
-        margin-right: 0; }
-    /* line 66, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_pages.scss */
-    table tr.contact-info td.link-col {
-      float: left;
-      display: block;
-      margin-right: 1.20482%;
-      width: 83.13253%; }
-      /* line 89, /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/neat-1.7.2/app/assets/stylesheets/grid/_span-columns.scss */
-      table tr.contact-info td.link-col:last-child {
-        margin-right: 0; }
-
 /* line 1, /Users/Winning/Dropbox/Work/template/source/stylesheets/highlight.css.erb */
 .highlight table td {
   padding: 5px; }
@@ -1027,3 +455,508 @@ table {
 /* line 76, /Users/Winning/Dropbox/Work/template/source/stylesheets/highlight.css.erb */
 .highlight .ss {
   color: #90a959; }
+
+/* line 1, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_buttons.scss */
+button, input[type="button"], input[type="reset"], input[type="submit"] {
+  appearance: none;
+  background-color: white;
+  border: 0;
+  border-radius: 3px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Bitstream Vera Sans Mono", "Consolas", "Courier", monospace;
+  font-size: 1em;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0.9 1.8;
+  text-decoration: none;
+  transition: background-color 150ms ease;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap; }
+  /* line 21, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_buttons.scss */
+  button:hover, button:focus, input[type="button"]:hover, input[type="button"]:focus, input[type="reset"]:hover, input[type="reset"]:focus, input[type="submit"]:hover, input[type="submit"]:focus {
+    background-color: #cccccc;
+    color: #fff; }
+  /* line 27, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_buttons.scss */
+  button:disabled, input[type="button"]:disabled, input[type="reset"]:disabled, input[type="submit"]:disabled {
+    cursor: not-allowed;
+    opacity: 0.5; }
+    /* line 31, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_buttons.scss */
+    button:disabled:hover, input[type="button"]:disabled:hover, input[type="reset"]:disabled:hover, input[type="submit"]:disabled:hover {
+      background-color: white; }
+
+/* line 1, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_forms.scss */
+fieldset {
+  background-color: #d6d6d6;
+  border: 1px solid #595959;
+  margin: 0 0 0.9;
+  padding: 1.8; }
+
+/* line 8, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_forms.scss */
+input,
+label,
+select {
+  display: block;
+  font-family: "Bitstream Vera Sans Mono", "Consolas", "Courier", monospace;
+  font-size: 1em; }
+
+/* line 16, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_forms.scss */
+label {
+  font-weight: 600;
+  margin-bottom: 0.45; }
+  /* line 20, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_forms.scss */
+  label.required::after {
+    content: "*"; }
+  /* line 24, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_forms.scss */
+  label abbr {
+    display: none; }
+
+/* line 29, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_forms.scss */
+input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], input:not([type]), textarea,
+select[multiple=multiple] {
+  background-color: #000;
+  border: 1px solid #595959;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+  font-family: "Bitstream Vera Sans Mono", "Consolas", "Courier", monospace;
+  font-size: 1em;
+  margin-bottom: 0.9;
+  padding: 0.6;
+  transition: border-color 150ms ease;
+  width: 100%; }
+  /* line 43, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_forms.scss */
+  input[type="color"]:hover, input[type="date"]:hover, input[type="datetime"]:hover, input[type="datetime-local"]:hover, input[type="email"]:hover, input[type="month"]:hover, input[type="number"]:hover, input[type="password"]:hover, input[type="search"]:hover, input[type="tel"]:hover, input[type="text"]:hover, input[type="time"]:hover, input[type="url"]:hover, input[type="week"]:hover, input:not([type]):hover, textarea:hover,
+  select[multiple=multiple]:hover {
+    border-color: #474747; }
+  /* line 47, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_forms.scss */
+  input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="email"]:focus, input[type="month"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="time"]:focus, input[type="url"]:focus, input[type="week"]:focus, input:not([type]):focus, textarea:focus,
+  select[multiple=multiple]:focus {
+    border-color: white;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 5px rgba(242, 242, 242, 0.7);
+    outline: none; }
+  /* line 53, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_forms.scss */
+  input[type="color"]:disabled, input[type="date"]:disabled, input[type="datetime"]:disabled, input[type="datetime-local"]:disabled, input[type="email"]:disabled, input[type="month"]:disabled, input[type="number"]:disabled, input[type="password"]:disabled, input[type="search"]:disabled, input[type="tel"]:disabled, input[type="text"]:disabled, input[type="time"]:disabled, input[type="url"]:disabled, input[type="week"]:disabled, input:not([type]):disabled, textarea:disabled,
+  select[multiple=multiple]:disabled {
+    background-color: black;
+    cursor: not-allowed; }
+    /* line 57, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_forms.scss */
+    input[type="color"]:disabled:hover, input[type="date"]:disabled:hover, input[type="datetime"]:disabled:hover, input[type="datetime-local"]:disabled:hover, input[type="email"]:disabled:hover, input[type="month"]:disabled:hover, input[type="number"]:disabled:hover, input[type="password"]:disabled:hover, input[type="search"]:disabled:hover, input[type="tel"]:disabled:hover, input[type="text"]:disabled:hover, input[type="time"]:disabled:hover, input[type="url"]:disabled:hover, input[type="week"]:disabled:hover, input:not([type]):disabled:hover, textarea:disabled:hover,
+    select[multiple=multiple]:disabled:hover {
+      border: 1px solid #595959; }
+
+/* line 63, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_forms.scss */
+textarea {
+  resize: vertical; }
+
+/* line 67, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_forms.scss */
+input[type="search"] {
+  appearance: none; }
+
+/* line 71, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_forms.scss */
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline;
+  margin-right: 0.45; }
+  /* line 76, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_forms.scss */
+  input[type="checkbox"] + label,
+  input[type="radio"] + label {
+    display: inline-block; }
+
+/* line 81, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_forms.scss */
+input[type="file"] {
+  margin-bottom: 0.9;
+  width: 100%; }
+
+/* line 86, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_forms.scss */
+select {
+  margin-bottom: 1.8;
+  max-width: 100%;
+  width: auto; }
+
+/* line 1, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_lists.scss */
+ul,
+ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+/* line 20, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_lists.scss */
+dl {
+  margin-bottom: 0.9; }
+  /* line 23, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_lists.scss */
+  dl dt {
+    font-weight: bold;
+    margin-top: 0.9; }
+  /* line 28, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_lists.scss */
+  dl dd {
+    margin: 0; }
+
+/* line 1, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_tables.scss */
+table {
+  border-collapse: collapse;
+  font-feature-settings: "kern", "liga", "tnum";
+  margin: 0.9 0;
+  table-layout: fixed;
+  width: 100%; }
+
+/* line 9, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_tables.scss */
+th {
+  border-bottom: 1px solid #434343;
+  font-weight: 600;
+  padding: 0.9 0;
+  text-align: left; }
+
+/* line 16, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_tables.scss */
+td {
+  border-bottom: 1px solid #595959;
+  padding: 0.9 0; }
+
+/* line 21, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_tables.scss */
+tr,
+td,
+th {
+  vertical-align: middle; }
+
+/* line 1, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_typography.scss */
+body {
+  color: #60a020;
+  font-family: "Bitstream Vera Sans Mono", "Consolas", "Courier", monospace;
+  font-feature-settings: "kern", "liga", "pnum";
+  font-size: 1em;
+  line-height: 1.5; }
+
+/* line 9, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_typography.scss */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Bitstream Vera Sans Mono", "Consolas", "Courier", monospace;
+  font-size: 1em;
+  line-height: 1.2;
+  margin: 0 0 0.9; }
+
+/* line 21, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_typography.scss */
+p {
+  margin: 0 0 0.9; }
+
+/* line 25, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_typography.scss */
+a {
+  color: white;
+  text-decoration: none;
+  transition: color 150ms ease; }
+  /* line 30, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_typography.scss */
+  a:active, a:focus, a:hover {
+    color: #bfbfbf; }
+
+/* line 37, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_typography.scss */
+hr {
+  border-bottom: 1px solid #595959;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  margin: 1.8 0; }
+
+/* line 45, /Users/Winning/Dropbox/Work/template/source/stylesheets/base/_typography.scss */
+img,
+picture {
+  margin: 0;
+  max-width: 100%; }
+
+/* Bitters needs to be imported before Neat */
+/* line 4, /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/neat-1.7.2/app/assets/stylesheets/grid/_box-sizing.scss */
+html {
+  box-sizing: border-box; }
+
+/* line 9, /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/neat-1.7.2/app/assets/stylesheets/grid/_box-sizing.scss */
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+/* line 1, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
+h1 {
+  font-size: 2em;
+  margin-top: 0.5em;
+  color: #c06000; }
+  /* line 6, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
+  h1:before {
+    content: "* ";
+    color: #c06000; }
+
+/* line 12, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
+h2 {
+  font-size: 1.5em;
+  line-height: 2em;
+  color: #c06000; }
+  /* line 17, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
+  h2:before {
+    content: "** ";
+    color: #c06000; }
+
+/* line 23, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
+h3 {
+  font-size: 1.17em;
+  color: #c06000; }
+  /* line 27, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
+  h3:before {
+    content: "*** ";
+    color: #c06000; }
+
+/* line 33, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
+h4 {
+  font-size: 1.12em;
+  color: #c06000; }
+  /* line 37, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
+  h4:before {
+    content: "**** ";
+    color: #c06000; }
+
+/* line 43, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
+h5 {
+  font-size: .83em;
+  color: #c06000; }
+  /* line 47, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
+  h5:before {
+    content: "***** ";
+    color: #c06000; }
+
+/* line 53, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
+h6 {
+  font-size: .75em;
+  color: #c06000; }
+  /* line 57, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
+  h6:before {
+    content: "****** ";
+    color: #c06000; }
+
+/* line 63, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
+strong {
+  color: #7acb29;
+  font: serif;
+  font-size: 1.2em;
+  font-weight: 900; }
+
+/* line 70, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
+ul li {
+  list-style: circle;
+  margin-left: 2em; }
+
+/* line 75, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
+ol li {
+  list-style: decimal;
+  margin-left: 2em; }
+
+/* line 80, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
+blockquote {
+  border-left-style: solid;
+  border-left-color: #595959; }
+  /* line 83, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
+  blockquote p {
+    padding-left: 1em; }
+
+/* code blocks */
+/* line 89, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
+code {
+  background-color: #595959; }
+  /* line 90, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
+  code:before {
+    content: " "; }
+  /* line 94, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
+  code:after {
+    content: " "; }
+
+/* line 101, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
+pre.highlight {
+  background-color: #595959;
+  padding-left: 1.618em; }
+
+/* line 1, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_nav.scss */
+.nav {
+  background-color: #666;
+  font-family: sans-serif;
+  text-align: left; }
+  /* line 6, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_nav.scss */
+  .nav ul {
+    margin-left: 8.5298%; }
+    /* line 9, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_nav.scss */
+    .nav ul li {
+      display: inline-block;
+      margin: 1em 1em 0 1em; }
+      /* line 13, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_nav.scss */
+      .nav ul li:first-letter {
+        text-decoration: underline; }
+      /* line 16, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_nav.scss */
+      .nav ul li a {
+        color: white;
+        text-decoration: none; }
+        /* line 20, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_nav.scss */
+        .nav ul li a:hover {
+          color: #1a1a1a; }
+
+/* line 28, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_nav.scss */
+.index-title {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 15px; }
+  /* line 20, /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bourbon-4.2.6/app/assets/stylesheets/addons/_clearfix.scss */
+  .index-title::after {
+    clear: both;
+    content: "";
+    display: table; }
+  /* line 32, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_nav.scss */
+  .index-title aside {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 6.17215%;
+    min-width: 62px;
+    margin-left: 10px; }
+    /* line 89, /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/neat-1.7.2/app/assets/stylesheets/grid/_span-columns.scss */
+    .index-title aside:last-child {
+      margin-right: 0; }
+    /* line 36, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_nav.scss */
+    .index-title aside img {
+      border-radius: 15px; }
+  /* line 41, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_nav.scss */
+  .index-title .title-heading {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 74.41059%;
+    margin-right: 0; }
+    /* line 89, /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/neat-1.7.2/app/assets/stylesheets/grid/_span-columns.scss */
+    .index-title .title-heading:last-child {
+      margin-right: 0; }
+    /* line 45, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_nav.scss */
+    .index-title .title-heading .name-brand {
+      font-size: 2em;
+      height: 1.2em;
+      margin: 0;
+      padding: 0; }
+    /* line 51, /Users/Winning/Dropbox/Work/template/source/stylesheets/partials/_nav.scss */
+    .index-title .title-heading p {
+      margin: 0;
+      padding-top: 0; }
+
+/* line 1, /Users/Winning/Dropbox/Work/template/source/stylesheets/components/_content.scss */
+.content {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1.8; }
+  /* line 20, /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bourbon-4.2.6/app/assets/stylesheets/addons/_clearfix.scss */
+  .content::after {
+    clear: both;
+    content: "";
+    display: table; }
+
+/* line 1, /Users/Winning/Dropbox/Work/template/source/stylesheets/components/_listed-post.scss */
+.listed-post {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%; }
+  /* line 89, /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/neat-1.7.2/app/assets/stylesheets/grid/_span-columns.scss */
+  .listed-post:last-child {
+    margin-right: 0; }
+  /* line 3, /Users/Winning/Dropbox/Work/template/source/stylesheets/components/_listed-post.scss */
+  .listed-post .listed-post__title {
+    margin-top: 0.5em;
+    margin-bottom: 0;
+    padding: 0;
+    font-size: 2em;
+    color: #c06000; }
+    /* line 9, /Users/Winning/Dropbox/Work/template/source/stylesheets/components/_listed-post.scss */
+    .listed-post .listed-post__title:before {
+      content: "* ";
+      color: #c06000; }
+  /* line 15, /Users/Winning/Dropbox/Work/template/source/stylesheets/components/_listed-post.scss */
+  .listed-post .listed-post__date {
+    margin: 0;
+    padding: 0;
+    color: #3a6013;
+    font-size: 1em;
+    font-style: italic; }
+  /* line 26, /Users/Winning/Dropbox/Work/template/source/stylesheets/components/_listed-post.scss */
+  .listed-post .listed-post--with-image__image {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 23.23176%; }
+    /* line 89, /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/neat-1.7.2/app/assets/stylesheets/grid/_span-columns.scss */
+    .listed-post .listed-post--with-image__image:last-child {
+      margin-right: 0; }
+  /* line 29, /Users/Winning/Dropbox/Work/template/source/stylesheets/components/_listed-post.scss */
+  .listed-post .listed-post--with-image__summary {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 74.41059%; }
+    /* line 89, /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/neat-1.7.2/app/assets/stylesheets/grid/_span-columns.scss */
+    .listed-post .listed-post--with-image__summary:last-child {
+      margin-right: 0; }
+
+/* line 1, /Users/Winning/Dropbox/Work/template/source/stylesheets/components/_main.scss */
+.main {
+  background-color: #000; }
+
+/* line 1, /Users/Winning/Dropbox/Work/template/source/stylesheets/components/_post.scss */
+.post {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%; }
+  /* line 89, /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/neat-1.7.2/app/assets/stylesheets/grid/_span-columns.scss */
+  .post:last-child {
+    margin-right: 0; }
+  /* line 3, /Users/Winning/Dropbox/Work/template/source/stylesheets/components/_post.scss */
+  .post .post__title {
+    margin-top: 0.5em;
+    margin-bottom: 0;
+    padding: 0;
+    font-size: 2em;
+    color: #c06000; }
+    /* line 9, /Users/Winning/Dropbox/Work/template/source/stylesheets/components/_post.scss */
+    .post .post__title:before {
+      content: "* ";
+      color: #c06000; }
+  /* line 15, /Users/Winning/Dropbox/Work/template/source/stylesheets/components/_post.scss */
+  .post .post__date {
+    margin: 0;
+    padding: 0;
+    color: #3a6013;
+    font-size: 1em;
+    font-style: italic; }
+
+/* line 1, /Users/Winning/Dropbox/Work/template/source/stylesheets/components/_question.scss */
+.question {
+  border-style: dotted;
+  color: white;
+  font-size: 1.5em;
+  padding-left: 1em;
+  margin: 1em;
+  transition: color 0.1s linear; }
+  /* line 2, /Users/Winning/Dropbox/Work/template/source/stylesheets/components/_question.scss */
+  .question:after {
+    content: "(click to toggle answer)";
+    display: block; }
+  /* line 6, /Users/Winning/Dropbox/Work/template/source/stylesheets/components/_question.scss */
+  .question:before {
+    content: "Check for Understanding";
+    display: block;
+    text-decoration: underline; }
+  /* line 11, /Users/Winning/Dropbox/Work/template/source/stylesheets/components/_question.scss */
+  .question:active, .question:focus, .question:hover {
+    color: #333333; }
+  /* line 24, /Users/Winning/Dropbox/Work/template/source/stylesheets/components/_question.scss */
+  .question .answer {
+    color: #60a020;
+    transition: color 0.1s linear; }
+    /* line 28, /Users/Winning/Dropbox/Work/template/source/stylesheets/components/_question.scss */
+    .question .answer p, .question .answer pre {
+      margin: 0;
+      padding: 0; }
