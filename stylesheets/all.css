@@ -757,18 +757,28 @@ blockquote {
   blockquote p {
     padding-left: 1em; }
 
+/* line 88, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
+img {
+  display: block;
+  margin: auto; }
+
+/* line 93, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
+iframe {
+  display: block;
+  margin: auto; }
+
 /* code blocks */
-/* line 89, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
+/* line 99, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
 code {
   background-color: #595959; }
-  /* line 90, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
+  /* line 100, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
   code:before {
     content: " "; }
-  /* line 94, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
+  /* line 104, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
   code:after {
     content: " "; }
 
-/* line 101, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
+/* line 111, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
 pre.highlight {
   background-color: #595959;
   padding-left: 1.618em; }
