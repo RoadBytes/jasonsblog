@@ -1,0 +1,507 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title>Upcase: Test Doubles trail</title>
+
+        <link rel="apple-touch-icon-precomposed" sizes="57x57"   href="images/favicomatic/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/favicomatic/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72"   href="images/favicomatic/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/favicomatic/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60"   href="images/favicomatic/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="images/favicomatic/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76"   href="images/favicomatic/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="images/favicomatic/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="images/favicomatic/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="images/favicomatic/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="images/favicomatic/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="images/favicomatic/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="images/favicomatic/favicon-128.png" sizes="128x128" />
+    <meta name="application-name" content="&nbsp;"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
+
+    <link href="../../../../stylesheets/normalize.css" rel="stylesheet" type="text/css" /><link href="../../../../stylesheets/all.css" rel="stylesheet" type="text/css" />
+    <script src="../../../../javascripts/all.js" type="text/javascript"></script>
+  </head>
+
+  <body class="technical technical_2016 technical_2016_07 technical_2016_07_28 technical_2016_07_28_upcase-test-doubles-trail main">
+   <div class="nav">
+  <ul id="nav_text">
+    <li>
+      <a href="/">Home</a>
+    </li>
+    <li>
+      <a href="../../../../technical.html">TechnicalPosts</a>
+    </li>
+    <li>
+      <a href="../../../../about.html">About</a>
+    </li>
+    <li>
+      <a href="../../../../contact.html">Contact</a>
+    </li>
+  </ul>
+</div>
+
+   <div class="content">
+     <div class="post">
+       <h1 class="post__title">Upcase: Test Doubles trail</h1>
+       <p class="post__date"><28 Jul 2016></p>
+       <p>
+           <a class="post__tag" href="../../../technical/tags/course-notes.html">course notes</a>
+           <a class="post__tag" href="../../../technical/tags/upcase.html">upcase</a>
+           <a class="post__tag" href="../../../technical/tags/testing.html">testing</a>
+       </p>
+       <hr/>
+       <h1 id="learning-about-testing-with-stubs-and-mocks-and-spies">Learning about Testing with Stubs and Mocks and Spies</h1>
+
+<p>These are notes from UpCase’s course “Test Doubles”</p>
+
+<p>https://thoughtbot.com/upcase/test-doubles</p>
+
+<h1 id="simple-stub">Simple Stub</h1>
+
+<h2 id="create-a-stub-with-rspec-double">Create a Stub with Rspec <code>double</code></h2>
+
+<p><code>all_posts = double('descriptive statement')</code></p>
+
+<blockquote>
+  <p>This creates an object that stands in for an actual object like an ActiveRecord DB Query for example;
+it’s like a stunt double for your actual object. Using the double method is very similar to calling Object.new, but tests that use doubles will fail with much clearer error messages. The “descriptive statement” string above is simply a name which will be used in test failure messages.</p>
+</blockquote>
+
+<h2 id="control-behavior-with-allow">Control behavior with <code>allow</code></h2>
+
+<p><code>allow(Posts).to receive(:all).and_return(all_posts)</code></p>
+
+<p>Combined with <code>allow</code>, you can prevent the test from actually hitting the database or model</p>
+
+<h1 id="notes-from-my-implementation">Notes from my implementation</h1>
+<pre class="highlight plaintext"><code>require "spec_helper"
+require "dashboard"
+
+describe Dashboard do
+  describe "#posts" do
+    it "returns posts created today" do
+      posts        = double('all posts')
+      todays_posts = double('today\s posts')
+
+      allow(Post).to receive(:all).and_return(posts)
+      allow(posts).to receive(:today).and_return(todays_posts)
+      allow(todays_posts).to receive(:map).and_return(%w(first_today last_today))
+
+      dashboard = Dashboard.new(posts: Post.all)
+      # Post.all.today
+      # When is it run?  I think it's lazy loaded, but run when @posts is initialized OR is it run at today
+      # Well lets run the code
+      # the other issue is knowing what code to stub
+
+      result = dashboard.todays_posts
+
+      expect(result.map(&amp;:title)).to match_array(%w(first_today last_today))
+    end
+  end
+
+  around do |example|
+    Timecop.freeze { example.run }
+  end
+end
+</code></pre>
+
+<h1 id="stubs-with-constrant">Stubs with constrant</h1>
+
+<h2 id="this-adds-another-method-with-to-receivemethod-that-allows-us-to-check-if-a-method-is-received-with-arguments">this adds another method <code>.with()</code> to <code>receive(:method)</code> that allows us to check if a method is received with arguments</h2>
+
+<p><code>allow(all_posts).to receive(:visible_to).with(user).and_return(visible_posts)</code></p>
+
+<h1 id="here-is-a-diff-of-my-first-attempt-at-the-assignment">Here is a diff of my first attempt at the assignment</h1>
+
+<pre class="highlight plaintext"><code>describe Dashboard do
+   describe "#posts" do
+     it "returns posts visible to the current user" do
+-      user = create(:user)
+-      other_user = create(:user)
+-      create :post, user: other_user, published: true, title: "published_one"
+-      create :post, user: other_user, published: true, title: "published_two"
+-      create :post, user: other_user, published: false, title: "unpublished"
+-      create :post, user: user, published: false, title: "visible_one"
+-      create :post, user: user, published: false, title: "visible_two"
+-      dashboard = Dashboard.new(posts: Post.all, user: user)
++      create(:user) # other user
++      user          = create(:user)
++      all_posts     = double("all posts")
++      visible_posts = double("visible posts")
++      allow(Post).to receive(:all).and_return(all_posts)
++      allow(all_posts).to receive(:visible_to).with(user).and_return(visible_posts)
+ 
+-      result = dashboard.posts
++      dashboard = Dashboard.new(posts: Post.all, user: user)
++      result    = dashboard.posts
+ 
+-      expect(result.map(&amp;:title)).to match_array(%w(
+-        published_one
+-        published_two
+-        visible_one
+-        visible_two
+-      ))
++      expect(result).to eq visible_posts
+     end
+   end
+ end
+</code></pre>
+
+<p>I wonder if <code>Post.all</code> needs to be stubbed.</p>
+
+<h1 id="setting-expectations-with-mocks">Setting Expectations with Mocks</h1>
+
+<p>This allows us to test if a model received a method.</p>
+
+<p><code>allow(Post).to receive(:all)</code> stubs out the behavior of <code>Post</code>.</p>
+
+<p><code>expect(Post).to receive(:all)</code></p>
+
+<ul>
+  <li>stubs out the behavior of <code>Post</code></li>
+  <li>AND tests that <code>Post</code> receives the <code>all</code> method</li>
+</ul>
+
+<h1 id="my-implementation">My implementation</h1>
+
+<pre class="highlight plaintext"><code> describe Signup do
+   describe "#save" do
+     it "creates an account with one user" do
++      account = double("Account instance")
++      expect(Account).to receive("create!").
++        with(name: "Example").and_return(account)
++      expect(User).to receive("create!").
++        with(account: account, email: "user@example.com")
++
+       signup = Signup.new(email: "user@example.com", account_name: "Example")
+ 
+       result = signup.save
+ 
+-      expect(Account.count).to eq(1)
+-      expect(Account.last.name).to eq("Example")
+-      expect(User.count).to eq(1)
+-      expect(User.last.email).to eq("user@example.com")
+-      expect(User.last.account).to eq(Account.last)
+       expect(result).to be(true)
+     end
+   end
+ 
+   describe "#user" do
+     it "returns the user created by #save" do
++      saved_user = double("saved user")
++      allow(User).to receive("create!").and_return(saved_user)
+       signup = Signup.new(email: "user@example.com", account_name: "Example")
+       signup.save
+ 
+       result = signup.user
+ 
+-      expect(result.email).to eq("user@example.com")
+-      expect(result.account.name).to eq("Example")
++      expect(result).to eq(saved_user)
+     end
+   end
+ end
+</code></pre>
+
+<p>No need to touch the database</p>
+
+<h1 id="verifying-expectations-with-spies">Verifying Expectations with Spies</h1>
+
+<ul>
+  <li>Allows us to break up test into nice parts:
+    <ul>
+      <li>Setup</li>
+      <li>Exercise</li>
+      <li>Verification</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="example">Example</h1>
+
+<p>these two implementations are the same behavior with spies having better grouping</p>
+
+<ul>
+  <li>Mock example</li>
+</ul>
+
+<pre class="highlight plaintext"><code>describe PostsController  do
+  describe "#edit" do
+    it "redirects to the created post when published" do
+      # Setup
+      post = create(:post)
+      allow(post).to received(:published?).and_return(true)
+      attributes = { "title" =&gt; "example" }
+
+      # Setup? Verification? Both?
+      expect(Post).to receive(:create).with(attributes).and_return(post)
+
+      # Exercise
+      post :create, post: attributes
+
+      # Verification
+      expect(response).to redirect_to(post_url(post))
+    end
+  end
+end
+</code></pre>
+
+<ul>
+  <li>Spy example</li>
+</ul>
+
+<pre class="highlight plaintext"><code>describe PostsController  do
+  describe "#edit" do
+    it "redirects to the created post when published" do
+      # Setup
+      post = create(:post)
+      allow(post).to receive(:published?).and_return(true)
+      allow(Post).to receive(:create).and_return(post)
+      attributes = { "title" =&gt; "example" }
+
+      # Exercise
+      post :create, post: attributes
+
+      # Verification
+      expect(Post).to have_received(:create).with(attributes)
+      expect(response).to redirect_to(post_url(post))
+    end
+  end
+end
+</code></pre>
+
+<h1 id="more-closely">More closely:</h1>
+
+<pre class="highlight plaintext"><code>  # Here is a mock
+  expect(Post).to receive(:create).with(attributes).and_return(post)
+
+  # Here is an equivalent spy
+  allow(Post).to receive(:create).with(attributes).and_return(post)
+  expect(Post).to have_received(:create).with(attributes)
+</code></pre>
+
+<h1 id="testing-flexible-interactions-with-fakes">Testing Flexible Interactions with Fakes</h1>
+
+<p>Here we just actually implement a plain old Ruby object!</p>
+
+<h1 id="an-awkward-example">An awkward example</h1>
+
+<pre class="highlight plaintext"><code>describe SearchForm  do
+  describe "#results" do
+    it "builds a search and returns its results" do
+      search = double("search")
+      results = double("results")
+      allow(Search).to receive(:new).and_return(search)
+      allow(search).to receive(:author_word).and_return(search)
+      allow(search).to receive(:title_word).and_return(search)
+      # the order must have `:to_a` last!
+      allow(search).to receive(:to_a).and_return(results)
+      form = SearchForm.new(title: "one two", author: "Billy Idol")
+
+      expect(form.results).to eq(results)
+      expect(search).to have_received(:author_word).with("Billy")
+      expect(search).to have_received(:author_word).with("Idol")
+      expect(search).to have_received(:title_word).with("one")
+      expect(search).to have_received(:title_word).with("two")
+    end
+  end
+end
+</code></pre>
+
+<h1 id="using-a-fake">Using a fake</h1>
+
+<pre class="highlight plaintext"><code>describe SearchForm  do
+  describe "#results" do
+    it "builds a search and returns its results" do
+      search = FakeSearch.new
+      allow(Search).to receive(:new).and_return(search)
+      form = SearchForm.new(title: "one two", author: "Billy Idol")
+
+      expect(form.results.criteria).to eq(
+        author_words: %w(Billy Idol),
+        title_words: %w(one two)
+      )
+    end
+  end
+end
+</code></pre>
+
+<h1 id="but-this-fakesearch-must-be-implemented">But this <code>FakeSearch</code> must be implemented</h1>
+
+<pre class="highlight plaintext"><code>class FakeSearch
+  def initialize(criteria = nil)
+    @criteria = criteria || {
+      author_words: [],
+      title_words: []
+    }
+  end
+
+  def author_word(word)
+    new_words = @criteria[:author_words] + [word]
+    self.class.new(@criteria.merge(author_words: new_words))
+  end
+
+  def title_word(word)
+    new_words = @criteria[:title_words] + [word]
+    self.class.new(@criteria.merge(title_words: new_words))
+  end
+
+  def results
+    Results.new(@criteria)
+  end
+
+  class Results
+    attr_reader :criteria
+
+    def initialize(criteria)
+      @criteria = criteria
+    end
+  end
+end
+</code></pre>
+
+<h1 id="some-question-and-answers-i-have">Some question and answers I have</h1>
+
+<ul>
+  <li>Q: How does the fake replace spies?</li>
+</ul>
+
+<pre class="highlight plaintext"><code>expect(search).to have_received(:author_word).with("Billy")
+expect(search).to have_received(:author_word).with("Idol")
+expect(search).to have_received(:title_word).with("one")
+expect(search).to have_received(:title_word).with("two")
+</code></pre>
+
+<ul>
+  <li>A: By testing side effects.
+    <ul>
+      <li>if <code>search</code> didn’t receive the following methods, this wouldn’t pass.</li>
+    </ul>
+  </li>
+</ul>
+
+<pre class="highlight plaintext"><code>expect(form.results.criteria).to eq(
+  author_words: %w(Billy Idol),
+  title_words: %w(one two)
+)
+</code></pre>
+
+<h1 id="my-implementation-1">My implementation</h1>
+
+<p>For this assignment, we were meant to implement a <code>logger</code> that made note of exceptions that were raised when a method was called.</p>
+
+<p>I just made this class:</p>
+
+<pre class="highlight plaintext"><code>class FakeLogger
+  attr_reader :info_message, :error_message
+  def info(message)
+    @info_message = message
+  end
+
+  def error(message)
+    @error_message = message
+  end
+end
+</code></pre>
+
+<ul>
+  <li>It can tell if there’s been an error or not.</li>
+  <li>It can return the error that was logged.</li>
+</ul>
+
+<h1 id="the-featured-solution">The featured solution</h1>
+
+<pre class="highlight plaintext"><code>class FakeLogger
+  attr_reader :info_message, :error_message
+  def info(message)
+    @message = {
+      info: [],
+      data: [],
+      error: [],
+      fatal: []
+    }
+  end
+
+  def data(message)
+    @message[:data] &lt;&lt; message
+  end
+
+  ... # other parts omitted
+end
+</code></pre>
+
+<h1 id="verifying-mailers-with-test-doubles">Verifying Mailers with Test Doubles</h1>
+
+<p>Putting it all together</p>
+
+<h1 id="objectives">Objectives:</h1>
+
+<ul>
+  <li>test <code>Signup#save</code>’s interaction with <code>SignupMailer#signup</code></li>
+  <li>test this same method to log a message</li>
+</ul>
+
+<h1 id="signupmailersignup"><code>SignupMailer#signup</code></h1>
+
+<p>Here, I just needed to test that <code>SignupMailer</code> received the <code>signup(account: account, user: user)</code> when <code>Signup#save</code> was called.</p>
+
+<p>This was straight forward and there weren’t many side effects to test for.</p>
+
+<h1 id="logmessageinfo"><code>Log.message[:info]</code></h1>
+
+<p>After testing <code>Signup#save</code> sends a message to <code>SignupMailer</code>, we were asked to practice TDD and implement a log to the server with an info message.  It was interesting because there was no Logger object to work with.  But, I make a <code>FakeLogger</code> fake in the end to make sure that the <code>Signup#save</code> object some how logs a sent email.</p>
+
+<p>Still, one interesting thing was I was open to implementing the message anyway I wanted since there was no preexisting <code>Logger</code>.  I created an object with a <code>messages</code> method that returned a hash.  <code>{ info: [] }</code>.  This may have made more sense if were logging errors and stuff too, but that’s what I saw in in the lesson so I had at it.</p>
+
+<h1 id="conclusion">Conclusion</h1>
+
+<p>I really enjoyed the lesson and learned about stubs, mocks, spies, and fakes. This will come in handy for TDD I’m working on in the future.</p>
+
+<ul>
+  <li>Stubs: stand in objects for betting isolating and error messages.</li>
+  <li>Mocks: stand in ‘method’ calls with evaluation</li>
+  <li>Spies: separated out Mock to allow for organizing setup and evaluation</li>
+  <li>Fakes: plain old ruby objects that can be tested for values.</li>
+</ul>
+
+
+       <div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'jasondata';
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+     </div>
+   </div>
+   <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-66493418-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  </body>
+</html>

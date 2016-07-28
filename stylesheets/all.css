@@ -677,108 +677,112 @@ html {
   box-sizing: inherit; }
 
 /* line 1, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
+a {
+  text-decoration: underline; }
+
+/* line 5, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
 h1 {
   font-size: 2em;
   margin-top: 0.5em;
   color: #c06000; }
-  /* line 6, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
+  /* line 10, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
   h1:before {
     content: "* ";
     color: #c06000; }
 
-/* line 12, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
+/* line 16, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
 h2 {
   font-size: 1.5em;
   line-height: 2em;
   color: #c06000; }
-  /* line 17, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
+  /* line 21, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
   h2:before {
     content: "** ";
     color: #c06000; }
 
-/* line 23, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
+/* line 27, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
 h3 {
   font-size: 1.17em;
   color: #c06000; }
-  /* line 27, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
+  /* line 31, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
   h3:before {
     content: "*** ";
     color: #c06000; }
 
-/* line 33, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
+/* line 37, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
 h4 {
   font-size: 1.12em;
   color: #c06000; }
-  /* line 37, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
+  /* line 41, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
   h4:before {
     content: "**** ";
     color: #c06000; }
 
-/* line 43, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
+/* line 47, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
 h5 {
   font-size: .83em;
   color: #c06000; }
-  /* line 47, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
+  /* line 51, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
   h5:before {
     content: "***** ";
     color: #c06000; }
 
-/* line 53, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
+/* line 57, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
 h6 {
   font-size: .75em;
   color: #c06000; }
-  /* line 57, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
+  /* line 61, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
   h6:before {
     content: "****** ";
     color: #c06000; }
 
-/* line 63, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
+/* line 67, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
 strong {
   color: #7acb29;
   font: serif;
   font-size: 1.2em;
   font-weight: 900; }
 
-/* line 70, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
+/* line 74, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
 ul li {
   list-style: circle;
   margin-left: 2em; }
 
-/* line 75, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
+/* line 79, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
 ol li {
   list-style: decimal;
   margin-left: 2em; }
 
-/* line 80, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
+/* line 84, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
 blockquote {
   border-left-style: solid;
   border-left-color: #595959; }
-  /* line 83, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
+  /* line 87, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
   blockquote p {
     padding-left: 1em; }
 
-/* line 88, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
+/* line 92, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
 img {
   display: block;
   margin: auto; }
 
-/* line 93, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
+/* line 97, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
 iframe {
   display: block;
   margin: auto; }
 
 /* code blocks */
-/* line 99, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
+/* line 103, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
 code {
   background-color: #595959; }
-  /* line 100, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
+  /* line 104, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
   code:before {
     content: " "; }
-  /* line 104, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
+  /* line 108, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
   code:after {
     content: " "; }
 
-/* line 111, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
+/* line 115, /Users/Winning/Dropbox/Work/template/source/stylesheets/overrides.scss */
 pre.highlight {
   background-color: #595959;
   padding-left: 1.618em; }
