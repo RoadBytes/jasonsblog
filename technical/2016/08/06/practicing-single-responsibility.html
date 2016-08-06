@@ -1,0 +1,290 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title>Practicing Single Responsibility</title>
+
+        <link rel="apple-touch-icon-precomposed" sizes="57x57"   href="images/favicomatic/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/favicomatic/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72"   href="images/favicomatic/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/favicomatic/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60"   href="images/favicomatic/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="images/favicomatic/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76"   href="images/favicomatic/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="images/favicomatic/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="images/favicomatic/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="images/favicomatic/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="images/favicomatic/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="images/favicomatic/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="images/favicomatic/favicon-128.png" sizes="128x128" />
+    <meta name="application-name" content="&nbsp;"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
+
+    <link href="../../../../stylesheets/normalize.css" rel="stylesheet" type="text/css" /><link href="../../../../stylesheets/all.css" rel="stylesheet" type="text/css" />
+    <script src="../../../../javascripts/all.js" type="text/javascript"></script>
+  </head>
+
+  <body class="technical technical_2016 technical_2016_08 technical_2016_08_06 technical_2016_08_06_practicing-single-responsibility main">
+   <div class="nav">
+  <ul id="nav_text">
+    <li>
+      <a href="/">Home</a>
+    </li>
+    <li>
+      <a href="../../../../technical.html">TechnicalPosts</a>
+    </li>
+    <li>
+      <a href="../../../../about.html">About</a>
+    </li>
+    <li>
+      <a href="../../../../contact.html">Contact</a>
+    </li>
+  </ul>
+</div>
+
+   <div class="content">
+     <div class="post">
+       <h1 class="post__title">Practicing Single Responsibility</h1>
+       <p class="post__date">< 6 Aug 2016></p>
+       <p>
+           <a class="post__tag" href="../../../technical/tags/practice.html">practice</a>
+           <a class="post__tag" href="../../../technical/tags/single-responsibility.html">single responsibility</a>
+           <a class="post__tag" href="../../../technical/tags/intermediate.html">intermediate</a>
+       </p>
+       <hr/>
+       <p>Since I’ve been applying for jobs, I came across a ToyRobot challenge and it’s helping me dig a bit deeper with OOP Design.  You can find details in the <code>README</code> of my <a href="https://github.com/RoadBytes/ToyRobot">repo</a></p>
+
+<p>So other people can benefit from my experience, I thought I’d present a case where you can take my <code>Robot</code> class and extract out a <code>Table</code> class.</p>
+
+<p>Here is a file and <a href="https://github.com/RoadBytes/ToyRobot/blob/before-seeing-solutions/app/robot.rb">link to the repo file</a> if you wanted to implement it yourself.</p>
+
+<pre class="highlight ruby"><code>
+<span class="c1"># Robot object impelemented to specs</span>
+<span class="k">class</span> <span class="nc">Robot</span>
+  <span class="kp">attr_accessor</span> <span class="ss">:x</span><span class="p">,</span> <span class="ss">:y</span><span class="p">,</span> <span class="ss">:direction</span>
+
+  <span class="no">DIRECTIONS</span>    <span class="o">=</span> <span class="p">[</span><span class="ss">:SOUTH</span><span class="p">,</span> <span class="ss">:EAST</span><span class="p">,</span> <span class="ss">:NORTH</span><span class="p">,</span> <span class="ss">:WEST</span><span class="p">].</span><span class="nf">freeze</span>
+  <span class="no">USER_COMMANDS</span> <span class="o">=</span> <span class="sx">%w(place report move left right)</span><span class="p">.</span><span class="nf">freeze</span>
+  <span class="no">TABLE_SIZE</span>    <span class="o">=</span> <span class="mi">5</span>
+  <span class="c1"># (0, 0) south west most corner of square table</span>
+
+  <span class="k">def</span> <span class="nf">place</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">direction</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">self</span> <span class="k">unless</span> <span class="no">DIRECTIONS</span><span class="p">.</span><span class="nf">include?</span> <span class="n">direction</span>
+    <span class="k">return</span> <span class="nb">self</span> <span class="k">unless</span> <span class="n">coordinates_in_bounds</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="vi">@x</span>         <span class="o">=</span> <span class="n">x</span>
+    <span class="vi">@y</span>         <span class="o">=</span> <span class="n">y</span>
+    <span class="vi">@direction</span> <span class="o">=</span> <span class="n">direction</span>
+    <span class="nb">self</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">report</span>
+    <span class="k">return</span> <span class="nb">self</span> <span class="k">if</span> <span class="n">robot_not_set</span>
+    <span class="nb">puts</span> <span class="s2">"</span><span class="si">#{</span><span class="n">x</span><span class="si">}</span><span class="s2">, </span><span class="si">#{</span><span class="n">y</span><span class="si">}</span><span class="s2">, </span><span class="si">#{</span><span class="n">direction</span><span class="si">}</span><span class="s2">"</span>
+    <span class="nb">self</span>
+  <span class="k">end</span>
+
+  <span class="c1"># rubocop:disable Metrics/PerceivedComplexity</span>
+  <span class="k">def</span> <span class="nf">move</span>
+    <span class="nb">self</span><span class="p">.</span><span class="nf">x</span> <span class="o">+=</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">east?</span> <span class="o">&amp;&amp;</span> <span class="n">not_on_east_edge?</span>
+    <span class="nb">self</span><span class="p">.</span><span class="nf">x</span> <span class="o">-=</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">west?</span> <span class="o">&amp;&amp;</span> <span class="n">not_on_west_edge?</span>
+    <span class="nb">self</span><span class="p">.</span><span class="nf">y</span> <span class="o">+=</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">north?</span> <span class="o">&amp;&amp;</span> <span class="n">not_on_north_edge?</span>
+    <span class="nb">self</span><span class="p">.</span><span class="nf">y</span> <span class="o">-=</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">south?</span> <span class="o">&amp;&amp;</span> <span class="n">not_on_south_edge?</span>
+    <span class="nb">self</span>
+  <span class="k">end</span>
+  <span class="c1"># rubocop:enable Metrics/PerceivedComplexity</span>
+
+  <span class="k">def</span> <span class="nf">left</span>
+    <span class="k">return</span> <span class="nb">self</span> <span class="k">if</span> <span class="n">robot_not_set</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="no">DIRECTIONS</span><span class="p">.</span><span class="nf">index</span><span class="p">(</span><span class="n">direction</span><span class="p">)</span>
+    <span class="n">new_index</span> <span class="o">=</span> <span class="p">(</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="no">DIRECTIONS</span><span class="p">.</span><span class="nf">size</span>
+    <span class="nb">self</span><span class="p">.</span><span class="nf">direction</span> <span class="o">=</span> <span class="no">DIRECTIONS</span><span class="p">[</span><span class="n">new_index</span><span class="p">]</span>
+    <span class="nb">self</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">right</span>
+    <span class="k">return</span> <span class="nb">self</span> <span class="k">if</span> <span class="n">robot_not_set</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="no">DIRECTIONS</span><span class="p">.</span><span class="nf">index</span><span class="p">(</span><span class="n">direction</span><span class="p">)</span>
+    <span class="n">new_index</span> <span class="o">=</span> <span class="n">index</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="nb">self</span><span class="p">.</span><span class="nf">direction</span> <span class="o">=</span> <span class="no">DIRECTIONS</span><span class="p">[</span><span class="n">new_index</span><span class="p">]</span>
+    <span class="nb">self</span>
+  <span class="k">end</span>
+
+  <span class="kp">private</span>
+
+  <span class="k">def</span> <span class="nf">coordinates_in_bounds</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">&lt;</span> <span class="no">TABLE_SIZE</span> <span class="o">&amp;&amp;</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="no">TABLE_SIZE</span> <span class="o">&amp;&amp;</span>
+      <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">y</span> <span class="o">&gt;=</span> <span class="mi">0</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">robot_not_set</span>
+    <span class="n">x</span><span class="p">.</span><span class="nf">nil?</span> <span class="o">||</span> <span class="n">y</span><span class="p">.</span><span class="nf">nil?</span> <span class="o">||</span> <span class="n">direction</span><span class="p">.</span><span class="nf">nil?</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">north?</span>
+    <span class="n">direction</span> <span class="o">==</span> <span class="ss">:NORTH</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">south?</span>
+    <span class="n">direction</span> <span class="o">==</span> <span class="ss">:SOUTH</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">east?</span>
+    <span class="n">direction</span> <span class="o">==</span> <span class="ss">:EAST</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">west?</span>
+    <span class="n">direction</span> <span class="o">==</span> <span class="ss">:WEST</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">not_on_east_edge?</span>
+    <span class="n">x</span> <span class="o">!=</span> <span class="no">TABLE_SIZE</span> <span class="o">-</span> <span class="mi">1</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">not_on_west_edge?</span>
+    <span class="n">x</span> <span class="o">!=</span> <span class="mi">0</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">not_on_north_edge?</span>
+    <span class="n">y</span> <span class="o">!=</span> <span class="no">TABLE_SIZE</span> <span class="o">-</span> <span class="mi">1</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">not_on_south_edge?</span>
+    <span class="n">y</span> <span class="o">!=</span> <span class="mi">0</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>
+
+<p>Try it out yourself, and I even have some tests set up.  After giving it a go, here is a link to my <a href="https://github.com/RoadBytes/ToyRobot/blob/after-seeing-solutions/app/robot.rb">answer to the challenge.</a>  Spoiler Alert! Here are some things I think are interesting with the implementation below.</p>
+
+<hr />
+
+<h2 id="placing-the-robot-on-the-table">Placing the Robot on the Table</h2>
+
+<h3 id="robot-would-have-a-table-through-its-initialization"><code>Robot</code> would have a <code>Table</code> through it’s initialization</h3>
+
+<ul>
+  <li>Through Sandi Metz, I learned dependency injection involved having
+instantiation of other objects on the boundary of the class… In our case,
+since there are no arguments for <code>Robot.new</code>, I just initialized a <code>Table</code> in
+the <code>Robot.initialize</code> method establishing a <code>Robot#table</code>.</li>
+</ul>
+
+<pre class="highlight ruby"><code>
+<span class="k">class</span> <span class="nc">Robot</span>
+  <span class="kp">attr_accessor</span> <span class="ss">:table</span>
+
+  <span class="k">def</span> <span class="nf">initialize</span>
+    <span class="vi">@table</span> <span class="o">=</span> <span class="no">Table</span><span class="p">.</span><span class="nf">new</span>
+  <span class="k">end</span>
+  <span class="p">.</span><span class="nf">.</span><span class="o">.</span> <span class="p">(</span><span class="n">other</span> <span class="n">stuff</span><span class="p">)</span>
+<span class="k">end</span>
+</code></pre>
+
+<h3 id="i-thought-it-was-interesting-trying-to-slice-the-class-in-two-and-determine-what-the-table-would-be-responsible-for">I thought it was interesting trying to slice the class in two and determine what the <code>Table</code> would be responsible for.</h3>
+
+<ul>
+  <li>The easy part was placing the constant <code>TABLE_SIZE</code> in <code>Table</code></li>
+  <li>Finding if it was <code>#not_on_*direction*_egde</code> was probably part of the <code>Table</code> as well.</li>
+  <li>This led to the <code>x</code> and <code>y</code> getter being a extracted out, but I still felt like it was deeply a part of <code>Robot</code></li>
+  <li>The compromise was:</li>
+</ul>
+
+<pre class="highlight ruby"><code>
+<span class="k">class</span> <span class="nc">Robot</span>
+  <span class="p">.</span><span class="nf">.</span><span class="o">.</span> <span class="p">(</span><span class="n">other</span> <span class="n">stuff</span><span class="p">)</span>
+
+  <span class="k">def</span> <span class="nf">x</span>
+    <span class="n">table</span><span class="p">.</span><span class="nf">x</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">y</span>
+    <span class="n">table</span><span class="p">.</span><span class="nf">y</span>
+  <span class="k">end</span>
+</code></pre>
+
+<ul>
+  <li>I had <code>robot.x</code> just pass on the <code>x</code> message onto <code>table</code> and the setting of instance variables <code>@x</code> and <code>@y</code> was in <code>Table</code></li>
+</ul>
+
+<pre class="highlight ruby"><code>
+<span class="k">class</span> <span class="nc">Table</span>
+  <span class="p">.</span><span class="nf">.</span><span class="o">.</span> <span class="p">(</span><span class="n">other</span> <span class="n">stuff</span><span class="p">)</span>
+
+  <span class="k">def</span> <span class="nf">set</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="vi">@x</span> <span class="o">=</span> <span class="n">x</span>
+    <span class="vi">@y</span> <span class="o">=</span> <span class="n">y</span>
+  <span class="k">end</span>
+</code></pre>
+
+<ul>
+  <li>I liked this idea of just passing on messages, so for <code>coordinates_in_bounds</code>, I had robot just pass on this message as well.
+    <ul>
+      <li><code>Robot</code> has an instance method <code>Robot#coordinates_in_bounds</code></li>
+      <li><code>Table</code> had the logic</li>
+    </ul>
+  </li>
+</ul>
+
+<pre class="highlight ruby"><code>
+<span class="k">class</span> <span class="nc">Robot</span>
+  <span class="p">.</span><span class="nf">.</span><span class="o">.</span> <span class="p">(</span><span class="n">other</span> <span class="n">stuff</span><span class="p">)</span>
+
+  <span class="k">def</span> <span class="nf">coordinates_in_bounds</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="n">table</span><span class="p">.</span><span class="nf">coordinates_in_bounds</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">Table</span>
+  <span class="p">.</span><span class="nf">.</span><span class="o">.</span> <span class="p">(</span><span class="n">other</span> <span class="n">stuff</span><span class="p">)</span>
+
+  <span class="k">def</span> <span class="nf">coordinates_in_bounds</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">&lt;</span> <span class="no">TABLE_SIZE</span> <span class="o">&amp;&amp;</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="no">TABLE_SIZE</span> <span class="o">&amp;&amp;</span>
+      <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">y</span> <span class="o">&gt;=</span> <span class="mi">0</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>
+
+<h3 id="next-steps-and-howd-it-go-for-you">Next steps and How’d it go for you?</h3>
+
+<p>Anyway, I’ll continue to chop up this class and try different techniques.  I
+might seeing if a robot can not know about its direction.  If
+you tried it yourself, leave a comment link to your repo.</p>
+
+       <div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'jasondata';
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+     </div>
+   </div>
+   <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-66493418-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  </body>
+</html>
