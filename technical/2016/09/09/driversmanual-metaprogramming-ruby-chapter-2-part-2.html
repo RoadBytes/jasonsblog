@@ -1,0 +1,254 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title>DriversManual: Metaprogramming Ruby Chapter 2 Part 2</title>
+
+        <link rel="apple-touch-icon-precomposed" sizes="57x57"   href="images/favicomatic/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/favicomatic/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72"   href="images/favicomatic/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/favicomatic/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60"   href="images/favicomatic/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="images/favicomatic/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76"   href="images/favicomatic/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="images/favicomatic/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="images/favicomatic/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="images/favicomatic/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="images/favicomatic/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="images/favicomatic/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="images/favicomatic/favicon-128.png" sizes="128x128" />
+    <meta name="application-name" content="&nbsp;"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
+
+    <link href="../../../../stylesheets/normalize.css" rel="stylesheet" type="text/css" /><link href="../../../../stylesheets/all.css" rel="stylesheet" type="text/css" />
+    <script src="../../../../javascripts/all.js" type="text/javascript"></script>
+  </head>
+
+  <body class="technical technical_2016 technical_2016_09 technical_2016_09_09 technical_2016_09_09_driversmanual-metaprogramming-ruby-chapter-2-part-2 main">
+   <div class="nav">
+  <ul id="nav_text">
+    <li>
+      <a href="/">Home</a>
+    </li>
+    <li>
+      <a href="../../../../technical.html">TechnicalPosts</a>
+    </li>
+    <li>
+      <a href="../../../../about.html">About</a>
+    </li>
+    <li>
+      <a href="../../../../contact.html">Contact</a>
+    </li>
+  </ul>
+</div>
+
+   <div class="content">
+     <div class="post">
+       <h1 class="post__title">DriversManual: Metaprogramming Ruby Chapter 2 Part 2</h1>
+       <p class="post__date">< 9 Sep 2016></p>
+       <p>
+           <a class="post__tag" href="../../../technical/tags/driversmanual.html">driversmanual</a>
+           <a class="post__tag" href="../../../technical/tags/metaprogramming-ruby.html">metaprogramming ruby</a>
+       </p>
+       <hr/>
+       <h1 id="the-object-model">The Object Model</h1>
+
+<hr />
+
+<h2 id="contents">Contents</h2>
+
+<ul>
+  <li>Namespaces</li>
+  <li>Loading and Requiring</li>
+  <li>Ruby Method</li>
+  <li>Method look up
+    <ul>
+      <li>The Kernel</li>
+    </ul>
+  </li>
+  <li>Method execution</li>
+  <li>Refinements</li>
+</ul>
+
+<hr />
+
+<h1 id="namespaces">Namespaces</h1>
+
+<ul>
+  <li>Story time!
+    <ul>
+      <li>you see <code>class TEXT</code></li>
+      <li>change to <code>class Text</code></li>
+      <li>Conflicts with ActionMailer, there’s a <code>module Text</code></li>
+      <li>So, you wrap <code>class Text</code> with a <code>module</code> as in:</li>
+    </ul>
+  </li>
+</ul>
+
+<pre class="highlight plaintext"><code>  module Bookworm
+    class Text
+      ...
+</code></pre>
+
+<ul>
+  <li>now <code>Text</code> can be called through <code>Bookworm::Text</code></li>
+</ul>
+
+<h1 id="loading-and-requiring">Loading and Requiring</h1>
+
+<ul>
+  <li><code>load</code> executes the code every time
+    <ul>
+      <li>scope of constants continue like for class instantiation,</li>
+      <li>but can take a second argument if you want scope cleared after load</li>
+      <li>load( ‘filename’, [true, false]: deletes constants after load )</li>
+    </ul>
+  </li>
+  <li><code>require</code> executes the code once
+    <ul>
+      <li>no second argument since requiring libraries are MEANT to access classes</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="ruby-method">Ruby Method</h1>
+
+<ul>
+  <li>Calling a method does two things
+    <ol>
+      <li>Method Look up</li>
+      <li>execution with <code>self</code></li>
+    </ol>
+  </li>
+</ul>
+
+<h1 id="method-look-up">Method look up</h1>
+
+<ul>
+  <li><code>obj.my_method</code>
+    <ul>
+      <li><code>obj</code> is the receiver</li>
+      <li><code>.my_method</code> is the method</li>
+    </ul>
+  </li>
+  <li>ancestor chain is the look up of methods
+    <ul>
+      <li>obj class -&gt; (inserted) modules -&gt; superclass -&gt;
+superclass modules -&gt; (up and up) -&gt; Object -&gt; Kernel -&gt; BasicObject</li>
+      <li><code>prepend 'module name'</code> can have module be listed BEFORE class</li>
+      <li>for multiple <code>include</code>s and <code>prepend</code>s Ruby ignores the consequential references</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="the-kernel">The Kernel</h1>
+
+<ul>
+  <li>the <code>Object</code> class <code>include</code>s <code>Kernel</code>
+    <ul>
+      <li>so methods here look like language keywords</li>
+      <li>these include <code>print</code>, <code>puts</code></li>
+    </ul>
+  </li>
+  <li>ex: ‘awesome_print`</li>
+</ul>
+
+<pre class="highlight plaintext"><code>module Kernel
+  def ap( object, options = {} )
+    ...
+  end
+end
+</code></pre>
+
+<h1 id="method-execution">Method execution</h1>
+
+<ul>
+  <li><code>self</code> keyword references method receivers</li>
+</ul>
+
+<h2 id="private-methods"><code>private</code> methods</h2>
+
+<ul>
+  <li>
+    <p>can only be called ‘implicitly’, ie, cannot have <code>self.</code> on it</p>
+  </li>
+  <li>
+    <p>top level object is <code>main</code> as you start inside that object</p>
+  </li>
+</ul>
+
+<h1 id="refinements">Refinements</h1>
+
+<ul>
+  <li>a way to get around monkey patching by creating a local scope</li>
+</ul>
+
+<hr />
+
+<h1 id="quiz-questions">Quiz Questions</h1>
+
+<div class="question">  Q: How would you access 
+module Bookworm
+  class Text
+    ...?  <div class="answer">    A: Bookworm::Text  </div></div>
+<textarea rows="4" style="color: green" placeholder="write your answer before checking mine"></textarea>
+
+<div class="question">  Q: How does ruby call a method?  <div class="answer">    A: 1) Method Lookup 2) execution  </div></div>
+<textarea rows="4" style="color: green" placeholder="write your answer before checking mine"></textarea>
+
+<div class="question">  Q: How do you have module methods checked before class ones?  <div class="answer">    A: `prepend [module name] instead of `include`  </div></div>
+<textarea rows="4" style="color: green" placeholder="write your answer before checking mine"></textarea>
+
+<div class="question">  Q: How do you have 'language keyword' type features?  <div class="answer">    A: add methods to `Kernel`  </div></div>
+<textarea rows="4" style="color: green" placeholder="write your answer before checking mine"></textarea>
+
+<div class="question">  Q: What keyword references method receivers?  <div class="answer">    A: self  </div></div>
+<textarea rows="4" style="color: green" placeholder="write your answer before checking mine"></textarea>
+
+<div class="question">  Q: What is an explicit method call?  <div class="answer">    A: calls with `self.` on it  </div></div>
+<textarea rows="4" style="color: green" placeholder="write your answer before checking mine"></textarea>
+
+<div class="question">  Q: Can `private` methods have explicit method calls?  <div class="answer">    A: no  </div></div>
+<textarea rows="4" style="color: green" placeholder="write your answer before checking mine"></textarea>
+
+<div class="question">  Q: What is the top level object you start in when you use irb?  <div class="answer">    A: the `main` object  </div></div>
+<textarea rows="4" style="color: green" placeholder="write your answer before checking mine"></textarea>
+
+       <div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'jasondata';
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+     </div>
+   </div>
+   <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-66493418-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  </body>
+</html>

@@ -1,0 +1,203 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title>DriversManual: Metaprogramming Ruby Chapter 3 Part 1</title>
+
+        <link rel="apple-touch-icon-precomposed" sizes="57x57"   href="images/favicomatic/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/favicomatic/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72"   href="images/favicomatic/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/favicomatic/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60"   href="images/favicomatic/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="images/favicomatic/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76"   href="images/favicomatic/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="images/favicomatic/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="images/favicomatic/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="images/favicomatic/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="images/favicomatic/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="images/favicomatic/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="images/favicomatic/favicon-128.png" sizes="128x128" />
+    <meta name="application-name" content="&nbsp;"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
+
+    <link href="../../../../stylesheets/normalize.css" rel="stylesheet" type="text/css" /><link href="../../../../stylesheets/all.css" rel="stylesheet" type="text/css" />
+    <script src="../../../../javascripts/all.js" type="text/javascript"></script>
+  </head>
+
+  <body class="technical technical_2016 technical_2016_09 technical_2016_09_09 technical_2016_09_09_driversmanual-metaprogramming-ruby-chapter-3-part-1 main">
+   <div class="nav">
+  <ul id="nav_text">
+    <li>
+      <a href="/">Home</a>
+    </li>
+    <li>
+      <a href="../../../../technical.html">TechnicalPosts</a>
+    </li>
+    <li>
+      <a href="../../../../about.html">About</a>
+    </li>
+    <li>
+      <a href="../../../../contact.html">Contact</a>
+    </li>
+  </ul>
+</div>
+
+   <div class="content">
+     <div class="post">
+       <h1 class="post__title">DriversManual: Metaprogramming Ruby Chapter 3 Part 1</h1>
+       <p class="post__date">< 9 Sep 2016></p>
+       <p>
+           <a class="post__tag" href="../../../technical/tags/driversmanual.html">driversmanual</a>
+           <a class="post__tag" href="../../../technical/tags/metaprogramming-ruby.html">metaprogramming ruby</a>
+       </p>
+       <hr/>
+       <h1 id="ch-3-methods">Ch 3: Methods</h1>
+
+<hr />
+
+<h1 id="static-vs-dynamic">Static vs Dynamic</h1>
+
+<ul>
+  <li>Static:
+    <ul>
+      <li>compiler check method calls beforehand to verify existance.</li>
+    </ul>
+  </li>
+  <li>Dynamic:
+    <ul>
+      <li>does NOT check for method calls until it’s executed.</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="removing-duplication">Removing Duplication</h1>
+
+<ul>
+  <li>How would you reduce this?</li>
+</ul>
+
+<h1 id="boom">Boom!</h1>
+
+<pre class="highlight ruby"><code>
+<span class="k">class</span> <span class="nc">Computer</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">computer_id</span><span class="p">,</span> <span class="n">data_source</span><span class="p">)</span>
+    <span class="vi">@id</span> <span class="o">=</span> <span class="n">computer_id</span>
+    <span class="vi">@data_source</span> <span class="o">=</span> <span class="n">data_source</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">mouse</span>
+    <span class="n">info</span>   <span class="o">=</span> <span class="vi">@data_source</span><span class="p">.</span><span class="nf">get_mouse_info</span><span class="p">(</span><span class="vi">@id</span><span class="p">)</span>
+    <span class="n">price</span>  <span class="o">=</span> <span class="vi">@data_source</span><span class="p">.</span><span class="nf">get_mouse_price</span><span class="p">(</span><span class="vi">@id</span><span class="p">)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="s2">"Mouse: </span><span class="si">#{</span><span class="n">info</span><span class="si">}</span><span class="s2"> ($</span><span class="si">#{</span><span class="n">price</span><span class="si">}</span><span class="s2">)"</span>
+    <span class="k">return</span> <span class="s2">"* </span><span class="si">#{</span><span class="n">result</span><span class="si">}</span><span class="s2">"</span> <span class="k">if</span> <span class="n">price</span> <span class="o">&gt;=</span> <span class="mi">100</span>
+    <span class="n">result</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">cpu</span>
+    <span class="n">info</span>   <span class="o">=</span> <span class="vi">@data_source</span><span class="p">.</span><span class="nf">get_cpu_info</span><span class="p">(</span><span class="vi">@id</span><span class="p">)</span>
+    <span class="n">price</span>  <span class="o">=</span> <span class="vi">@data_source</span><span class="p">.</span><span class="nf">get_cpu_price</span><span class="p">(</span><span class="vi">@id</span><span class="p">)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="s2">"Cpu: </span><span class="si">#{</span><span class="n">info</span><span class="si">}</span><span class="s2"> ($</span><span class="si">#{</span><span class="n">price</span><span class="si">}</span><span class="s2">)"</span>
+    <span class="k">return</span> <span class="s2">"* </span><span class="si">#{</span><span class="n">result</span><span class="si">}</span><span class="s2">"</span> <span class="k">if</span> <span class="n">price</span> <span class="o">&gt;=</span> <span class="mi">100</span>
+    <span class="n">result</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">keyboard</span>
+    <span class="n">info</span>   <span class="o">=</span> <span class="vi">@data_source</span><span class="p">.</span><span class="nf">get_keyboard_info</span><span class="p">(</span><span class="vi">@id</span><span class="p">)</span>
+    <span class="n">price</span>  <span class="o">=</span> <span class="vi">@data_source</span><span class="p">.</span><span class="nf">get_keyboard_price</span><span class="p">(</span><span class="vi">@id</span><span class="p">)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="s2">"Keyboard: </span><span class="si">#{</span><span class="n">info</span><span class="si">}</span><span class="s2"> ($</span><span class="si">#{</span><span class="n">price</span><span class="si">}</span><span class="s2">)"</span>
+    <span class="k">return</span> <span class="s2">"* </span><span class="si">#{</span><span class="n">result</span><span class="si">}</span><span class="s2">"</span> <span class="k">if</span> <span class="n">price</span> <span class="o">&gt;=</span> <span class="mi">100</span>
+    <span class="n">result</span>
+  <span class="k">end</span>
+
+  <span class="c1"># ...</span>
+<span class="k">end</span>
+</code></pre>
+
+<h1 id="two-ways-to-reduce-duplication">Two Ways to reduce duplication</h1>
+
+<ol>
+  <li>Dynamic Methods and</li>
+  <li><code>method_missing</code></li>
+</ol>
+
+<h1 id="dynamic-methods-and-dynamic-dispatch">1) Dynamic Methods and Dynamic Dispatch</h1>
+
+<h1 id="dynamic-dispatch">Dynamic Dispatch</h1>
+
+<ul>
+  <li><code>send</code> highlight that a method is like a message to an object
+    <ul>
+      <li>dotnotation: <code>obj.my_method(arg)</code></li>
+      <li>send:        <code>obj.send(:my_method, arg)</code></li>
+    </ul>
+  </li>
+  <li>having the method call as an argument, allows for ‘deciding’ on the method to
+execute for the very last minute</li>
+</ul>
+
+<blockquote>
+  <p><strong>Dynamic Dispatch</strong>: Where you learn how to call and define methods 
+dynamically, and you remove the duplicated code.</p>
+</blockquote>
+
+<pre class="highlight ruby"><code>
+<span class="k">def</span> <span class="nf">cpu</span>
+  <span class="n">info</span> <span class="o">=</span> <span class="vi">@data_source</span><span class="p">.</span><span class="nf">get_cpu_info</span><span class="p">(</span><span class="vi">@id</span><span class="p">)</span>
+  <span class="n">price</span> <span class="o">=</span> <span class="vi">@data_source</span><span class="p">.</span><span class="nf">get_cpu_price</span><span class="p">(</span><span class="vi">@id</span><span class="p">)</span>
+  <span class="n">result</span> <span class="o">=</span> <span class="s2">"Cpu: </span><span class="si">#{</span><span class="n">info</span><span class="si">}</span><span class="s2"> ($</span><span class="si">#{</span><span class="n">price</span><span class="si">}</span><span class="s2">)"</span>
+  <span class="k">return</span> <span class="s2">"</span><span class="se">\*</span><span class="s2"> </span><span class="si">#{</span><span class="n">result</span><span class="si">}</span><span class="s2">"</span> <span class="k">if</span> <span class="n">price</span> <span class="o">&gt;=</span> <span class="mi">100</span>
+  <span class="n">result</span>
+<span class="k">end</span>
+
+<span class="n">define_method</span> <span class="ss">:my_method</span> <span class="k">do</span> <span class="o">|</span><span class="n">args</span><span class="o">|</span>
+  <span class="n">info_method</span>  <span class="o">=</span> <span class="ss">:get_</span><span class="c1">#{my_method}_info</span>
+  <span class="n">price_method</span> <span class="o">=</span> <span class="ss">:get_</span><span class="c1">#{my_method}_price</span>
+
+  <span class="n">info</span>   <span class="o">=</span> <span class="vi">@data_source</span><span class="p">.</span><span class="nf">send</span> <span class="n">info_method</span><span class="p">,</span> <span class="vi">@id</span>
+  <span class="n">price</span>  <span class="o">=</span> <span class="vi">@data_source</span><span class="p">.</span><span class="nf">send</span> <span class="n">price_method</span><span class="p">,</span> <span class="vi">@id</span>
+  <span class="n">result</span> <span class="o">=</span> <span class="s2">"Cpu: </span><span class="si">#{</span><span class="n">info</span><span class="si">}</span><span class="s2"> ($</span><span class="si">#{</span><span class="n">price</span><span class="si">}</span><span class="s2">)"</span>
+  <span class="k">return</span> <span class="s2">"</span><span class="se">\*</span><span class="s2"> </span><span class="si">#{</span><span class="n">result</span><span class="si">}</span><span class="s2">"</span> <span class="k">if</span> <span class="n">price</span> <span class="o">&gt;=</span> <span class="mi">100</span>
+  <span class="n">result</span>
+<span class="k">end</span>
+</code></pre>
+
+<h1 id="methodmissing">2) <code>method_missing</code></h1>
+
+       <div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'jasondata';
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+     </div>
+   </div>
+   <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-66493418-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  </body>
+</html>

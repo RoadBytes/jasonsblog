@@ -1,0 +1,328 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title>DriversManual: Metaprogramming Ruby Chapter 2 Part 1</title>
+
+        <link rel="apple-touch-icon-precomposed" sizes="57x57"   href="images/favicomatic/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/favicomatic/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72"   href="images/favicomatic/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/favicomatic/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60"   href="images/favicomatic/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="images/favicomatic/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76"   href="images/favicomatic/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="images/favicomatic/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="images/favicomatic/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="images/favicomatic/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="images/favicomatic/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="images/favicomatic/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="images/favicomatic/favicon-128.png" sizes="128x128" />
+    <meta name="application-name" content="&nbsp;"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
+
+    <link href="../../../../stylesheets/normalize.css" rel="stylesheet" type="text/css" /><link href="../../../../stylesheets/all.css" rel="stylesheet" type="text/css" />
+    <script src="../../../../javascripts/all.js" type="text/javascript"></script>
+  </head>
+
+  <body class="technical technical_2016 technical_2016_09 technical_2016_09_09 technical_2016_09_09_driversmanual-metaprogramming-ruby-chapter-2-part-1 main">
+   <div class="nav">
+  <ul id="nav_text">
+    <li>
+      <a href="/">Home</a>
+    </li>
+    <li>
+      <a href="../../../../technical.html">TechnicalPosts</a>
+    </li>
+    <li>
+      <a href="../../../../about.html">About</a>
+    </li>
+    <li>
+      <a href="../../../../contact.html">Contact</a>
+    </li>
+  </ul>
+</div>
+
+   <div class="content">
+     <div class="post">
+       <h1 class="post__title">DriversManual: Metaprogramming Ruby Chapter 2 Part 1</h1>
+       <p class="post__date">< 9 Sep 2016></p>
+       <p>
+           <a class="post__tag" href="../../../technical/tags/driversmanual.html">driversmanual</a>
+           <a class="post__tag" href="../../../technical/tags/metaprogramming-ruby.html">metaprogramming ruby</a>
+       </p>
+       <hr/>
+       <h1 id="the-object-model">The Object Model</h1>
+
+<hr />
+
+<h2 id="contents">Contents</h2>
+
+<ul>
+  <li><code>class</code></li>
+  <li>Problem with Open Classes</li>
+  <li>What’s an object?</li>
+  <li>Classes</li>
+  <li>Modules</li>
+  <li>Classes as Objects</li>
+  <li>Constants</li>
+  <li>Structure like a File System</li>
+  <li>Objects and Classes Wrap-Up</li>
+</ul>
+
+<hr />
+
+<h1 id="class"><code>class</code></h1>
+
+<ul>
+  <li>Open Classes</li>
+  <li>Editing Standard Objects</li>
+</ul>
+
+<h1 id="open-classes">Open Classes</h1>
+
+<ul>
+  <li><code>class</code> as in something like <code>class Foo</code> is more like a scope method since:
+    <ul>
+      <li>it instantiates <code>Foo</code> if it doesn’t exist and opens <code>Foo</code> otherwise</li>
+    </ul>
+  </li>
+</ul>
+
+<pre class="highlight ruby"><code>
+<span class="k">class</span> <span class="nc">Foo</span>
+  <span class="k">def</span> <span class="nf">one_method</span>
+    <span class="nb">puts</span> <span class="s1">'one'</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">Foo</span>
+  <span class="k">def</span> <span class="nf">two_method</span>
+    <span class="nb">puts</span> <span class="s1">'two'</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">foo</span><span class="o">-</span><span class="n">instance</span> <span class="o">=</span> <span class="no">Foo</span><span class="p">.</span><span class="nf">new</span>
+
+<span class="n">foo</span><span class="o">-</span><span class="n">instance</span><span class="p">.</span><span class="nf">one_method</span> <span class="c1"># =&gt; 'one'</span>
+<span class="n">foo</span><span class="o">-</span><span class="n">instance</span><span class="p">.</span><span class="nf">two_method</span> <span class="c1"># =&gt; 'two'</span>
+
+</code></pre>
+
+<h1 id="editing-standard-library-objects">Editing Standard Library Objects</h1>
+
+<ul>
+  <li>classes can also be changed on the fly</li>
+</ul>
+
+<pre class="highlight ruby"><code>
+<span class="k">class</span> <span class="nc">String</span>
+  <span class="k">def</span> <span class="nf">word_characters</span>
+    <span class="nb">gsub</span><span class="p">(</span><span class="sr">/[^\w]+/</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="s2">"asdf1234##"</span><span class="p">.</span><span class="nf">word_characters</span> <span class="c1"># =&gt; 'asdf1234'</span>
+</code></pre>
+
+<h1 id="problem-with-open-classes">Problem with Open Classes</h1>
+
+<ul>
+  <li>Do not overwrite existing methods since you might end up with unintended side effects</li>
+  <li>known as “monkey patching”</li>
+  <li>ex: overwriting <code>Array#replace</code></li>
+</ul>
+
+<pre class="highlight ruby"><code>
+<span class="k">class</span> <span class="nc">Array</span>
+  <span class="k">def</span> <span class="nf">replace</span><span class="p">(.</span><span class="nf">.</span><span class="o">.</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>
+
+<h1 id="whats-an-object">What’s an object?</h1>
+
+<p><code>obj = MyObject.new</code></p>
+
+<ul>
+  <li>instance <code>obj</code> contain instance variables <code>@variable</code>, and ref to class
+    <ul>
+      <li>variables not connected to Class</li>
+    </ul>
+  </li>
+  <li>methods
+    <ul>
+      <li>a list can be provided through <code>MyClass#methods</code></li>
+      <li>stored in the class</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img alt="figure one: object instance variables and method locations" src="../../../../images/figure-1-object-model.png" /></p>
+
+<h1 id="classes">Classes</h1>
+
+<ul>
+  <li>classes are also objects of <code>Class</code>!
+    <ul>
+      <li>allows for <code>Class.new</code> call</li>
+      <li>Class.instance_methods(false) =&gt; [:allocate, :new, :superclass]</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="modules">Modules</h1>
+
+<ul>
+  <li>very similar to class but with out inheritance</li>
+  <li>all classes are modules since they are instances of <code>Module</code></li>
+  <li>Picking between <code>Class</code> and <code>Module</code> is mainly for clarity</li>
+</ul>
+
+<h1 id="classes-as-objects">Classes as Objects</h1>
+
+<ul>
+  <li>whiteboard the relationships between
+    <ul>
+      <li>class MyClass; end</li>
+      <li>obj1 = MyClass.new</li>
+      <li>obj2 = MyClass.new</li>
+      <li>Class</li>
+      <li>Module</li>
+      <li>Object</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="classes-as-objects-diagram">Classes as Objects (diagram)</h1>
+
+<p><img alt="figure two: classes are objects" src="../../../../images/figure-2-class-objects.png" /></p>
+
+<h1 id="constants">Constants</h1>
+
+<ul>
+  <li>start with a capital letter</li>
+  <li>can still be changed</li>
+</ul>
+
+<h1 id="structure-like-a-file-system">Structure like a File System</h1>
+
+<ul>
+  <li>Classes and Modules are like directories</li>
+  <li>constants are like files</li>
+</ul>
+
+<pre class="highlight plaintext"><code>
+module M
+  class C
+    X = 'a constant'
+  end
+  C::X # =&gt; "a constant"
+end
+M::C::X # =&gt; "a constant"
+</code></pre>
+
+<ul>
+  <li><code>Module#constants</code> returns constants in that scope, like <code>ls</code></li>
+  <li><code>Module#nesting</code> returns path’s</li>
+  <li>Namespacing is creating a Module to contain constants</li>
+</ul>
+
+<h1 id="objects-and-classes-wrap-up">Objects and Classes Wrap-Up</h1>
+
+<ul>
+  <li>What’s an object?
+    <ul>
+      <li>instance vars, plus</li>
+      <li>reference to its class</li>
+      <li>instance methods live in the class</li>
+    </ul>
+  </li>
+  <li>What’s a class
+    <ul>
+      <li>an object, instance of <code>Class</code>, plus</li>
+      <li>instance methods, and</li>
+      <li>link to superclass</li>
+      <li><code>Class</code> is a subclass of <code>Module</code>, so a class is also a module</li>
+      <li>class name is a constant reference to the class</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h1 id="quiz-questions">Quiz Questions</h1>
+
+<div class="question">  Q: What is meant by 'Open' classes with ruby?  <div class="answer">    A: Classes can be changed on the fly  </div></div>
+<textarea rows="4" style="color: green" placeholder="write your answer before checking mine"></textarea>
+
+<div class="question">  Q: What is Monkey Patching?  <div class="answer">    A: Changing Standard Class methods  </div></div>
+<textarea rows="4" style="color: green" placeholder="write your answer before checking mine"></textarea>
+
+<div class="question">  Q: What parts of an instance is highlighted?  <div class="answer">    A: 1) instance variables, and 2) references to classes [that contain instance methods]  </div></div>
+<textarea rows="4" style="color: green" placeholder="write your answer before checking mine"></textarea>
+
+<div class="question">  Q: What is the superclass of `Class`?  <div class="answer">    A: Module  </div></div>
+<textarea rows="4" style="color: green" placeholder="write your answer before checking mine"></textarea>
+
+<div class="question">  Q: What are highlighted differences between Module and Class?  <div class="answer">    A: Class is an instance of Module.  Classes have inheritance and instantiation Modules don't  </div></div>
+<textarea rows="4" style="color: green" placeholder="write your answer before checking mine"></textarea>
+
+<div class="question">  Q: Compare instantiation vs child  <div class="answer">    A: Classes are children of their superclasses and instances of their class example: Class is an instance of Class and child of Module  </div></div>
+<textarea rows="4" style="color: green" placeholder="write your answer before checking mine"></textarea>
+
+<div class="question">  Q: Class names were simply ________ in the text  <div class="answer">    A: constants  </div></div>
+<textarea rows="4" style="color: green" placeholder="write your answer before checking mine"></textarea>
+
+<div class="question">  Q: How would you find a 'root' level constant 'Y'?  <div class="answer">    A: `::Y` the '::' acts like '~'  </div></div>
+<textarea rows="4" style="color: green" placeholder="write your answer before checking mine"></textarea>
+
+<div class="question">  Q: With a File System metaphor, what is == to 'ls'?  <div class="answer">    A: the `Module#constants` method  </div></div>
+<textarea rows="4" style="color: green" placeholder="write your answer before checking mine"></textarea>
+
+<div class="question">  Q: What is a Namespace?  <div class="answer">    A: a Module that exists to only be a container of constants  </div></div>
+<textarea rows="4" style="color: green" placeholder="write your answer before checking mine"></textarea>
+
+<div class="question">  Q: What is an object?  <div class="answer">    A: instance vars + reference to its class  </div></div>
+<textarea rows="4" style="color: green" placeholder="write your answer before checking mine"></textarea>
+
+<div class="question">  Q: What is a class?  <div class="answer">    A: instance of `Class` + instance methods + link to superclass  </div></div>
+<textarea rows="4" style="color: green" placeholder="write your answer before checking mine"></textarea>
+
+       <div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'jasondata';
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+     </div>
+   </div>
+   <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-66493418-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  </body>
+</html>
