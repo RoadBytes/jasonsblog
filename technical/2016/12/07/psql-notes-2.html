@@ -1,0 +1,334 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title>PSQL Notes 2</title>
+
+        <link rel="apple-touch-icon-precomposed" sizes="57x57"   href="images/favicomatic/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/favicomatic/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72"   href="images/favicomatic/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/favicomatic/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60"   href="images/favicomatic/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="images/favicomatic/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76"   href="images/favicomatic/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="images/favicomatic/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="images/favicomatic/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="images/favicomatic/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="images/favicomatic/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="images/favicomatic/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="images/favicomatic/favicon-128.png" sizes="128x128" />
+    <meta name="application-name" content="&nbsp;"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
+
+    <link href="../../../../stylesheets/normalize.css" rel="stylesheet" type="text/css" /><link href="../../../../stylesheets/all.css" rel="stylesheet" type="text/css" />
+    <script src="../../../../javascripts/all.js" type="text/javascript"></script>
+  </head>
+
+  <body class="technical technical_2016 technical_2016_12 technical_2016_12_07 technical_2016_12_07_psql-notes-2 main">
+   <div class="nav">
+  <ul id="nav_text">
+    <li>
+      <a href="/">Home</a>
+    </li>
+    <li>
+      <a href="../../../../technical.html">TechnicalPosts</a>
+    </li>
+    <li>
+      <a href="../../../../about.html">About</a>
+    </li>
+    <li>
+      <a href="../../../../contact.html">Contact</a>
+    </li>
+  </ul>
+</div>
+
+   <div class="content">
+     <div class="post">
+       <h1 class="post__title">PSQL Notes 2</h1>
+       <p class="post__date">< 7 Dec 2016></p>
+       <p>
+           <a class="post__tag" href="../../../technical/tags/notes.html">notes</a>
+           <a class="post__tag" href="../../../technical/tags/psql.html">psql</a>
+       </p>
+       <hr/>
+       <h1 id="launch-school-notes-schema-data-and-sql">Launch School Notes: Schema, Data, and SQL</h1>
+
+<p>There are things I’m learning as I go through the Postgres course of Launch
+School. This post are notes from,</p>
+
+<p>‘6. NOT NULL and Default Values’</p>
+
+<hr />
+
+<h2 id="setting-a-default-value">Setting a default value</h2>
+
+<p><code>
+ALTER TABLE employees ALTER COLUMN department SET DEFAULT 'unassigned';
+</code></p>
+
+<h2 id="changing-the-data">changing the data</h2>
+
+<p><code>
+UPDATE employees SET department = 'unassigned' where department is null;
+</code></p>
+
+<hr />
+
+<blockquote>
+  <ol>
+    <li>Set the default value of column department to “unassigned”. Then set the
+value of the department column to “unassigned” for any rows where it has a
+NULL value. Finally, add a NOT NULL constraint to the department column.</li>
+  </ol>
+</blockquote>
+
+<p><code>
+ALTER TABLE employees ALTER COLUMN department SET DEFAULT 'unassigned';
+UPDATE employees SET department = 'unassigned' WHERE department IS NULL;
+ATLER TABLE employees ALTER COLUMN department SET NOT NULL;
+</code></p>
+
+<hr />
+
+<blockquote>
+  <ol>
+    <li>Write the SQL statement to create a table called temperatures to hold the
+following data:</li>
+  </ol>
+</blockquote>
+
+<p>```
+CREATE TABLE temperatures (
+  date DATE NOT NULL,
+  low  INTEGER NOT NULL,
+  high INTEGER NOT NULL
+);</p>
+
+<p>INSERT INTO temperatures (date, low, high) VALUES
+  (‘2016-03-01’, 34, 43),
+  (‘2016-03-02’, 32, 44),
+  (‘2016-03-03’, 31, 47),
+  (‘2016-03-04’, 33, 42),
+  (‘2016-03-05’, 39, 46),
+  (‘2016-03-06’, 32, 43),
+  (‘2016-03-07’, 29, 32),
+  (‘2016-03-08’, 23, 31),
+  (‘2016-03-09’, 17, 28)</p>
+
+<p>```</p>
+
+<p>I first didn’t add ‘’ ’s around DATE
+INSERT INTO temperatures (date, low, high) VALUES (2016-03-01, 34, 43);</p>
+
+<hr />
+
+<blockquote>
+  <ol>
+    <li>Write a SQL statement to determine the average (mean) temperature for the
+days from March 2, 2016 through March 8, 2016.</li>
+  </ol>
+</blockquote>
+
+<ul>
+  <li>my first attempt</li>
+</ul>
+
+<p><code>
+SELECT (avg(low) + avg(high)) / 2
+FROM temperatures
+WHERE date &gt;= '2016-03-02' AND date &lt;= '2016-03-08'
+</code></p>
+
+<ul>
+  <li>my second attempt</li>
+</ul>
+
+<p><code>
+SELECT date, (low + high) / 2 as average
+FROM temperatures
+WHERE date &gt;= '2016-03-02' AND date &lt;= '2016-03-08'
+</code></p>
+
+<ul>
+  <li>answer</li>
+</ul>
+
+<p><code>
+SELECT date, (high + low) / 2 as average
+FROM temperatures
+WHERE date BETWEEN '2016-03-02' AND '2016-03-08';
+</code></p>
+
+<ul>
+  <li>response</li>
+</ul>
+
+<p>I like the <code>BETWEEN</code> keyword</p>
+
+<hr />
+
+<blockquote>
+  <ol>
+    <li>Write a SQL statement to add a new column, rainfall, to the temperatures
+table. It should store millimeters of rain as integers and have a default
+value of 0.</li>
+  </ol>
+</blockquote>
+
+<ul>
+  <li>my first attempt</li>
+</ul>
+
+<p><code>
+ALTER TABLE temperatures INSERT COLUMN rainfall INTEGERS DEFAULT 0;
+</code></p>
+
+<ul>
+  <li>my second attempt</li>
+</ul>
+
+<p><code>
+ALTER TABLE temperatures ADD COLUMN rainfall INTEGER DEFAULT 0;
+</code></p>
+
+<ul>
+  <li>answer</li>
+</ul>
+
+<p><code>
+ALTER TABLE temperatures ADD COLUMN rainfall integer DEFAULT 0
+</code></p>
+
+<ul>
+  <li>response</li>
+</ul>
+
+<p>It’s <code>ADD</code> not <code>INSERT</code> for columns, and integer I guess is a method? so it’s
+lowercase</p>
+
+<hr />
+
+<blockquote>
+  <ol>
+    <li>Each day, it rains one millimeter for every degree the average temperature
+goes above 35. Write a SQL statement to update the data in the table
+temperatures to reflect this.</li>
+  </ol>
+</blockquote>
+
+<ul>
+  <li>my first attempt</li>
+</ul>
+
+<p>```
+select (high + low) / 2 - 35 as mm from temperatures where rainfall &gt;= 0;</p>
+
+<p>UPDATE temperatures
+SET rainfall = (high + low) / 2 - 35;</p>
+
+<p>UPDATE temperatures
+SET rainfall = 0
+WHERE rainfall &lt; 0;
+```</p>
+
+<ul>
+  <li>answer</li>
+</ul>
+
+<p><code>
+UPDATE temperatures
+   SET rainfall = (high + low) / 2 - 35
+ WHERE (high + low) / 2 &gt; 35;
+</code></p>
+
+<ul>
+  <li>response</li>
+</ul>
+
+<p>I didn’t realize I should have just rewritten that whole
+  <code>(high + low) / 2 &gt; 35;</code> statement</p>
+
+<hr />
+
+<blockquote>
+  <ol>
+    <li>A decision has been made to store rainfall data in inches. Write the SQL
+statements required to modify the rainfall column to reflect these new
+requirements.</li>
+  </ol>
+</blockquote>
+
+<ul>
+  <li>my first attempt</li>
+</ul>
+
+<p>1 mm = 0.0393701 inches</p>
+
+<h2 id="change-integer-to-float-or-decimal">change integer to float or decimal(</h2>
+
+<p><code>
+ALTER TABLE temperatures
+ALTER COLUMN tests TYPE numeric(4, 3);
+</code></p>
+
+<h2 id="change-the-value-by-multiplying-by-00393701-inchesmm">change the value by multiplying by 0.0393701 inches/mm</h2>
+
+<p><code>
+UPDATE temperatures
+   SET rainfall= ((high + low) / 2 - 35) * 0.0393701
+ WHERE (high + low) / 2 &gt; 35;
+</code></p>
+
+<ul>
+  <li>answer</li>
+</ul>
+
+<p><code>
+ALTER TABLE temperatures ALTER COLUMN rainfall TYPE numeric(6,3);
+UPDATE temperatures SET rainfall = rainfall * 0.039;
+</code></p>
+
+<ul>
+  <li>response</li>
+</ul>
+
+<p>I didn’t realize I could change values in line like that <code>col = col * 3</code></p>
+
+       <div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'jasondata';
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+     </div>
+   </div>
+   <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-66493418-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  </body>
+</html>

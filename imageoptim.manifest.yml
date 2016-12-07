@@ -1,67 +1,67 @@
 ---
-build/images/BEM-example.png: 2016-09-14 01:52:25.000000000 +08:00
-build/images/controller.png: 2016-07-20 03:45:58.000000000 +08:00
-build/images/data.png: 2016-07-20 03:45:57.000000000 +08:00
-build/images/Desktop-index.png: 2016-07-20 03:48:11.000000000 +08:00
-build/images/Desktop.png: 2016-07-20 03:48:29.000000000 +08:00
-build/images/face.jpg: 2016-07-20 03:46:02.000000000 +08:00
-build/images/favicomatic/apple-touch-icon-114x114.png: 2016-07-20 03:46:04.000000000
-  +08:00
-build/images/favicomatic/apple-touch-icon-120x120.png: 2016-07-20 03:46:06.000000000
-  +08:00
-build/images/favicomatic/apple-touch-icon-144x144.png: 2016-07-20 03:46:08.000000000
-  +08:00
-build/images/favicomatic/apple-touch-icon-152x152.png: 2016-07-20 03:46:11.000000000
-  +08:00
-build/images/favicomatic/apple-touch-icon-57x57.png: 2016-07-20 03:46:13.000000000
-  +08:00
-build/images/favicomatic/apple-touch-icon-60x60.png: 2016-07-20 03:46:13.000000000
-  +08:00
-build/images/favicomatic/apple-touch-icon-72x72.png: 2016-07-20 03:46:13.000000000
-  +08:00
-build/images/favicomatic/apple-touch-icon-76x76.png: 2016-07-20 03:46:14.000000000
-  +08:00
-build/images/favicomatic/favicon-128.png: 2016-07-20 03:46:16.000000000 +08:00
-build/images/favicomatic/favicon-16x16.png: 2016-07-20 03:46:16.000000000 +08:00
-build/images/favicomatic/favicon-196x196.png: 2016-07-20 03:46:22.000000000 +08:00
-build/images/favicomatic/favicon-32x32.png: 2016-07-20 03:46:25.000000000 +08:00
-build/images/favicomatic/favicon-96x96.png: 2016-07-20 03:46:25.000000000 +08:00
-build/images/favicomatic/mstile-144x144.png: 2016-07-20 03:46:27.000000000 +08:00
-build/images/favicomatic/mstile-150x150.png: 2016-07-20 03:46:42.000000000 +08:00
-build/images/favicomatic/mstile-310x150.png: 2016-07-20 03:47:18.000000000 +08:00
-build/images/favicomatic/mstile-310x310.png: 2016-07-20 03:48:24.000000000 +08:00
-build/images/favicomatic/mstile-70x70.png: 2016-07-20 03:48:08.000000000 +08:00
-build/images/figure-1-object-model.png: 2016-09-14 01:51:41.000000000 +08:00
-build/images/figure-2-class-objects.png: 2016-09-14 01:51:49.000000000 +08:00
-build/images/first.gif: 2016-07-20 03:48:09.000000000 +08:00
-build/images/form_helpers_view.png: 2016-07-20 03:48:10.000000000 +08:00
-build/images/gtp-menu.png: 2016-07-20 03:49:21.000000000 +08:00
-build/images/html_form_view.png: 2016-07-20 03:48:35.000000000 +08:00
-build/images/index_display.png: 2016-07-20 03:49:00.000000000 +08:00
-build/images/index_view.png: 2016-07-20 03:49:09.000000000 +08:00
-build/images/jason-data-icon.png: 2016-07-20 03:48:52.000000000 +08:00
-build/images/kims_site.png: 2016-11-16 10:21:26.000000000 +08:00
-build/images/middleman-blog-in-browser.png: 2016-07-20 03:49:42.000000000 +08:00
-build/images/mrtruongscounter.jpg: 2016-07-20 03:49:07.000000000 +08:00
-build/images/mrtruongsdisplay.jpg: 2016-07-20 03:49:07.000000000 +08:00
-build/images/mrtruongsnapikins.jpg: 2016-07-20 03:49:08.000000000 +08:00
-build/images/mrtruongsnearby.png: 2016-07-20 03:49:31.000000000 +08:00
-build/images/mrtruongsporksandwich.jpg: 2016-07-20 03:49:18.000000000 +08:00
-build/images/mrtruongsreview.png: 2016-07-20 03:49:35.000000000 +08:00
-build/images/mvc.png: 2016-07-20 03:51:21.000000000 +08:00
-build/images/page-source.png: 2016-07-20 03:50:22.000000000 +08:00
-build/images/partial_output.png: 2016-07-20 03:50:13.000000000 +08:00
-build/images/program21days.png: 2016-07-20 03:50:18.000000000 +08:00
-build/images/radius_element.png: 2016-11-16 10:20:21.000000000 +08:00
-build/images/radius_element_final.png: 2016-11-16 10:20:24.000000000 +08:00
-build/images/routes.png: 2016-07-20 03:50:40.000000000 +08:00
-build/images/spotlight-terminal.png: 2016-07-20 03:52:13.000000000 +08:00
-build/images/taco-medic-annie-order.jpg: 2016-07-20 03:50:41.000000000 +08:00
-build/images/taco-medic-annie.jpg: 2016-07-20 03:50:42.000000000 +08:00
-build/images/taco-medic-fish-2.jpg: 2016-07-20 03:50:42.000000000 +08:00
-build/images/taco-medic-fish-tacos.jpg: 2016-07-20 03:50:43.000000000 +08:00
-build/images/taco-medic-roca.jpg: 2016-07-20 03:50:43.000000000 +08:00
-build/images/taco-medic-side.jpg: 2016-07-20 03:50:44.000000000 +08:00
-build/images/terminal-file.png: 2016-07-20 03:51:03.000000000 +08:00
-build/images/view-page-source.png: 2016-07-20 03:50:51.000000000 +08:00
-build/images/views.png: 2016-07-20 03:51:10.000000000 +08:00
+build/images/BEM-example.png: 2016-09-14 03:52:25.000000000 +10:00
+build/images/controller.png: 2016-07-20 05:45:58.000000000 +10:00
+build/images/data.png: 2016-07-20 05:45:57.000000000 +10:00
+build/images/Desktop-index.png: 2016-07-20 05:48:11.000000000 +10:00
+build/images/Desktop.png: 2016-07-20 05:48:29.000000000 +10:00
+build/images/face.jpg: 2016-07-20 05:46:02.000000000 +10:00
+build/images/favicomatic/apple-touch-icon-114x114.png: 2016-07-20 05:46:04.000000000
+  +10:00
+build/images/favicomatic/apple-touch-icon-120x120.png: 2016-07-20 05:46:06.000000000
+  +10:00
+build/images/favicomatic/apple-touch-icon-144x144.png: 2016-07-20 05:46:08.000000000
+  +10:00
+build/images/favicomatic/apple-touch-icon-152x152.png: 2016-07-20 05:46:11.000000000
+  +10:00
+build/images/favicomatic/apple-touch-icon-57x57.png: 2016-07-20 05:46:13.000000000
+  +10:00
+build/images/favicomatic/apple-touch-icon-60x60.png: 2016-07-20 05:46:13.000000000
+  +10:00
+build/images/favicomatic/apple-touch-icon-72x72.png: 2016-07-20 05:46:13.000000000
+  +10:00
+build/images/favicomatic/apple-touch-icon-76x76.png: 2016-07-20 05:46:14.000000000
+  +10:00
+build/images/favicomatic/favicon-128.png: 2016-07-20 05:46:16.000000000 +10:00
+build/images/favicomatic/favicon-16x16.png: 2016-07-20 05:46:16.000000000 +10:00
+build/images/favicomatic/favicon-196x196.png: 2016-07-20 05:46:22.000000000 +10:00
+build/images/favicomatic/favicon-32x32.png: 2016-07-20 05:46:25.000000000 +10:00
+build/images/favicomatic/favicon-96x96.png: 2016-07-20 05:46:25.000000000 +10:00
+build/images/favicomatic/mstile-144x144.png: 2016-07-20 05:46:27.000000000 +10:00
+build/images/favicomatic/mstile-150x150.png: 2016-07-20 05:46:42.000000000 +10:00
+build/images/favicomatic/mstile-310x150.png: 2016-07-20 05:47:18.000000000 +10:00
+build/images/favicomatic/mstile-310x310.png: 2016-07-20 05:48:24.000000000 +10:00
+build/images/favicomatic/mstile-70x70.png: 2016-07-20 05:48:08.000000000 +10:00
+build/images/figure-1-object-model.png: 2016-09-14 03:51:41.000000000 +10:00
+build/images/figure-2-class-objects.png: 2016-09-14 03:51:49.000000000 +10:00
+build/images/first.gif: 2016-07-20 05:48:09.000000000 +10:00
+build/images/form_helpers_view.png: 2016-07-20 05:48:10.000000000 +10:00
+build/images/gtp-menu.png: 2016-07-20 05:49:21.000000000 +10:00
+build/images/html_form_view.png: 2016-07-20 05:48:35.000000000 +10:00
+build/images/index_display.png: 2016-07-20 05:49:00.000000000 +10:00
+build/images/index_view.png: 2016-07-20 05:49:09.000000000 +10:00
+build/images/jason-data-icon.png: 2016-07-20 05:48:52.000000000 +10:00
+build/images/kims_site.png: 2016-11-16 13:21:26.000000000 +11:00
+build/images/middleman-blog-in-browser.png: 2016-07-20 05:49:42.000000000 +10:00
+build/images/mrtruongscounter.jpg: 2016-07-20 05:49:07.000000000 +10:00
+build/images/mrtruongsdisplay.jpg: 2016-07-20 05:49:07.000000000 +10:00
+build/images/mrtruongsnapikins.jpg: 2016-07-20 05:49:08.000000000 +10:00
+build/images/mrtruongsnearby.png: 2016-07-20 05:49:31.000000000 +10:00
+build/images/mrtruongsporksandwich.jpg: 2016-07-20 05:49:18.000000000 +10:00
+build/images/mrtruongsreview.png: 2016-07-20 05:49:35.000000000 +10:00
+build/images/mvc.png: 2016-07-20 05:51:21.000000000 +10:00
+build/images/page-source.png: 2016-07-20 05:50:22.000000000 +10:00
+build/images/partial_output.png: 2016-07-20 05:50:13.000000000 +10:00
+build/images/program21days.png: 2016-07-20 05:50:18.000000000 +10:00
+build/images/radius_element.png: 2016-11-16 13:20:21.000000000 +11:00
+build/images/radius_element_final.png: 2016-11-16 13:20:24.000000000 +11:00
+build/images/routes.png: 2016-07-20 05:50:40.000000000 +10:00
+build/images/spotlight-terminal.png: 2016-07-20 05:52:13.000000000 +10:00
+build/images/taco-medic-annie-order.jpg: 2016-07-20 05:50:41.000000000 +10:00
+build/images/taco-medic-annie.jpg: 2016-07-20 05:50:42.000000000 +10:00
+build/images/taco-medic-fish-2.jpg: 2016-07-20 05:50:42.000000000 +10:00
+build/images/taco-medic-fish-tacos.jpg: 2016-07-20 05:50:43.000000000 +10:00
+build/images/taco-medic-roca.jpg: 2016-07-20 05:50:43.000000000 +10:00
+build/images/taco-medic-side.jpg: 2016-07-20 05:50:44.000000000 +10:00
+build/images/terminal-file.png: 2016-07-20 05:51:03.000000000 +10:00
+build/images/view-page-source.png: 2016-07-20 05:50:51.000000000 +10:00
+build/images/views.png: 2016-07-20 05:51:10.000000000 +10:00

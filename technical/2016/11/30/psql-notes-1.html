@@ -66,10 +66,8 @@
 <p>There are things I’m learning as I go through the Postgres course of Launch
 School. This post are notes from,</p>
 
-<ol>
-  <li>Loading Database Dumps</li>
-  <li>More Single Table Queries</li>
-</ol>
+<p>‘4. Loading Database Dumps’
+‘5. More Single Table Queries’</p>
 
 <hr />
 
@@ -117,10 +115,13 @@ LOCATION:  coerce_to_boolean, parse_coerce.c:1044
 
 <h2 id="using-like-to-match">Using <code>LIKE</code> to match</h2>
 
-<p>Above, I used <code>WHERE substring(email from 'teleworm.us') = 'teleworm.us';</code></p>
+<p>Above, I used</p>
 
-<p>But it’s likely to be more standard to instead <code>WHERE email LIKE
-'%teleworm.us';</code></p>
+<p><code>WHERE substring(email from 'teleworm.us') = 'teleworm.us';</code></p>
+
+<p>But it’s likely to be more standard to instead</p>
+
+<p><code>WHERE email LIKE '%teleworm.us';</code></p>
 
 <h2 id="countid-or-count"><code>count(id)</code> or <code>count(*)</code></h2>
 
@@ -158,7 +159,7 @@ company        | [NULL]
 which the GROUP BY clause is issued.</p>
 </blockquote>
 
-<p>http://stackoverflow.com/questions/1769361/postgresql-group-by-different-from-mysql</p>
+<p><a href="http://stackoverflow.com/questions/1769361/postgresql-group-by-different-from-mysql">quote was from here</a></p>
 
 <p>This means that with:</p>
 
