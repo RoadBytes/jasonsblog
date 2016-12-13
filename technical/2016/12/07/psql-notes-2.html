@@ -72,60 +72,56 @@ School. This post are notes from,</p>
 
 <h2 id="setting-a-default-value">Setting a default value</h2>
 
-<p><code>
+<pre class="highlight plaintext"><code>
 ALTER TABLE employees ALTER COLUMN department SET DEFAULT 'unassigned';
-</code></p>
+</code></pre>
 
 <h2 id="changing-the-data">changing the data</h2>
 
-<p><code>
+<pre class="highlight plaintext"><code>
 UPDATE employees SET department = 'unassigned' where department is null;
-</code></p>
+</code></pre>
 
 <hr />
 
 <blockquote>
-  <ol>
-    <li>Set the default value of column department to “unassigned”. Then set the
-value of the department column to “unassigned” for any rows where it has a
-NULL value. Finally, add a NOT NULL constraint to the department column.</li>
-  </ol>
+  <p>\2. Set the default value of column department to “unassigned”. Then set the
+   value of the department column to “unassigned” for any rows where it has a
+   NULL value. Finally, add a NOT NULL constraint to the department column.</p>
 </blockquote>
 
-<p><code>
+<pre class="highlight plaintext"><code>
 ALTER TABLE employees ALTER COLUMN department SET DEFAULT 'unassigned';
 UPDATE employees SET department = 'unassigned' WHERE department IS NULL;
 ATLER TABLE employees ALTER COLUMN department SET NOT NULL;
-</code></p>
+</code></pre>
 
 <hr />
 
 <blockquote>
-  <ol>
-    <li>Write the SQL statement to create a table called temperatures to hold the
-following data:</li>
-  </ol>
+  <p>\3. Write the SQL statement to create a table called temperatures to hold the
+   following data:</p>
 </blockquote>
 
-<p>```
+<pre class="highlight plaintext"><code>
 CREATE TABLE temperatures (
   date DATE NOT NULL,
   low  INTEGER NOT NULL,
   high INTEGER NOT NULL
-);</p>
+);
 
-<p>INSERT INTO temperatures (date, low, high) VALUES
-  (‘2016-03-01’, 34, 43),
-  (‘2016-03-02’, 32, 44),
-  (‘2016-03-03’, 31, 47),
-  (‘2016-03-04’, 33, 42),
-  (‘2016-03-05’, 39, 46),
-  (‘2016-03-06’, 32, 43),
-  (‘2016-03-07’, 29, 32),
-  (‘2016-03-08’, 23, 31),
-  (‘2016-03-09’, 17, 28)</p>
+INSERT INTO temperatures (date, low, high) VALUES
+  ('2016-03-01', 34, 43),
+  ('2016-03-02', 32, 44),
+  ('2016-03-03', 31, 47),
+  ('2016-03-04', 33, 42),
+  ('2016-03-05', 39, 46),
+  ('2016-03-06', 32, 43),
+  ('2016-03-07', 29, 32),
+  ('2016-03-08', 23, 31),
+  ('2016-03-09', 17, 28)
 
-<p>```</p>
+</code></pre>
 
 <p>I first didn’t add ‘’ ’s around DATE
 INSERT INTO temperatures (date, low, high) VALUES (2016-03-01, 34, 43);</p>
@@ -133,41 +129,39 @@ INSERT INTO temperatures (date, low, high) VALUES (2016-03-01, 34, 43);</p>
 <hr />
 
 <blockquote>
-  <ol>
-    <li>Write a SQL statement to determine the average (mean) temperature for the
-days from March 2, 2016 through March 8, 2016.</li>
-  </ol>
+  <p>\5. Write a SQL statement to determine the average (mean) temperature for the
+   days from March 2, 2016 through March 8, 2016.</p>
 </blockquote>
 
 <ul>
   <li>my first attempt</li>
 </ul>
 
-<p><code>
+<pre class="highlight plaintext"><code>
 SELECT (avg(low) + avg(high)) / 2
 FROM temperatures
 WHERE date &gt;= '2016-03-02' AND date &lt;= '2016-03-08'
-</code></p>
+</code></pre>
 
 <ul>
   <li>my second attempt</li>
 </ul>
 
-<p><code>
+<pre class="highlight plaintext"><code>
 SELECT date, (low + high) / 2 as average
 FROM temperatures
 WHERE date &gt;= '2016-03-02' AND date &lt;= '2016-03-08'
-</code></p>
+</code></pre>
 
 <ul>
   <li>answer</li>
 </ul>
 
-<p><code>
+<pre class="highlight plaintext"><code>
 SELECT date, (high + low) / 2 as average
 FROM temperatures
 WHERE date BETWEEN '2016-03-02' AND '2016-03-08';
-</code></p>
+</code></pre>
 
 <ul>
   <li>response</li>
@@ -178,36 +172,34 @@ WHERE date BETWEEN '2016-03-02' AND '2016-03-08';
 <hr />
 
 <blockquote>
-  <ol>
-    <li>Write a SQL statement to add a new column, rainfall, to the temperatures
-table. It should store millimeters of rain as integers and have a default
-value of 0.</li>
-  </ol>
+  <p>\6. Write a SQL statement to add a new column, rainfall, to the temperatures
+   table. It should store millimeters of rain as integers and have a default
+   value of 0.</p>
 </blockquote>
 
 <ul>
   <li>my first attempt</li>
 </ul>
 
-<p><code>
+<pre class="highlight plaintext"><code>
 ALTER TABLE temperatures INSERT COLUMN rainfall INTEGERS DEFAULT 0;
-</code></p>
+</code></pre>
 
 <ul>
   <li>my second attempt</li>
 </ul>
 
-<p><code>
+<pre class="highlight plaintext"><code>
 ALTER TABLE temperatures ADD COLUMN rainfall INTEGER DEFAULT 0;
-</code></p>
+</code></pre>
 
 <ul>
   <li>answer</li>
 </ul>
 
-<p><code>
+<pre class="highlight plaintext"><code>
 ALTER TABLE temperatures ADD COLUMN rainfall integer DEFAULT 0
-</code></p>
+</code></pre>
 
 <ul>
   <li>response</li>
@@ -219,37 +211,35 @@ lowercase</p>
 <hr />
 
 <blockquote>
-  <ol>
-    <li>Each day, it rains one millimeter for every degree the average temperature
-goes above 35. Write a SQL statement to update the data in the table
-temperatures to reflect this.</li>
-  </ol>
+  <p>\7. Each day, it rains one millimeter for every degree the average temperature
+   goes above 35. Write a SQL statement to update the data in the table
+   temperatures to reflect this.</p>
 </blockquote>
 
 <ul>
   <li>my first attempt</li>
 </ul>
 
-<p>```
-select (high + low) / 2 - 35 as mm from temperatures where rainfall &gt;= 0;</p>
+<pre class="highlight plaintext"><code>
+select (high + low) / 2 - 35 as mm from temperatures where rainfall &gt;= 0;
 
-<p>UPDATE temperatures
-SET rainfall = (high + low) / 2 - 35;</p>
+UPDATE temperatures
+SET rainfall = (high + low) / 2 - 35;
 
-<p>UPDATE temperatures
+UPDATE temperatures
 SET rainfall = 0
 WHERE rainfall &lt; 0;
-```</p>
+</code></pre>
 
 <ul>
   <li>answer</li>
 </ul>
 
-<p><code>
+<pre class="highlight plaintext"><code>
 UPDATE temperatures
    SET rainfall = (high + low) / 2 - 35
  WHERE (high + low) / 2 &gt; 35;
-</code></p>
+</code></pre>
 
 <ul>
   <li>response</li>
@@ -261,11 +251,9 @@ UPDATE temperatures
 <hr />
 
 <blockquote>
-  <ol>
-    <li>A decision has been made to store rainfall data in inches. Write the SQL
-statements required to modify the rainfall column to reflect these new
-requirements.</li>
-  </ol>
+  <p>\8. A decision has been made to store rainfall data in inches. Write the SQL
+   statements required to modify the rainfall column to reflect these new
+   requirements.</p>
 </blockquote>
 
 <ul>
@@ -276,27 +264,27 @@ requirements.</li>
 
 <h2 id="change-integer-to-float-or-decimal">change integer to float or decimal(</h2>
 
-<p><code>
+<pre class="highlight plaintext"><code>
 ALTER TABLE temperatures
 ALTER COLUMN tests TYPE numeric(4, 3);
-</code></p>
+</code></pre>
 
 <h2 id="change-the-value-by-multiplying-by-00393701-inchesmm">change the value by multiplying by 0.0393701 inches/mm</h2>
 
-<p><code>
+<pre class="highlight plaintext"><code>
 UPDATE temperatures
    SET rainfall= ((high + low) / 2 - 35) * 0.0393701
  WHERE (high + low) / 2 &gt; 35;
-</code></p>
+</code></pre>
 
 <ul>
   <li>answer</li>
 </ul>
 
-<p><code>
+<pre class="highlight plaintext"><code>
 ALTER TABLE temperatures ALTER COLUMN rainfall TYPE numeric(6,3);
 UPDATE temperatures SET rainfall = rainfall * 0.039;
-</code></p>
+</code></pre>
 
 <ul>
   <li>response</li>
