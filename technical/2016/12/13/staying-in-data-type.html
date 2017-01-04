@@ -62,57 +62,61 @@
        <hr/>
        <h1 id="first-take">First Take</h1>
 
-<p>def rotate_rightmost_digits(integer, n)
-  stringified = integer.to_s
-  index       = (stringified.size - 1) - n</p>
+<pre class="highlight ruby"><code>
+<span class="k">def</span> <span class="nf">rotate_rightmost_digits</span><span class="p">(</span><span class="n">integer</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+  <span class="n">stringified</span> <span class="o">=</span> <span class="n">integer</span><span class="p">.</span><span class="nf">to_s</span>
+  <span class="n">index</span>       <span class="o">=</span> <span class="p">(</span><span class="n">stringified</span><span class="p">.</span><span class="nf">size</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">n</span>
 
-<p>front, back = split_at(index, stringified)
-  stringified = front + rotate_string(back)
-  stringified.to_i
-end</p>
+  <span class="n">front</span><span class="p">,</span> <span class="n">back</span> <span class="o">=</span> <span class="n">split_at</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">stringified</span><span class="p">)</span>
+  <span class="n">stringified</span> <span class="o">=</span> <span class="n">front</span> <span class="o">+</span> <span class="n">rotate_string</span><span class="p">(</span><span class="n">back</span><span class="p">)</span>
+  <span class="n">stringified</span><span class="p">.</span><span class="nf">to_i</span>
+<span class="k">end</span>
 
-<p>def rotate_array(array)
-  copy = array.clone</p>
+<span class="k">def</span> <span class="nf">rotate_array</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
+  <span class="n">copy</span> <span class="o">=</span> <span class="n">array</span><span class="p">.</span><span class="nf">clone</span>
 
-<p>first_item = copy.shift
-  copy.push first_item
-  copy
-end</p>
+  <span class="n">first_item</span> <span class="o">=</span> <span class="n">copy</span><span class="p">.</span><span class="nf">shift</span>
+  <span class="n">copy</span><span class="p">.</span><span class="nf">push</span> <span class="n">first_item</span>
+  <span class="n">copy</span>
+<span class="k">end</span>
 
-<p>def split_at(index, string)
-  if index == -1
-    front = ‘’
-    back  = string
-  else
-    front, back = string[0..index], string[index + 1..-1]
-  end</p>
+<span class="k">def</span> <span class="nf">split_at</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">string</span><span class="p">)</span>
+  <span class="k">if</span> <span class="n">index</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="n">front</span> <span class="o">=</span> <span class="s1">''</span>
+    <span class="n">back</span>  <span class="o">=</span> <span class="n">string</span>
+  <span class="k">else</span>
+    <span class="n">front</span><span class="p">,</span> <span class="n">back</span> <span class="o">=</span> <span class="n">string</span><span class="p">[</span><span class="mi">0</span><span class="p">.</span><span class="nf">.</span><span class="n">index</span><span class="p">],</span> <span class="n">string</span><span class="p">[</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">.</span><span class="nf">.</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+  <span class="k">end</span>
 
-<p>[front, back]
-end</p>
+  <span class="p">[</span><span class="n">front</span><span class="p">,</span> <span class="n">back</span><span class="p">]</span>
+<span class="k">end</span>
 
-<p>def rotate_string(string)
-  rotated = rotate_array string.chars
-  rotated.join
-end</p>
+<span class="k">def</span> <span class="nf">rotate_string</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+  <span class="n">rotated</span> <span class="o">=</span> <span class="n">rotate_array</span> <span class="n">string</span><span class="p">.</span><span class="nf">chars</span>
+  <span class="n">rotated</span><span class="p">.</span><span class="nf">join</span>
+<span class="k">end</span>
+</code></pre>
 
-<h2 id="wow-that-was-so-freaking-long-im-thinking-its-becuase-i-kept-getting">Wow, that was so freaking long, I’m thinking it’s becuase I kept getting</h2>
-<p>## mixed up between a string and an array… I should have stuck to one type</p>
+<p>Wow, that was so freaking long, I’m thinking it’s becuase I kept getting mixed
+up between a string and an array… I should have stuck to one type</p>
 
 <h1 id="second-take">Second Take</h1>
 
-<p>def rotate_rightmost_digits(integer, n)
-  all_digits = integer.to_s.chars
-  all_digits[-n..-1] = rotate_array all_digits[-n..-1]
-  all_digits.join.to_i
-end</p>
+<pre class="highlight ruby"><code>
+<span class="k">def</span> <span class="nf">rotate_rightmost_digits</span><span class="p">(</span><span class="n">integer</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+  <span class="n">all_digits</span> <span class="o">=</span> <span class="n">integer</span><span class="p">.</span><span class="nf">to_s</span><span class="p">.</span><span class="nf">chars</span>
+  <span class="n">all_digits</span><span class="p">[</span><span class="o">-</span><span class="n">n</span><span class="p">.</span><span class="nf">.</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">rotate_array</span> <span class="n">all_digits</span><span class="p">[</span><span class="o">-</span><span class="n">n</span><span class="p">.</span><span class="nf">.</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+  <span class="n">all_digits</span><span class="p">.</span><span class="nf">join</span><span class="p">.</span><span class="nf">to_i</span>
+<span class="k">end</span>
 
-<p>def rotate_array(array)
-  copy = array.clone</p>
+<span class="k">def</span> <span class="nf">rotate_array</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
+  <span class="n">copy</span> <span class="o">=</span> <span class="n">array</span><span class="p">.</span><span class="nf">clone</span>
 
-<p>first_item = copy.shift
-  copy.push first_item
-  copy
-end</p>
+  <span class="n">first_item</span> <span class="o">=</span> <span class="n">copy</span><span class="p">.</span><span class="nf">shift</span>
+  <span class="n">copy</span><span class="p">.</span><span class="nf">push</span> <span class="n">first_item</span>
+  <span class="n">copy</span>
+<span class="k">end</span>
+</code></pre>
 
 <h1 id="review">Review</h1>
 
