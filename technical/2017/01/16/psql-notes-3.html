@@ -7,7 +7,7 @@
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
 
     <!-- Use title if it's in the page YAML frontmatter -->
-    <title>JasonData</title>
+    <title>PSQL Notes 3</title>
 
         <link rel="apple-touch-icon-precomposed" sizes="57x57"   href="images/favicomatic/apple-touch-icon-57x57.png" />
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/favicomatic/apple-touch-icon-114x114.png" />
@@ -30,59 +30,84 @@
     <meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
 
-    <link href="stylesheets/normalize.css" rel="stylesheet" type="text/css" /><link href="stylesheets/all.css" rel="stylesheet" type="text/css" />
-    <script src="javascripts/all.js" type="text/javascript"></script>
+    <link href="../../../../stylesheets/normalize.css" rel="stylesheet" type="text/css" /><link href="../../../../stylesheets/all.css" rel="stylesheet" type="text/css" />
+    <script src="../../../../javascripts/all.js" type="text/javascript"></script>
   </head>
 
-  <body class="about main">
+  <body class="technical technical_2017 technical_2017_01 technical_2017_01_16 technical_2017_01_16_psql-notes-3 main">
    <div class="nav">
   <ul id="nav_text">
     <li>
       <a href="/">Home</a>
     </li>
     <li>
-      <a href="technical.html">TechnicalPosts</a>
+      <a href="../../../../technical.html">TechnicalPosts</a>
     </li>
     <li>
-      <a href="about.html">About</a>
+      <a href="../../../../about.html">About</a>
     </li>
     <li>
-      <a href="contact.html">Contact</a>
+      <a href="../../../../contact.html">Contact</a>
     </li>
   </ul>
 </div>
 
    <div class="content">
-     <h1>About Jason Data</h1>
+     <div class="post">
+       <h1 class="post__title">PSQL Notes 3</h1>
+       <p class="post__date"><16 Jan 2017></p>
+       <p>
+           <a class="post__tag" href="../../../technical/tags/notes.html">notes</a>
+           <a class="post__tag" href="../../../technical/tags/psql.html">psql</a>
+       </p>
+       <hr/>
+       <h2 id="anomalies">Anomalies</h2>
 
-<p>Well, welcome to my site.  Sit back and relax and prepare for the most amazing time you've ever had in your entire life!  Now, where do I start?</p>
-
-<p>I was born at a young age, the same as every other person who is born.  I was born on my zeroth birthday so I was officially zero, that's pretty freaking young.</p>
-
-<h4>The interesting thing is since that monumental birth, I've done a lot of things including deciding to pursue Web Development!</h4>
-
-<div class="video">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/aUOfdY9uIX8?list=PL9m3RKRZO8HSfqvWcI3l8O-O1TUwFM58W" frameborder="0" allowfullscreen></iframe>
-</div>
-
-<p>So, this site is going to document my adventures of becoming a web developer!</p>
-
-<p>Currently:</p>
+<p>ex: phone calls to certain numbers</p>
 
 <ul>
-  <li>
-    I'm enrolled in Launch School Academy and learning Rails Web Development
-  </li>
-  <li>
-    I'm working on my own site as you can see and practicing my new knowledge with fun projects
-  </li>
-  <li>
-    I'm reaching out to the portal of the internets and meeting other aspiring developers like me
-  </li>
+  <li>update: changing info means changing many rows</li>
+  <li>insertion: you must have a row, to have number info</li>
+  <li>deletion: removing all calls to a number removes the number’s info</li>
 </ul>
 
-   </div>
+<h2 id="great-article-on-double-vs-single-quotes-in-psql">Great article on double vs single quotes in PSQL</h2>
 
+<p><a href="http://blog.lerner.co.il/quoting-postgresql/">http://blog.lerner.co.il/quoting-postgresql/</a></p>
+
+<h1 id="extracting-an-1m-relationship">Extracting an 1:M Relationship</h1>
+
+<p>When extracting data:</p>
+
+<ol>
+  <li>Create a table for new relation</li>
+  <li>Insert data</li>
+  <li>Create relationship</li>
+  <li>Update films table to reference new relation</li>
+  <li>Clean up
+    <ul>
+      <li>set relation ‘table name’_id to <code>NOT NULL</code></li>
+      <li>remove redundant data from original table: drop columns</li>
+      <li>move constraints to new table</li>
+    </ul>
+  </li>
+</ol>
+
+       <div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'jasondata';
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+     </div>
+   </div>
    <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
