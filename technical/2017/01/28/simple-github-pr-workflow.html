@@ -62,10 +62,22 @@
        <hr/>
        <p>One of the things a web developer needs to get comfortable with is working with
 GitHub.  I’ve made a simple static site for ‘Melbourne Code Reading Club’ to
-practice how this works.  The cool thing is, when changes are merged, the actual
-site will record the changes.</p>
+practice how this works.  The cool thing is, when changes in the repository are
+merged, the actual site will record the changes.</p>
 
-<p>Here is the site before the changes were made on the members page:</p>
+<ul>
+  <li>
+    <p>here is a link to the site
+https://roadbytes.github.io/melbourne-code-reading-club/</p>
+  </li>
+  <li>
+    <p>here is a link to the repo
+https://github.com/RoadBytes/melbourne-code-reading-club</p>
+  </li>
+</ul>
+
+<p>Here is a screen capture of site before the changes were made on the members
+page:</p>
 
 <p><img alt="member page before changes" src="../../../../images/member-page-before-changes.png" /></p>
 
@@ -94,8 +106,8 @@ onto your local machine.</p>
 
 <p><code>$ git clone https://github.com/RoadBytes/melbourne-code-reading-club.git</code></p>
 
-<p>and then you can see that a folder was copied onto your computer through listing
-file in your current directory</p>
+<p>You can see that a folder was copied onto your computer by listing files in your
+current directory</p>
 
 <p><code>$ ls</code></p>
 
@@ -108,11 +120,12 @@ file in your current directory</p>
 <h1 id="create-a-local-branch">Create a local branch</h1>
 
 <p>Now that the remote repository has been copied, you have a <strong>local</strong> repository
-you can work with.  Change into the local file (aka ‘local repository’):</p>
+you can work with.  Change Directory into the local file (aka ‘local
+repository’):</p>
 
 <p><code>$ cd melbourne-code-reading-club</code></p>
 
-<p>To make sure you’re changes are all together, create your own branch and will 
+<p>To make sure your changes are all together, create your own branch and we’ll
 save (aka ‘commit’) your changes to this branch.</p>
 
 <p><code>$ git checkout -b &lt;branch-name&gt;</code></p>
@@ -136,14 +149,14 @@ So, I’ll need to have a file <code>/members/jason.html</code> in the root fold
 
 <p>Here, I can make my page to be anything I want, but I’d want the layout to be
 the same as the other pages.  I’ll just do this by copying the following text.
-Be sure to note: the navigation has <code>../</code> in the path to return to the root file
-first.</p>
+Be sure to note: the navigation has <code>../</code> in the path to return to the root
+folder first.</p>
 
 <pre class="highlight html"><code>
 <span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="nt">&lt;html&gt;</span>
   <span class="nt">&lt;head&gt;</span>
-    <span class="nt">&lt;title&gt;</span>MCRC: Home<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;title&gt;</span>MCRC: Jason<span class="nt">&lt;/title&gt;</span>
   <span class="nt">&lt;/head&gt;</span>
   <span class="nt">&lt;body&gt;</span>
     <span class="nt">&lt;nav&gt;</span>
@@ -182,9 +195,11 @@ On the members page...
 
 <p>Now that we’ve made this dope stuff, we can commit this code to our local branch</p>
 
-<p><code>$ git add --all</code> simply adds everything to the next commit
-<code>$ git status</code> checks status of working directory
-<code>$ git commit -m &lt;commit message&gt;</code> creates a commit and saves code base</p>
+<ul>
+  <li><code>$ git add --all</code> simply adds everything to the next commit</li>
+  <li><code>$ git status</code> checks status of working directory (optional)</li>
+  <li><code>$ git commit -m &lt;commit message&gt;</code> creates a commit and saves code base</li>
+</ul>
 
 <p>The whole thing should look something like this:</p>
 
@@ -194,14 +209,14 @@ On the members page...
 
 <h1 id="get-push-invitation-from-roadbytes">Get push invitation from RoadBytes</h1>
 
-<p>Make sure that RoadBytes know’s your GitHub handle and has added you as a
+<p>Make sure that RoadBytes knows your GitHub handle and has added you as a
 collaborator to the repository.</p>
 
 <p>Then, you can visit:</p>
 
 <p><a href="https://github.com/RoadBytes/melbourne-code-reading-club/invitations">https://github.com/RoadBytes/melbourne-code-reading-club/invitations</a></p>
 
-<p>and accept the invitaion.</p>
+<p>and accept the invitation.</p>
 
 <p>The whole thing should look something like this:</p>
 
@@ -217,6 +232,10 @@ main branch.</p>
 
 <p><code>$ git push origin &lt;branch-name&gt;</code></p>
 
+<p>This command says to push your branch on your local repo and add it to the
+remote repo.  It’s implied that the remote repository will then have a branch of
+the same name.</p>
+
 <p>The whole thing should look something like this:</p>
 
 <p><img alt="pushing branch" src="../../../../images/pushing-branch.png" /></p>
@@ -225,7 +244,7 @@ main branch.</p>
 
 <h1 id="make-a-pull-request-pr">Make a Pull Request (PR)</h1>
 
-<p>Now, when you go to the Remote Repository, you can make navigate to the
+<p>Now, when you go to the Remote Repository, you can navigate to remote repository
 branches, find your branch and make a pull request (PR)!</p>
 
 <p>You’re essentially taking the branch you’ve made, and laying those changes on
@@ -247,6 +266,13 @@ top of the ‘production’ branch (in this case the branch is called <code>gh-p
 
 <h2 id="merge-pull-request">Merge Pull Request</h2>
 
+<ul>
+  <li>Generally, a senior developer or another person would give a code review</li>
+  <li>You’d probably have to make more changes before you can merge</li>
+  <li>This is a cool way to see what you did since there is a differential between
+your code and the merging branch</li>
+</ul>
+
 <p><img alt="merge pr" src="../../../../images/merge-pr.png" /></p>
 
 <hr />
@@ -260,8 +286,11 @@ on the server, but go relax and grab some food for you food hole.</p>
 
 <p>Now, when you go to the website, you should see your changes taken place!</p>
 
-<p><img alt="updated member page" src="../../../../images/updated-member-page.png" />
-<img alt="added jason profile" src="../../../../images/updated-profile.png" /></p>
+<p><img alt="updated member page" src="../../../../images/updated-member-page.png" /></p>
+
+<p>And a brand new profile page</p>
+
+<p><img alt="added jason profile" src="../../../../images/updated-profile.png" /></p>
 
 <hr />
 
