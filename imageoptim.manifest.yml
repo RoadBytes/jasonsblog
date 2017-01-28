@@ -1,6 +1,10 @@
 ---
 build/images/BEM-example.png: 2016-09-14 03:52:25.000000000 +10:00
+build/images/clone-repo.png: 2017-01-28 19:20:55.000000000 +11:00
+build/images/commit-changes.png: 2017-01-28 19:20:56.000000000 +11:00
 build/images/controller.png: 2016-07-20 05:45:58.000000000 +10:00
+build/images/create-branch.png: 2017-01-28 19:20:55.000000000 +11:00
+build/images/create-pr.png: 2017-01-28 19:21:49.000000000 +11:00
 build/images/data.png: 2016-07-20 05:45:57.000000000 +10:00
 build/images/Desktop-index.png: 2016-07-20 05:48:11.000000000 +10:00
 build/images/Desktop.png: 2016-07-20 05:48:29.000000000 +10:00
@@ -39,8 +43,12 @@ build/images/gtp-menu.png: 2016-07-20 05:49:21.000000000 +10:00
 build/images/html_form_view.png: 2016-07-20 05:48:35.000000000 +10:00
 build/images/index_display.png: 2016-07-20 05:49:00.000000000 +10:00
 build/images/index_view.png: 2016-07-20 05:49:09.000000000 +10:00
+build/images/initialize-new-pr.png: 2017-01-28 19:22:28.000000000 +11:00
+build/images/invitation-acceptance.png: 2017-01-28 19:23:12.000000000 +11:00
 build/images/jason-data-icon.png: 2016-07-20 05:48:52.000000000 +10:00
 build/images/kims_site.png: 2016-11-16 13:21:26.000000000 +11:00
+build/images/member-page-before-changes.png: 2017-01-28 19:22:28.000000000 +11:00
+build/images/merge-pr.png: 2017-01-28 19:22:27.000000000 +11:00
 build/images/middleman-blog-in-browser.png: 2016-07-20 05:49:42.000000000 +10:00
 build/images/mrtruongscounter.jpg: 2016-07-20 05:49:07.000000000 +10:00
 build/images/mrtruongsdisplay.jpg: 2016-07-20 05:49:07.000000000 +10:00
@@ -52,9 +60,11 @@ build/images/mvc.png: 2016-07-20 05:51:21.000000000 +10:00
 build/images/page-source.png: 2016-07-20 05:50:22.000000000 +10:00
 build/images/partial_output.png: 2016-07-20 05:50:13.000000000 +10:00
 build/images/program21days.png: 2016-07-20 05:50:18.000000000 +10:00
+build/images/pushing-branch.png: 2017-01-28 19:23:00.000000000 +11:00
 build/images/radius_element.png: 2016-11-16 13:20:21.000000000 +11:00
 build/images/radius_element_final.png: 2016-11-16 13:20:24.000000000 +11:00
 build/images/routes.png: 2016-07-20 05:50:40.000000000 +10:00
+build/images/see-branches.png: 2017-01-28 19:23:22.000000000 +11:00
 build/images/spotlight-terminal.png: 2016-07-20 05:52:13.000000000 +10:00
 build/images/taco-medic-annie-order.jpg: 2016-07-20 05:50:41.000000000 +10:00
 build/images/taco-medic-annie.jpg: 2016-07-20 05:50:42.000000000 +10:00
