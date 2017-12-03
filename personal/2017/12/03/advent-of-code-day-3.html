@@ -6,6 +6,8 @@
     <!-- Always force latest IE rendering engine or request Chrome Frame -->
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <!-- Use title if it's in the page YAML frontmatter -->
     <title>Advent of Code (Day 3)</title>
 
@@ -200,7 +202,8 @@ sum at n == 601 is Vector[300, -300]
 
 Vector[300 + 1, -300 + 325]
 
-[301, 25] and Mahattan distance would be 301 + 25 = 326
+[301, 25] and Mahattan
+distance would be 301 + 25 = 326
 
 326 total steps to square 1
 </code></pre>
@@ -215,57 +218,57 @@ gave it another looksee and found the following pattern.</p>
 <table>
   <thead>
     <tr>
-      <th>step</th>
+      <th style="text-align: center">step</th>
       <th>change in distance</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>1</td>
+      <td style="text-align: center">1</td>
       <td>+x step right</td>
     </tr>
     <tr>
-      <td>2</td>
+      <td style="text-align: center">2</td>
       <td>+y step up</td>
     </tr>
     <tr>
-      <td>3</td>
+      <td style="text-align: center">3</td>
       <td>-x step back</td>
     </tr>
     <tr>
-      <td>4</td>
+      <td style="text-align: center">4</td>
       <td>-x step back</td>
     </tr>
     <tr>
-      <td>5</td>
+      <td style="text-align: center">5</td>
       <td>-y step down</td>
     </tr>
     <tr>
-      <td>6</td>
+      <td style="text-align: center">6</td>
       <td>-y step down</td>
     </tr>
     <tr>
-      <td>7</td>
+      <td style="text-align: center">7</td>
       <td>+x right</td>
     </tr>
     <tr>
-      <td>8</td>
+      <td style="text-align: center">8</td>
       <td>+x right</td>
     </tr>
     <tr>
-      <td>9</td>
+      <td style="text-align: center">9</td>
       <td>+x right</td>
     </tr>
     <tr>
-      <td>10</td>
+      <td style="text-align: center">10</td>
       <td>+y up</td>
     </tr>
     <tr>
-      <td>11</td>
+      <td style="text-align: center">11</td>
       <td>+y up</td>
     </tr>
     <tr>
-      <td>12</td>
+      <td style="text-align: center">12</td>
       <td>+y up</td>
     </tr>
   </tbody>
@@ -285,66 +288,70 @@ move through the grid.</p>
 sure if <code>Vector</code>’s make good keys so I just used an array of the <code>Vextor</code>’s x
 and y position.</p>
 
-<pre class="highlight plaintext"><code>require 'matrix'
+<pre class="highlight ruby"><code>
+<span class="nb">require</span> <span class="s1">'matrix'</span>
 
-class Grid
-  @@grid_width = 0
-  @@current_place = Vector[0, 0]
+<span class="k">class</span> <span class="nc">Grid</span>
+  <span class="vc">@@grid_width</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="vc">@@current_place</span> <span class="o">=</span> <span class="no">Vector</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
 
-  @@grid_values = Hash.new(0)
-  @@grid_values[[0, 0]] = 1
+  <span class="vc">@@grid_values</span> <span class="o">=</span> <span class="no">Hash</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+  <span class="vc">@@grid_values</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span> <span class="o">=</span> <span class="mi">1</span>
 
-  @@grid_steps = []
+  <span class="vc">@@grid_steps</span> <span class="o">=</span> <span class="p">[]</span>
 
-  def self.set_current_value
-    @@current_place += next_step
-    value = get_grid_values_around(@@current_place) # I didn't need an arg but don't care to refactor atm
-    @@grid_values[ [@@current_place[0], @@current_place[1]] ] = value
-  end
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">set_current_value</span>
+    <span class="vc">@@current_place</span> <span class="o">+=</span> <span class="n">next_step</span>
+    <span class="c1"># I didn't need an arg but don't care to refactor atm</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="n">get_grid_values_around</span><span class="p">(</span><span class="vc">@@current_place</span><span class="p">)</span>
+    <span class="vc">@@grid_values</span><span class="p">[</span>
+      <span class="p">[</span><span class="vc">@@current_place</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="vc">@@current_place</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
+      <span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+  <span class="k">end</span>
 
-  def self.next_step
-    if @@grid_steps.size == 0
-      @@grid_width += 1
-      set_grid_steps_at_width
-      @@grid_steps.shift
-    else
-      @@grid_steps.shift
-    end
-  end
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">next_step</span>
+    <span class="k">if</span> <span class="vc">@@grid_steps</span><span class="p">.</span><span class="nf">size</span> <span class="o">==</span> <span class="mi">0</span>
+      <span class="vc">@@grid_width</span> <span class="o">+=</span> <span class="mi">1</span>
+      <span class="n">set_grid_steps_at_width</span>
+      <span class="vc">@@grid_steps</span><span class="p">.</span><span class="nf">shift</span>
+    <span class="k">else</span>
+      <span class="vc">@@grid_steps</span><span class="p">.</span><span class="nf">shift</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
 
-  def self.set_grid_steps_at_width
-    x = Vector[1, 0]
-    y = Vector[0, 1]
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">set_grid_steps_at_width</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="no">Vector</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="no">Vector</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
 
-    x_step = (-1)**(@@grid_width + 1) * x
-    y_step = (-1)**(@@grid_width + 1) * y
+    <span class="n">x_step</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="vc">@@grid_width</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">x</span>
+    <span class="n">y_step</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="vc">@@grid_width</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">y</span>
 
-    @@grid_width.times { @@grid_steps &lt;&lt; x_step }
-    @@grid_width.times { @@grid_steps &lt;&lt; y_step }
-  end
+    <span class="vc">@@grid_width</span><span class="p">.</span><span class="nf">times</span> <span class="p">{</span> <span class="vc">@@grid_steps</span> <span class="o">&lt;&lt;</span> <span class="n">x_step</span> <span class="p">}</span>
+    <span class="vc">@@grid_width</span><span class="p">.</span><span class="nf">times</span> <span class="p">{</span> <span class="vc">@@grid_steps</span> <span class="o">&lt;&lt;</span> <span class="n">y_step</span> <span class="p">}</span>
+  <span class="k">end</span>
 
-  def self.get_grid_values_around(current_step)
-    x = current_step[0]
-    y = current_step[1]
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">get_grid_values_around</span><span class="p">(</span><span class="n">current_step</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">current_step</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">current_step</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 
-    @@grid_values[[x + 1, y + 1]] +
-    @@grid_values[[x + 1, y]] +
-    @@grid_values[[x + 1, y - 1]] +
-    @@grid_values[[x, y + 1]] +
-    @@grid_values[[x, y - 1]] +
-    @@grid_values[[x - 1, y + 1]] +
-    @@grid_values[[x - 1, y]] +
-    @@grid_values[[x - 1, y - 1]]
-  end
-end
+    <span class="vc">@@grid_values</span><span class="p">[[</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]]</span> <span class="o">+</span>
+    <span class="vc">@@grid_values</span><span class="p">[[</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="p">]]</span> <span class="o">+</span>
+    <span class="vc">@@grid_values</span><span class="p">[[</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]]</span> <span class="o">+</span>
+    <span class="vc">@@grid_values</span><span class="p">[[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]]</span> <span class="o">+</span>
+    <span class="vc">@@grid_values</span><span class="p">[[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]]</span> <span class="o">+</span>
+    <span class="vc">@@grid_values</span><span class="p">[[</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]]</span> <span class="o">+</span>
+    <span class="vc">@@grid_values</span><span class="p">[[</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="p">]]</span> <span class="o">+</span>
+    <span class="vc">@@grid_values</span><span class="p">[[</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]]</span>
+  <span class="k">end</span>
+<span class="k">end</span>
 
-n = 0
+<span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
 
-while (n &lt; 361527)
-  n = Grid.set_current_value
-end
+<span class="k">while</span> <span class="p">(</span><span class="n">n</span> <span class="o">&lt;</span> <span class="mi">361527</span><span class="p">)</span>
+  <span class="n">n</span> <span class="o">=</span> <span class="no">Grid</span><span class="p">.</span><span class="nf">set_current_value</span>
+<span class="k">end</span>
 
-puts n
+<span class="nb">puts</span> <span class="n">n</span>
 </code></pre>
 
 <p>Anyway, if the next challenges get much harder, I’m not sure I’ll have enough

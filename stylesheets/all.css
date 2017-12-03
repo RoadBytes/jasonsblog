@@ -745,6 +745,14 @@ html {
       margin: 0;
       padding-top: 0; }
 
+@media (max-width: 400px) {
+  /* line 59, /Users/Winning/Dropbox/Projects/Blog/template/source/stylesheets/partials/_nav.scss */
+  .nav ul {
+    margin-left: 0%; }
+
+  /* line 63, /Users/Winning/Dropbox/Projects/Blog/template/source/stylesheets/partials/_nav.scss */
+  .nav ul li {
+    margin: 10px 10px 0 10px; } }
 /* line 4, /Users/Winning/Dropbox/Projects/Blog/template/source/stylesheets/partials/_overrides.scss */
 a {
   text-decoration: underline; }
@@ -854,7 +862,7 @@ code {
 /* line 118, /Users/Winning/Dropbox/Projects/Blog/template/source/stylesheets/partials/_overrides.scss */
 pre.highlight {
   background-color: #595959;
-  padding-left: 1.618em; }
+  padding-left: 10px; }
 
 /* line 1, /Users/Winning/Dropbox/Projects/Blog/template/source/stylesheets/components/_content.scss */
 .content {
@@ -868,6 +876,10 @@ pre.highlight {
     content: "";
     display: table; }
 
+@media (max-width: 400px) {
+  /* line 7, /Users/Winning/Dropbox/Projects/Blog/template/source/stylesheets/components/_content.scss */
+  .content {
+    padding: 10px; } }
 /* line 1, /Users/Winning/Dropbox/Projects/Blog/template/source/stylesheets/components/_listed-post.scss */
 .listed-post {
   float: left;
@@ -914,6 +926,13 @@ pre.highlight {
     .listed-post .listed-post--with-image__summary:last-child {
       margin-right: 0; }
 
+@media (max-width: 400px) {
+  /* line 36, /Users/Winning/Dropbox/Projects/Blog/template/source/stylesheets/components/_listed-post.scss */
+  .listed-post h1,
+  .listed-post h2,
+  .listed-post h3,
+  .listed-post .listed-post__title {
+    font-size: 1.3rem; } }
 /* line 1, /Users/Winning/Dropbox/Projects/Blog/template/source/stylesheets/components/_main.scss */
 .main {
   background-color: #000; }
@@ -946,6 +965,13 @@ pre.highlight {
     font-size: 1em;
     font-style: italic; }
 
+@media (max-width: 400px) {
+  /* line 29, /Users/Winning/Dropbox/Projects/Blog/template/source/stylesheets/components/_post.scss */
+  .post h1,
+  .post h2,
+  .post h3,
+  .post .post__title {
+    font-size: 1.3rem; } }
 /* line 1, /Users/Winning/Dropbox/Projects/Blog/template/source/stylesheets/components/_question.scss */
 .question {
   border-style: dotted;

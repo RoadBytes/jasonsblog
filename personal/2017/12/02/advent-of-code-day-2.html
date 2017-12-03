@@ -1,0 +1,238 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title>Advent of Code (Day 2)</title>
+
+        <link rel="apple-touch-icon-precomposed" sizes="57x57"   href="images/favicomatic/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/favicomatic/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72"   href="images/favicomatic/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/favicomatic/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60"   href="images/favicomatic/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="images/favicomatic/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76"   href="images/favicomatic/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="images/favicomatic/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="images/favicomatic/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="images/favicomatic/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="images/favicomatic/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="images/favicomatic/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="images/favicomatic/favicon-128.png" sizes="128x128" />
+    <meta name="application-name" content="&nbsp;"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
+
+    <link href="../../../../stylesheets/normalize.css" rel="stylesheet" type="text/css" /><link href="../../../../stylesheets/all.css" rel="stylesheet" type="text/css" />
+    <script src="../../../../javascripts/all.js" type="text/javascript"></script>
+  </head>
+
+  <body class="personal personal_2017 personal_2017_12 personal_2017_12_02 personal_2017_12_02_advent-of-code-day-2 main">
+   <div class="nav">
+  <ul id="nav_text">
+    <li>
+      <a href="/">Home</a>
+    </li>
+    <li>
+      <a href="../../../../technical.html">TechnicalPosts</a>
+    </li>
+    <li>
+      <a href="../../../../about.html">About</a>
+    </li>
+    <li>
+      <a href="../../../../contact.html">Contact</a>
+    </li>
+  </ul>
+</div>
+
+   <div class="content">
+     <div class="post">
+       <h1 class="post__title">Advent of Code (Day 2)</h1>
+       <p class="post__date">< 2 Dec 2017></p>
+       <p>
+           <a class="post__tag" href="../../../personal/tags/advent-of-code.html">Advent of Code</a>
+           <a class="post__tag" href="../../../personal/tags/day-2.html">Day 2</a>
+       </p>
+       <hr/>
+       <p>It’s Christmas time again, and I know this because <a href="https://adventofcode.com/">Advent of
+Code</a> is here :).  I’ve never participated in this
+event until now and it’s surprisingly a ton of fun.</p>
+
+<h3 id="why-is-it-fun">Why is it fun?</h3>
+
+<p>Why is it fun? Partly because of the story in the challenges, but mostly because
+the challenges give me permission to throw caution to the wind and just hack the
+shit out of some data to try and get past the leader board… in only a few
+minutes. Everyone one of the top 100 finishers completed the challenge in less
+than 5 mins.  It’s taken me that long to read the damn spec (I’m a slow reader).
+So, forget testing, and planning, and thinking.  When the new challenge comes
+along, DO IT ASAP!</p>
+
+<h3 id="are-there-cheaters">Are there cheaters?</h3>
+
+<p>I looked into Reddit, and found that Advent participants go all in and skip to
+the story to make it on the leader board.  They bank off of their experience
+from previous challenges to get an idea of what they have to do and just pump
+out the answer and cross their fingers they did it correctly.  I’m sure there
+are a ton of other ways to cheat as well.</p>
+
+<h4 id="a-possible-hack">A possible hack</h4>
+
+<p>You have to input a value to answer a challenge and if the website tells you if
+your higher or lower, you can probably guess the answer in 5 guesses; no coding
+required.  This of course totally defeats to purpose of learning to code well,
+in exchange for the glory of the leader board. So, it’s a mix between hacking to
+get on the board and learning to code well.  I, of course, opt to do the
+‘virtuous thing’ and work on coding well instead of hacking the system.  But,
+maybe one day, I’ll change my mind and throw coding practices out the window.</p>
+
+<p>Until then, here is the code from Day 2, Advent of Code, 2017.</p>
+
+<h3 id="my-hacked-aftermath">My hacked aftermath</h3>
+
+<p>In the end, my code gets the answer, but not in a clear way.  Still, I think
+it’s a healthy mix of learning, having fun, and hacking.</p>
+
+<pre class="highlight ruby"><code><span class="n">rrr</span> <span class="o">=</span> <span class="p">[</span> <span class="p">[</span><span class="mi">278</span><span class="p">,</span><span class="mi">1689</span><span class="p">,</span><span class="mi">250</span><span class="p">,</span><span class="mi">1512</span><span class="p">,</span><span class="mi">1792</span><span class="p">,</span><span class="mi">1974</span><span class="p">,</span><span class="mi">175</span><span class="p">,</span><span class="mi">1639</span><span class="p">,</span><span class="mi">235</span><span class="p">,</span><span class="mi">1635</span><span class="p">,</span><span class="mi">1690</span><span class="p">,</span><span class="mi">1947</span><span class="p">,</span><span class="mi">810</span><span class="p">,</span><span class="mi">224</span><span class="p">,</span><span class="mi">928</span><span class="p">,</span><span class="mi">859</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">160</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">55</span><span class="p">,</span><span class="mi">81</span><span class="p">,</span><span class="mi">68</span><span class="p">,</span><span class="mi">130</span><span class="p">,</span><span class="mi">145</span><span class="p">,</span><span class="mi">21</span><span class="p">,</span><span class="mi">211</span><span class="p">,</span><span class="mi">136</span><span class="p">,</span><span class="mi">119</span><span class="p">,</span><span class="mi">78</span><span class="p">,</span><span class="mi">174</span><span class="p">,</span><span class="mi">155</span><span class="p">,</span><span class="mi">149</span><span class="p">,</span><span class="mi">72</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">4284</span><span class="p">,</span><span class="mi">185</span><span class="p">,</span><span class="mi">4499</span><span class="p">,</span><span class="mi">273</span><span class="p">,</span><span class="mi">4750</span><span class="p">,</span><span class="mi">4620</span><span class="p">,</span><span class="mi">4779</span><span class="p">,</span><span class="mi">4669</span><span class="p">,</span><span class="mi">2333</span><span class="p">,</span><span class="mi">231</span><span class="p">,</span><span class="mi">416</span><span class="p">,</span><span class="mi">1603</span><span class="p">,</span><span class="mi">197</span><span class="p">,</span><span class="mi">922</span><span class="p">,</span><span class="mi">5149</span><span class="p">,</span><span class="mi">2993</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">120</span><span class="p">,</span><span class="mi">124</span><span class="p">,</span><span class="mi">104</span><span class="p">,</span><span class="mi">1015</span><span class="p">,</span><span class="mi">1467</span><span class="p">,</span><span class="mi">110</span><span class="p">,</span><span class="mi">299</span><span class="p">,</span><span class="mi">320</span><span class="p">,</span><span class="mi">1516</span><span class="p">,</span><span class="mi">137</span><span class="p">,</span><span class="mi">1473</span><span class="p">,</span><span class="mi">132</span><span class="p">,</span><span class="mi">1229</span><span class="p">,</span><span class="mi">1329</span><span class="p">,</span><span class="mi">1430</span><span class="p">,</span><span class="mi">392</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">257</span><span class="p">,</span><span class="mi">234</span><span class="p">,</span><span class="mi">3409</span><span class="p">,</span><span class="mi">2914</span><span class="p">,</span><span class="mi">2993</span><span class="p">,</span><span class="mi">3291</span><span class="p">,</span><span class="mi">368</span><span class="p">,</span><span class="mi">284</span><span class="p">,</span><span class="mi">259</span><span class="p">,</span><span class="mi">3445</span><span class="p">,</span><span class="mi">245</span><span class="p">,</span><span class="mi">1400</span><span class="p">,</span><span class="mi">3276</span><span class="p">,</span><span class="mi">339</span><span class="p">,</span><span class="mi">2207</span><span class="p">,</span><span class="mi">233</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1259</span><span class="p">,</span><span class="mi">78</span><span class="p">,</span><span class="mi">811</span><span class="p">,</span><span class="mi">99</span><span class="p">,</span><span class="mi">2295</span><span class="p">,</span><span class="mi">1628</span><span class="p">,</span><span class="mi">3264</span><span class="p">,</span><span class="mi">2616</span><span class="p">,</span><span class="mi">116</span><span class="p">,</span><span class="mi">3069</span><span class="p">,</span><span class="mi">2622</span><span class="p">,</span><span class="mi">1696</span><span class="p">,</span><span class="mi">1457</span><span class="p">,</span><span class="mi">1532</span><span class="p">,</span><span class="mi">268</span><span class="p">,</span><span class="mi">82</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">868</span><span class="p">,</span><span class="mi">619</span><span class="p">,</span><span class="mi">139</span><span class="p">,</span><span class="mi">522</span><span class="p">,</span><span class="mi">168</span><span class="p">,</span><span class="mi">872</span><span class="p">,</span><span class="mi">176</span><span class="p">,</span><span class="mi">160</span><span class="p">,</span><span class="mi">1010</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">974</span><span class="p">,</span><span class="mi">1008</span><span class="p">,</span><span class="mi">1139</span><span class="p">,</span><span class="mi">552</span><span class="p">,</span><span class="mi">510</span><span class="p">,</span><span class="mi">1083</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1982</span><span class="p">,</span><span class="mi">224</span><span class="p">,</span><span class="mi">3003</span><span class="p">,</span><span class="mi">234</span><span class="p">,</span><span class="mi">212</span><span class="p">,</span><span class="mi">1293</span><span class="p">,</span><span class="mi">1453</span><span class="p">,</span><span class="mi">3359</span><span class="p">,</span><span class="mi">326</span><span class="p">,</span><span class="mi">3627</span><span class="p">,</span><span class="mi">3276</span><span class="p">,</span><span class="mi">3347</span><span class="p">,</span><span class="mi">1438</span><span class="p">,</span><span class="mi">2910</span><span class="p">,</span><span class="mi">248</span><span class="p">,</span><span class="mi">2512</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">4964</span><span class="p">,</span><span class="mi">527</span><span class="p">,</span><span class="mi">5108</span><span class="p">,</span><span class="mi">4742</span><span class="p">,</span><span class="mi">4282</span><span class="p">,</span><span class="mi">4561</span><span class="p">,</span><span class="mi">4070</span><span class="p">,</span><span class="mi">3540</span><span class="p">,</span><span class="mi">196</span><span class="p">,</span><span class="mi">228</span><span class="p">,</span><span class="mi">3639</span><span class="p">,</span><span class="mi">4848</span><span class="p">,</span><span class="mi">152</span><span class="p">,</span><span class="mi">1174</span><span class="p">,</span><span class="mi">5005</span><span class="p">,</span><span class="mi">202</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1381</span><span class="p">,</span><span class="mi">1480</span><span class="p">,</span><span class="mi">116</span><span class="p">,</span><span class="mi">435</span><span class="p">,</span><span class="mi">980</span><span class="p">,</span><span class="mi">1022</span><span class="p">,</span><span class="mi">155</span><span class="p">,</span><span class="mi">1452</span><span class="p">,</span><span class="mi">1372</span><span class="p">,</span><span class="mi">121</span><span class="p">,</span><span class="mi">128</span><span class="p">,</span><span class="mi">869</span><span class="p">,</span><span class="mi">1043</span><span class="p">,</span><span class="mi">826</span><span class="p">,</span><span class="mi">1398</span><span class="p">,</span><span class="mi">137</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">2067</span><span class="p">,</span><span class="mi">2153</span><span class="p">,</span><span class="mi">622</span><span class="p">,</span><span class="mi">1479</span><span class="p">,</span><span class="mi">2405</span><span class="p">,</span><span class="mi">1134</span><span class="p">,</span><span class="mi">2160</span><span class="p">,</span><span class="mi">1057</span><span class="p">,</span><span class="mi">819</span><span class="p">,</span><span class="mi">99</span><span class="p">,</span><span class="mi">106</span><span class="p">,</span><span class="mi">1628</span><span class="p">,</span><span class="mi">1538</span><span class="p">,</span><span class="mi">108</span><span class="p">,</span><span class="mi">112</span><span class="p">,</span><span class="mi">1732</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">4535</span><span class="p">,</span><span class="mi">2729</span><span class="p">,</span><span class="mi">4960</span><span class="p">,</span><span class="mi">241</span><span class="p">,</span><span class="mi">4372</span><span class="p">,</span><span class="mi">3960</span><span class="p">,</span><span class="mi">248</span><span class="p">,</span><span class="mi">267</span><span class="p">,</span><span class="mi">230</span><span class="p">,</span><span class="mi">5083</span><span class="p">,</span><span class="mi">827</span><span class="p">,</span><span class="mi">1843</span><span class="p">,</span><span class="mi">3488</span><span class="p">,</span><span class="mi">4762</span><span class="p">,</span><span class="mi">2294</span><span class="p">,</span><span class="mi">3932</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">3245</span><span class="p">,</span><span class="mi">190</span><span class="p">,</span><span class="mi">2249</span><span class="p">,</span><span class="mi">2812</span><span class="p">,</span><span class="mi">2620</span><span class="p">,</span><span class="mi">2743</span><span class="p">,</span><span class="mi">2209</span><span class="p">,</span><span class="mi">465</span><span class="p">,</span><span class="mi">139</span><span class="p">,</span><span class="mi">2757</span><span class="p">,</span><span class="mi">203</span><span class="p">,</span><span class="mi">2832</span><span class="p">,</span><span class="mi">2454</span><span class="p">,</span><span class="mi">177</span><span class="p">,</span><span class="mi">2799</span><span class="p">,</span><span class="mi">2278</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">1308</span><span class="p">,</span><span class="mi">797</span><span class="p">,</span><span class="mi">498</span><span class="p">,</span><span class="mi">791</span><span class="p">,</span><span class="mi">1312</span><span class="p">,</span><span class="mi">99</span><span class="p">,</span><span class="mi">1402</span><span class="p">,</span><span class="mi">1332</span><span class="p">,</span><span class="mi">521</span><span class="p">,</span><span class="mi">1354</span><span class="p">,</span><span class="mi">1339</span><span class="p">,</span><span class="mi">101</span><span class="p">,</span><span class="mi">367</span><span class="p">,</span><span class="mi">1333</span><span class="p">,</span><span class="mi">111</span><span class="p">,</span><span class="mi">92</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">149</span><span class="p">,</span><span class="mi">4140</span><span class="p">,</span><span class="mi">112</span><span class="p">,</span><span class="mi">3748</span><span class="p">,</span><span class="mi">148</span><span class="p">,</span><span class="mi">815</span><span class="p">,</span><span class="mi">4261</span><span class="p">,</span><span class="mi">138</span><span class="p">,</span><span class="mi">1422</span><span class="p">,</span><span class="mi">2670</span><span class="p">,</span><span class="mi">32</span><span class="p">,</span><span class="mi">334</span><span class="p">,</span><span class="mi">2029</span><span class="p">,</span><span class="mi">4750</span><span class="p">,</span><span class="mi">4472</span><span class="p">,</span><span class="mi">2010</span><span class="p">],</span>
+<span class="p">[</span><span class="mi">114</span><span class="p">,</span><span class="mi">605</span><span class="p">,</span><span class="mi">94</span><span class="p">,</span><span class="mi">136</span><span class="p">,</span><span class="mi">96</span><span class="p">,</span><span class="mi">167</span><span class="p">,</span><span class="mi">553</span><span class="p">,</span><span class="mi">395</span><span class="p">,</span><span class="mi">164</span><span class="p">,</span><span class="mi">159</span><span class="p">,</span><span class="mi">284</span><span class="p">,</span><span class="mi">104</span><span class="p">,</span><span class="mi">530</span><span class="p">,</span><span class="mi">551</span><span class="p">,</span><span class="mi">544</span><span class="p">,</span><span class="mi">18</span><span class="p">]]</span>
+
+<span class="n">sorted</span> <span class="o">=</span> <span class="n">rrr</span><span class="p">.</span><span class="nf">map</span> <span class="p">{</span><span class="o">|</span><span class="n">row</span><span class="o">|</span> <span class="n">row</span><span class="p">.</span><span class="nf">sort</span> <span class="p">}</span>
+
+
+<span class="c1"># gg = rrr.map { |row| row.max - row.min }</span>
+
+<span class="c1"># print gg.inject(:+)</span>
+<span class="c1"># puts gg.inject(:+)</span>
+
+<span class="nb">test</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">even_divide</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+  <span class="n">row</span><span class="p">.</span><span class="nf">each_with_index</span> <span class="k">do</span> <span class="o">|</span><span class="n">item</span><span class="p">,</span> <span class="n">index</span><span class="o">|</span>
+    <span class="c1"># divide into each other item</span>
+    <span class="n">row</span><span class="p">[(</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">).</span><span class="nf">.</span><span class="o">-</span><span class="mi">1</span><span class="p">].</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">divisor</span><span class="o">|</span>
+      <span class="k">return</span> <span class="n">divisor</span> <span class="o">/</span> <span class="n">item</span> <span class="k">if</span> <span class="p">(</span><span class="n">divisor</span> <span class="o">%</span> <span class="n">item</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="c1"># puts even_divide(test)</span>
+
+
+<span class="n">ratios</span> <span class="o">=</span> <span class="n">sorted</span><span class="p">.</span><span class="nf">map</span><span class="p">{</span><span class="o">|</span><span class="n">row</span><span class="o">|</span> <span class="n">even_divide</span><span class="p">(</span><span class="n">row</span><span class="p">)}</span>
+
+<span class="nb">print</span> <span class="n">ratios</span><span class="p">.</span><span class="nf">inject</span><span class="p">(:</span><span class="o">+</span><span class="p">)</span>
+</code></pre>
+
+<h3 id="learning-from-the-experience">Learning from the experience</h3>
+
+<p>Now, I’m going to clean this up to see if I can make it more readable.</p>
+
+<pre class="highlight plaintext"><code># It helped to learn Vim to get the input parsed to this data type
+
+input_rows = [
+  [278,1689,250,1512,1792,1974,175,1639,235,1635,1690,1947,810,224,928,859],
+  [160,50,55,81,68,130,145,21,211,136,119,78,174,155,149,72],
+  [4284,185,4499,273,4750,4620,4779,4669,2333,231,416,1603,197,922,5149,2993],
+  [120,124,104,1015,1467,110,299,320,1516,137,1473,132,1229,1329,1430,392],
+  [257,234,3409,2914,2993,3291,368,284,259,3445,245,1400,3276,339,2207,233],
+  [1259,78,811,99,2295,1628,3264,2616,116,3069,2622,1696,1457,1532,268,82],
+  [868,619,139,522,168,872,176,160,1010,200,974,1008,1139,552,510,1083],
+  [1982,224,3003,234,212,1293,1453,3359,326,3627,3276,3347,1438,2910,248,2512],
+  [4964,527,5108,4742,4282,4561,4070,3540,196,228,3639,4848,152,1174,5005,202],
+  [1381,1480,116,435,980,1022,155,1452,1372,121,128,869,1043,826,1398,137],
+  [2067,2153,622,1479,2405,1134,2160,1057,819,99,106,1628,1538,108,112,1732],
+  [4535,2729,4960,241,4372,3960,248,267,230,5083,827,1843,3488,4762,2294,3932],
+  [3245,190,2249,2812,2620,2743,2209,465,139,2757,203,2832,2454,177,2799,2278],
+  [1308,797,498,791,1312,99,1402,1332,521,1354,1339,101,367,1333,111,92],
+  [149,4140,112,3748,148,815,4261,138,1422,2670,32,334,2029,4750,4472,2010],
+  [114,605,94,136,96,167,553,395,164,159,284,104,530,551,544,18]
+]
+
+# First Challenge
+
+max_differences = input_rows.map { |row| row.max - row.min }
+sum_check = max_differences.inject(:+)
+
+puts sum_check
+
+# Second Challenge
+
+## Sort the rows to see what item divides the items in front of it in the array
+
+sorted_rows = input_rows.map {|row| row.sort }
+
+## The challenge stated that only two items in the row can be evenly divided
+
+def check_sum_ratio(row)
+  row.each_with_index do |item, index|
+    # divide into each other item
+    row[(index + 1)..-1].each do |divisor|
+      return divisor / item if (divisor % item == 0)
+    end
+  end
+end
+
+check_sum_ratios = sorted_rows.map{|row| check_sum_ratio(row)}
+sum_check = check_sum_ratios.inject(:+)
+
+puts sum_check
+</code></pre>
+
+<p>So, that’s my implementation and thoughts of Advent of Code.  How/What did you
+do?</p>
+
+<p>Love,</p>
+
+<p>Jason</p>
+
+       <div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'jasondata';
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+     </div>
+   </div>
+   <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-66493418-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  </body>
+</html>
