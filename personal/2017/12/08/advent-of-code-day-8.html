@@ -120,13 +120,10 @@ instruction.</p>
 
 <pre class="highlight ruby"><code>
 <span class="n">input</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">read</span><span class="p">(</span><span class="s1">'input.txt'</span><span class="p">).</span><span class="nf">split</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
-<span class="n">instructions</span> <span class="o">=</span> <span class="n">input</span><span class="p">.</span><span class="nf">map!</span> <span class="p">{</span> <span class="o">|</span><span class="n">program</span><span class="o">|</span> <span class="n">program</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="s1">' '</span><span class="p">)</span> <span class="p">}</span>
+<span class="n">instructions</span> <span class="o">=</span> <span class="n">input</span><span class="p">.</span><span class="nf">map!</span> <span class="p">{</span> <span class="o">|</span><span class="n">instruction</span><span class="o">|</span> <span class="n">instruction</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="s1">' '</span><span class="p">)</span> <span class="p">}</span>
 
 <span class="n">registers</span> <span class="o">=</span> <span class="no">Hash</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">sign_map</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">'dec'</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="s1">'inc'</span><span class="p">:</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">}</span>
-
-<span class="n">highest</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-
 
 <span class="k">def</span> <span class="nf">condition</span><span class="p">(</span><span class="n">registers</span><span class="p">,</span> <span class="n">other_reg</span><span class="p">,</span> <span class="n">comparison</span><span class="p">,</span> <span class="n">integer</span><span class="p">)</span>
   <span class="n">integer</span> <span class="o">=</span> <span class="n">integer</span><span class="p">.</span><span class="nf">to_i</span>
