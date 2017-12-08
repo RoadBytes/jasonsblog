@@ -517,7 +517,7 @@ label {
 /* line 29, /Users/Winning/Dropbox/Projects/Blog/template/source/stylesheets/base/_forms.scss */
 input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], input:not([type]), textarea,
 select[multiple=multiple] {
-  background-color: #000;
+  background-color: #121212;
   border: 1px solid #595959;
   border-radius: 3px;
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
@@ -541,7 +541,7 @@ select[multiple=multiple] {
   /* line 53, /Users/Winning/Dropbox/Projects/Blog/template/source/stylesheets/base/_forms.scss */
   input[type="color"]:disabled, input[type="date"]:disabled, input[type="datetime"]:disabled, input[type="datetime-local"]:disabled, input[type="email"]:disabled, input[type="month"]:disabled, input[type="number"]:disabled, input[type="password"]:disabled, input[type="search"]:disabled, input[type="tel"]:disabled, input[type="text"]:disabled, input[type="time"]:disabled, input[type="url"]:disabled, input[type="week"]:disabled, input:not([type]):disabled, textarea:disabled,
   select[multiple=multiple]:disabled {
-    background-color: black;
+    background-color: #111111;
     cursor: not-allowed; }
     /* line 57, /Users/Winning/Dropbox/Projects/Blog/template/source/stylesheets/base/_forms.scss */
     input[type="color"]:disabled:hover, input[type="date"]:disabled:hover, input[type="datetime"]:disabled:hover, input[type="datetime-local"]:disabled:hover, input[type="email"]:disabled:hover, input[type="month"]:disabled:hover, input[type="number"]:disabled:hover, input[type="password"]:disabled:hover, input[type="search"]:disabled:hover, input[type="tel"]:disabled:hover, input[type="text"]:disabled:hover, input[type="time"]:disabled:hover, input[type="url"]:disabled:hover, input[type="week"]:disabled:hover, input:not([type]):disabled:hover, textarea:disabled:hover,
@@ -683,23 +683,24 @@ html {
   text-align: left; }
   /* line 6, /Users/Winning/Dropbox/Projects/Blog/template/source/stylesheets/partials/_nav.scss */
   .nav ul {
-    margin-left: 8.5298%; }
-    /* line 9, /Users/Winning/Dropbox/Projects/Blog/template/source/stylesheets/partials/_nav.scss */
+    margin: 0 auto;
+    max-width: 800px; }
+    /* line 10, /Users/Winning/Dropbox/Projects/Blog/template/source/stylesheets/partials/_nav.scss */
     .nav ul li {
       display: inline-block;
       margin: 1em 1em 0 1em; }
-      /* line 13, /Users/Winning/Dropbox/Projects/Blog/template/source/stylesheets/partials/_nav.scss */
+      /* line 14, /Users/Winning/Dropbox/Projects/Blog/template/source/stylesheets/partials/_nav.scss */
       .nav ul li:first-letter {
         text-decoration: underline; }
-      /* line 16, /Users/Winning/Dropbox/Projects/Blog/template/source/stylesheets/partials/_nav.scss */
+      /* line 17, /Users/Winning/Dropbox/Projects/Blog/template/source/stylesheets/partials/_nav.scss */
       .nav ul li a {
         color: white;
         text-decoration: none; }
-        /* line 20, /Users/Winning/Dropbox/Projects/Blog/template/source/stylesheets/partials/_nav.scss */
+        /* line 21, /Users/Winning/Dropbox/Projects/Blog/template/source/stylesheets/partials/_nav.scss */
         .nav ul li a:hover {
           color: #1a1a1a; }
 
-/* line 28, /Users/Winning/Dropbox/Projects/Blog/template/source/stylesheets/partials/_nav.scss */
+/* line 29, /Users/Winning/Dropbox/Projects/Blog/template/source/stylesheets/partials/_nav.scss */
 .index-title {
   max-width: 68em;
   margin-left: auto;
@@ -710,7 +711,7 @@ html {
     clear: both;
     content: "";
     display: table; }
-  /* line 32, /Users/Winning/Dropbox/Projects/Blog/template/source/stylesheets/partials/_nav.scss */
+  /* line 33, /Users/Winning/Dropbox/Projects/Blog/template/source/stylesheets/partials/_nav.scss */
   .index-title aside {
     float: left;
     display: block;
@@ -721,10 +722,10 @@ html {
     /* line 89, /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/neat-1.7.2/app/assets/stylesheets/grid/_span-columns.scss */
     .index-title aside:last-child {
       margin-right: 0; }
-    /* line 36, /Users/Winning/Dropbox/Projects/Blog/template/source/stylesheets/partials/_nav.scss */
+    /* line 37, /Users/Winning/Dropbox/Projects/Blog/template/source/stylesheets/partials/_nav.scss */
     .index-title aside img {
       border-radius: 15px; }
-  /* line 41, /Users/Winning/Dropbox/Projects/Blog/template/source/stylesheets/partials/_nav.scss */
+  /* line 42, /Users/Winning/Dropbox/Projects/Blog/template/source/stylesheets/partials/_nav.scss */
   .index-title .title-heading {
     float: left;
     display: block;
@@ -734,23 +735,23 @@ html {
     /* line 89, /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/neat-1.7.2/app/assets/stylesheets/grid/_span-columns.scss */
     .index-title .title-heading:last-child {
       margin-right: 0; }
-    /* line 45, /Users/Winning/Dropbox/Projects/Blog/template/source/stylesheets/partials/_nav.scss */
+    /* line 46, /Users/Winning/Dropbox/Projects/Blog/template/source/stylesheets/partials/_nav.scss */
     .index-title .title-heading .name-brand {
       font-size: 2em;
       height: 1.2em;
       margin: 0;
       padding: 0; }
-    /* line 51, /Users/Winning/Dropbox/Projects/Blog/template/source/stylesheets/partials/_nav.scss */
+    /* line 52, /Users/Winning/Dropbox/Projects/Blog/template/source/stylesheets/partials/_nav.scss */
     .index-title .title-heading p {
       margin: 0;
       padding-top: 0; }
 
 @media (max-width: 400px) {
-  /* line 59, /Users/Winning/Dropbox/Projects/Blog/template/source/stylesheets/partials/_nav.scss */
+  /* line 60, /Users/Winning/Dropbox/Projects/Blog/template/source/stylesheets/partials/_nav.scss */
   .nav ul {
     margin-left: 0%; }
 
-  /* line 63, /Users/Winning/Dropbox/Projects/Blog/template/source/stylesheets/partials/_nav.scss */
+  /* line 64, /Users/Winning/Dropbox/Projects/Blog/template/source/stylesheets/partials/_nav.scss */
   .nav ul li {
     margin: 10px 10px 0 10px; } }
 /* line 4, /Users/Winning/Dropbox/Projects/Blog/template/source/stylesheets/partials/_overrides.scss */
@@ -862,14 +863,17 @@ code {
 /* line 118, /Users/Winning/Dropbox/Projects/Blog/template/source/stylesheets/partials/_overrides.scss */
 pre.highlight {
   background-color: #595959;
-  padding-left: 10px; }
+  overflow-x: scroll;
+  padding-left: 10px;
+  white-space: pre; }
 
 /* line 1, /Users/Winning/Dropbox/Projects/Blog/template/source/stylesheets/components/_content.scss */
 .content {
   max-width: 68em;
   margin-left: auto;
   margin-right: auto;
-  padding: 1.8; }
+  padding: 15px;
+  max-width: 800px; }
   /* line 20, /usr/local/var/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/bourbon-4.2.6/app/assets/stylesheets/addons/_clearfix.scss */
   .content::after {
     clear: both;
@@ -877,7 +881,7 @@ pre.highlight {
     display: table; }
 
 @media (max-width: 400px) {
-  /* line 7, /Users/Winning/Dropbox/Projects/Blog/template/source/stylesheets/components/_content.scss */
+  /* line 8, /Users/Winning/Dropbox/Projects/Blog/template/source/stylesheets/components/_content.scss */
   .content {
     padding: 10px; } }
 /* line 1, /Users/Winning/Dropbox/Projects/Blog/template/source/stylesheets/components/_listed-post.scss */
@@ -935,7 +939,7 @@ pre.highlight {
     font-size: 1.3rem; } }
 /* line 1, /Users/Winning/Dropbox/Projects/Blog/template/source/stylesheets/components/_main.scss */
 .main {
-  background-color: #000; }
+  background-color: #121212; }
 
 /* line 1, /Users/Winning/Dropbox/Projects/Blog/template/source/stylesheets/components/_post.scss */
 .post {
