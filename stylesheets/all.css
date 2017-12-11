@@ -863,10 +863,15 @@ code {
 /* line 118, /Users/Winning/Dropbox/Projects/Blog/template/source/stylesheets/partials/_overrides.scss */
 pre.highlight {
   background-color: #595959;
+  min-width: 600px;
   overflow-x: scroll;
   padding-left: 10px;
   white-space: pre; }
 
+@media (max-width: 400px) {
+  /* line 127, /Users/Winning/Dropbox/Projects/Blog/template/source/stylesheets/partials/_overrides.scss */
+  pre.highlight {
+    font-size: 12px; } }
 /* line 1, /Users/Winning/Dropbox/Projects/Blog/template/source/stylesheets/components/_content.scss */
 .content {
   max-width: 68em;
